@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementVector.x = Input.GetAxisRaw("Horizontal");
-        movementVector.y = Input.GetAxisRaw("Vertical");
+        movementVector.x = Input.GetAxisRaw("Horizontal") *5;
+        movementVector.y = Input.GetAxisRaw("Vertical") *5;
 
         rgdbd2d.velocity = movementVector;
     }
