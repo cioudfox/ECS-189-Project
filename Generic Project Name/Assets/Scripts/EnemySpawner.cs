@@ -28,5 +28,8 @@ public class EnemySpawner : MonoBehaviour
             UnityEngine.Random.Range(-spawnArea.y,  spawnArea.y),
             0.0f
         );
+
+        GameObject newEnemy = Instantiate(enemy);
+        newEnemy.transform.position = position;
     }
 }
