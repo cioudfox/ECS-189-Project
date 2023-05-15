@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D body;
     private Vector2 moveDir;
-
+    public Vector2 GetMoveDir(){return moveDir;}
     //To preserve states
     private float lastHorizontalVector;
     private float lastVerticalVector;
