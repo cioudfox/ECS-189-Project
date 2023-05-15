@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerMovement>().transform;
+        player = FindObjectOfType<PlayerController>().transform;
     }
 
     // Update is called once per frame

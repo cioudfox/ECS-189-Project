@@ -2,25 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
     public float moveSpeed;
-    private Rigidbody2D rb;
 
+    private Rigidbody2D body;
     private Vector2 moveDir;
 
     //To preserve states
-
     private float lastHorizontalVector;
- 
     private float lastVerticalVector;
     private Vector2 lastMovedVector;
 
-    public Vector2 GetLastMovedVector() {return lastMovedVector;}
-    // vector3 GetMoveDir(){return moveDir;}
+    public Vector2 GetLastMovedVector() 
+    {
+        return lastMovedVector;
+    }
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody2D>();
         lastMovedVector = new Vector2(1, 0f); //If we don't do this and game starts up and don't move, the projectile weapon will have no momentum
     }
 
@@ -30,15 +32,10 @@ public class PlayerMovement : MonoBehaviour
         Move();
     }
 
-    // void FixedUpdate() //Always calculate physics in fixed update
-    // {
-    //     Move();
-    // }
-
     void InputManagement()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
 
         moveDir = new Vector2(moveX, moveY).normalized; //Use normalize as moving in diagonal generates a value > 1 so cap it to 1
 
@@ -62,8 +59,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);    //Apply velocity
-    }
+        if (moveDir.x > 0.0f)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (moveDir.x < 0.0f)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
 
-    
+        body.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);    //Apply velocity
+    }
 }

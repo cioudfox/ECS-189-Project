@@ -13,11 +13,11 @@ public class WeaponController : MonoBehaviour
     float currentCooldown;
     //public type?;
 
-    protected PlayerMovement player;
+    protected PlayerController player;
     
     protected virtual void Start()
     {
-        player = FindObjectOfType<PlayerMovement>();
+        player = FindObjectOfType<PlayerController>();
         currentCooldown = cooldownDuration;
     }   
     
