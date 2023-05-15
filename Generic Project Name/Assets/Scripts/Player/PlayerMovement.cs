@@ -5,9 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
 
-    [HideInInspector]
     private Vector2 moveDir;
 
     //To preserve states

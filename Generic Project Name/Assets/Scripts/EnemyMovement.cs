@@ -9,12 +9,12 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // player = FindObjectOfType<PlayerMovement>().transform;
+        player = FindObjectOfType<PlayerMovement>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);        
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);        
     }
 }
