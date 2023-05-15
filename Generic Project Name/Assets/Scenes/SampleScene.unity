@@ -1983,7 +1983,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9098f02fec0ec9d4fb5fe8534cc7b158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  moveSpeed: 5
+  moveDir: {x: 0, y: 0}
+  lastHorizontalVector: 0
+  lastVerticalVector: 0
+  lastMovedVector: {x: 0, y: 0}
 --- !u!50 &137304611
 Rigidbody2D:
   serializedVersion: 4
