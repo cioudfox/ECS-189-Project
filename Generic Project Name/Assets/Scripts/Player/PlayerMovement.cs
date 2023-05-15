@@ -2,25 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Controls all player movement
-/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     Rigidbody2D rb;
 
     [HideInInspector]
-    public Vector2 moveDir;
+    private Vector2 moveDir;
 
     //To preserve states
-    [HideInInspector]
-    public float lastHorizontalVector;
-    [HideInInspector]
-    public float lastVerticalVector;
-    [HideInInspector]
-    public Vector2 lastMovedVector;
 
+    private float lastHorizontalVector;
+ 
+    private float lastVerticalVector;
+    private Vector2 lastMovedVector;
+
+    public Vector2 GetLastMovedVector() {return lastMovedVector;}
+    // vector3 GetMoveDir(){return moveDir;}
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,12 +28,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         InputManagement();
-    }
-
-    void FixedUpdate() //Always calculate physics in fixed update
-    {
         Move();
     }
+
+    // void FixedUpdate() //Always calculate physics in fixed update
+    // {
+    //     Move();
+    // }
 
     void InputManagement()
     {
@@ -66,4 +65,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);    //Apply velocity
     }
+
+    
 }

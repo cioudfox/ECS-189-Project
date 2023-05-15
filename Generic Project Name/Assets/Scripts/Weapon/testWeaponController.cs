@@ -14,6 +14,6 @@ public class testWeaponController : WeaponController
         base.Attack();
         GameObject spawnTestWeapon = Instantiate(prefab);
         spawnTestWeapon.transform.position = transform.position;
-        spawnTestWeapon.GetComponent<testWeaponBehaviour>().DirectionChecker(player.moveDir);
+        spawnTestWeapon.GetComponent<testWeaponBehaviour>().DirectionChecker(player.GetLastMovedVector());
     }
 }
