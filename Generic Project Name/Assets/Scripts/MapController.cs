@@ -17,7 +17,8 @@ public class MapController : MonoBehaviour
     GameObject latestChunk;
     public float maxOpDist; //Must be greater than the length and width of the tilemap
     float opDist;
-
+    float optimizerCooldown;
+    public float optimizerCooldownDur;
 
 
     void Start()
@@ -28,6 +29,7 @@ public class MapController : MonoBehaviour
     void Update()
     {
         ChunkChecker();
+        ChunkOptimzer();
     }
 
     void ChunkChecker()
@@ -108,5 +110,34 @@ public class MapController : MonoBehaviour
         int rand = Random.Range(0, terrainChunks.Count);
         latestChunk = Instantiate(terrainChunks[rand], noTerrainPosition, Quaternion.identity);
         spawnedChunks.Add(latestChunk);
+    }
+
+    void ChunkOptimzer()
+    {
+        optimizerCooldown -= Time.deltaTime;
+
+        if (optimizerCooldown <= 0f)
+        {
+            optimizerCooldown = optimizerCooldownDur;   //Check every 1 second to save cost, change this value to lower to check more times
+        }
+        else
+        {
+            return;
+        }
+
+        foreach (GameObject chunk in spawnedChunks)
+        {
+            opDist = Vector3.Distance(player.transform.position, chunk.transform.position);
+            Debug.Log(opDist);
+
+            if (opDist > maxOpDist)
+            {
+                chunk.SetActive(false);
+            }
+            else
+            {
+                chunk.SetActive(true);
+            }
+        }
     }
 }
