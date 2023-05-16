@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour, IDamageable
 {
     [SerializeField] Transform tragetDestination;
     GameObject targetGameObject;
     [SerializeField] float speed = 3.0f;
+    [SerializeField] int hp = 10;
+    
 
     Rigidbody2D rgdbd2d;
     // Start is called before the first frame update
@@ -35,5 +37,14 @@ public class EnemyMovement : MonoBehaviour
     {
         Debug.Log("Attack!");
         // need to arrage with the hp system.
+    }
+
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+        if (hp < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

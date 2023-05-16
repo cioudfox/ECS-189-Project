@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 137304611}
   - component: {fileID: 137304610}
   - component: {fileID: 137304615}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 214140381}
   - component: {fileID: 214140382}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,6 +910,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin_walk_0
       objectReference: {fileID: 0}
+    - target: {fileID: 897527639298260085, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 897527639298260085, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 897527639298260088, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -960,7 +968,7 @@ PrefabInstance:
       objectReference: {fileID: 137304614}
     - target: {fileID: 897527639298260094, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
       propertyPath: m_BodyType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 897527639298260094, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
       propertyPath: m_CollisionDetection
