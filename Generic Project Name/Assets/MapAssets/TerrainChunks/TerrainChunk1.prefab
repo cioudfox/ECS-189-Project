@@ -16452,6 +16452,7 @@ GameObject:
   - component: {fileID: 5672890811736825586}
   - component: {fileID: 5672890811736825585}
   - component: {fileID: 3535158367354271647}
+  - component: {fileID: 8047387562176018353}
   m_Layer: 6
   m_Name: TerrainChunk1
   m_TagString: Untagged
@@ -16537,6 +16538,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 40, y: 40}
   m_EdgeRadius: 0
+--- !u!210 &8047387562176018353
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672890811736825587}
+  m_Enabled: 1
+  m_SortingLayerID: -1238599507
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!1 &5672890812129100299
 GameObject:
   m_ObjectHideFlags: 0
