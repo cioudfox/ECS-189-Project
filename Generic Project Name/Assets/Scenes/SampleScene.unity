@@ -958,6 +958,18 @@ PrefabInstance:
       propertyPath: tragetDestination
       value: 
       objectReference: {fileID: 137304614}
+    - target: {fileID: 897527639298260094, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 897527639298260094, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 897527639298260095, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
 --- !u!1001 &5672890813097482003
