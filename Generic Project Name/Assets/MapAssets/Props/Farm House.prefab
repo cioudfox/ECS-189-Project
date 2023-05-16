@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 6443594798004666177}
   - component: {fileID: -8608626155854616511}
   m_Layer: 0
-  m_Name: House_1 (closed)
+  m_Name: Farm House
   m_TagString: Occludable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
