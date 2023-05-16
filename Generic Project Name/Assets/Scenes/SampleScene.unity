@@ -355,10 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed78b2dd41979647b1da49bb24ab458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3432851166608940634, guid: 8b6403975bf108f42b9c5c94a9b4df88, type: 3}
-  damage: 10
-  speed: 10
-  cooldownDuration: 0.5
+  weaponData: {fileID: 11400000, guid: 9004c15f7292a324198011b0895ed20b, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

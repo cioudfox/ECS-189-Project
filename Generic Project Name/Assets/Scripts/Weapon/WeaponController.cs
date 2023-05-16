@@ -6,10 +6,7 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     [Header("Weapon Stats")]
-    public GameObject prefab;
-    public float damage;
-    public float speed;
-    public float cooldownDuration;
+    public WeaponScriptableObject weaponData;
     float currentCooldown;
     //public type?;
 
@@ -18,7 +15,7 @@ public class WeaponController : MonoBehaviour
     protected virtual void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        currentCooldown = cooldownDuration;
+        currentCooldown = weaponData.cooldownDuration;
     }   
     
     protected virtual void Update()
@@ -34,6 +31,6 @@ public class WeaponController : MonoBehaviour
     {
         // Debug.Log("fire2");
         // Debug.Log(currentCooldown);
-        currentCooldown = cooldownDuration;
+        currentCooldown = weaponData.cooldownDuration;
     }
 }

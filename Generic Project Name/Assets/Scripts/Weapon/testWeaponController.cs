@@ -12,7 +12,7 @@ public class testWeaponController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        GameObject spawnTestWeapon = Instantiate(prefab);
+        GameObject spawnTestWeapon = Instantiate(weaponData.prefab);
         spawnTestWeapon.transform.position = transform.position;
         spawnTestWeapon.GetComponent<testWeaponBehaviour>().DirectionChecker(player.GetLastMovedVector());
     }
