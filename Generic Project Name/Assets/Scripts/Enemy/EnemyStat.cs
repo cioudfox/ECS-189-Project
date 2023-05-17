@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
+    [SerializeField]
+    public GameObject productDropPrefab;
     public EnemyScriptableObject enemyData;
 
     float currentDamage;
     float currentSpeed;
     float currentHp;
-        
+    // Controls the horizontal speed at which prefabs are instantiated.
 
     // Update is called once per frame
     void Awake()
@@ -31,5 +33,10 @@ public class EnemyStat : MonoBehaviour
     public void Kill()
     {
         Destroy(gameObject);
+
+        var itemDrop = (GameObject) Instantiate(productDropPrefab, this.gameObject.transform.position, Quaternion.identity);
+
     }
+
+
 }
