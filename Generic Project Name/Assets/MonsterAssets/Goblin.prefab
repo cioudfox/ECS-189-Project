@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 897527639298260088}
   - component: {fileID: 897527639298260091}
   - component: {fileID: 897527639298260090}
-  - component: {fileID: 897527639298260089}
   - component: {fileID: 897527639298260095}
   - component: {fileID: 897527639298260094}
-  m_Layer: 0
-  m_Name: Goblin_walk_0
-  m_TagString: Untagged
+  - component: {fileID: 1883115664703339551}
+  - component: {fileID: 1876816605223184706}
+  m_Layer: 8
+  m_Name: Goblin
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1962019153
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2106673618, guid: bd82cfca198fd4c4b9a1adefba362190, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -109,20 +110,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &897527639298260089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897527639298260085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9a88c1a22b4d0e49829120cb0b64850, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tragetDestination: {fileID: 0}
-  speed: 2
 --- !u!58 &897527639298260095
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -160,3 +147,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1883115664703339551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897527639298260085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d614236f86454d54c954953e994622ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 2eab12479fc921f4c85afec9cd3affb2, type: 2}
+--- !u!114 &1876816605223184706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897527639298260085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27debe7d0ef3d5d43899e641a1c966ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 2eab12479fc921f4c85afec9cd3affb2, type: 2}

@@ -15,7 +15,7 @@ public class WeaponController : MonoBehaviour
     protected virtual void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        currentCooldown = weaponData.cooldownDuration;
+        currentCooldown = weaponData.CooldownDuration;
     }   
     
     protected virtual void Update()
@@ -31,6 +31,6 @@ public class WeaponController : MonoBehaviour
     {
         // Debug.Log("fire2");
         // Debug.Log(currentCooldown);
-        currentCooldown = weaponData.cooldownDuration;
+        currentCooldown = weaponData.CooldownDuration;
     }
 }
