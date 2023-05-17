@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  animator: {fileID: 137304612}
 --- !u!50 &137304611
 Rigidbody2D:
   serializedVersion: 4
@@ -889,6 +890,8 @@ MonoBehaviour:
   terrainChunks:
   - {fileID: 5672890811736825587, guid: f62c617cf5b804d49a47decb0cb70482, type: 3}
   - {fileID: 5672890811736825587, guid: d88e535a38f840f4a81609c2cc21a7b5, type: 3}
+  - {fileID: 5672890811736825587, guid: d19ea0bd2ab384d45973f68eececd776, type: 3}
+  - {fileID: 5672890811736825587, guid: 829ec09622b1c5a4fb7c784ec5446b81, type: 3}
   player: {fileID: 137304609}
   checkerRadius: 0.2
   noTerrainPosition: {x: 0, y: 0, z: 0}

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public float moveSpeed;
 
+    public Animator animator;
     private Rigidbody2D body;
     private Vector2 moveDir;
     public Vector2 GetMoveDir(){return moveDir;}
@@ -57,6 +58,15 @@ public class PlayerController : MonoBehaviour
         float moveY = Input.GetAxis("Vertical");
 
         moveDir = new Vector2(moveX, moveY).normalized; //Use normalize as moving in diagonal generates a value > 1 so cap it to 1
+
+        if (moveDir.x != 0 || moveDir.y != 0)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
 
         if(moveDir.x != 0)
         {
