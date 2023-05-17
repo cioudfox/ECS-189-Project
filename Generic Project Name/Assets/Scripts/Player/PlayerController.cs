@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Player.Command;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private IPlayerCommand leftMouse;
+    private IPlayerCommand rightMouse;
+
+
     [SerializeField]
     public float moveSpeed;
 
@@ -20,10 +25,24 @@ public class PlayerController : MonoBehaviour
         return lastMovedVector;
     }
 
+    public Vector2 GetMouseDirection()
+    {
+        Vector3 playerPosition = this.gameObject.transform.position;
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = playerPosition.z;
+        
+        Vector2 direction = new Vector2(mousePosition.x - playerPosition.x, mousePosition.y - playerPosition.y);
+        direction.Normalize();
+        return direction;
+    }
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         lastMovedVector = new Vector2(1, 0f); //If we don't do this and game starts up and don't move, the projectile weapon will have no momentum
+
+        this.leftMouse = ScriptableObject.CreateInstance<ShootingTowardsMouseCommand>();
+        this.rightMouse = ScriptableObject.CreateInstance<ShootingForwardCommand>();
     }
 
     void Update()
@@ -54,6 +73,22 @@ public class PlayerController : MonoBehaviour
         if(moveDir.x != 0 && moveDir.y != 0)
         {
             lastMovedVector = new Vector2(lastHorizontalVector, lastVerticalVector);    //While moving
+        }
+
+
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Left mouse button was clicked
+            this.leftMouse.Execute(this.gameObject);
+            
+        }
+        
+        if (Input.GetMouseButtonDown(1))
+        {
+            // Right mouse button was clicked
+            this.rightMouse.Execute(this.gameObject);
         }
     }
 
