@@ -31,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject newEnemy = Instantiate(enemy);
         newEnemy.transform.position = position;
         newEnemy.GetComponent<EnemyController>().SetTarget(player);
+        newEnemy.transform.parent = transform;
     }
 
     private Vector3 GenerateRandomPosition()

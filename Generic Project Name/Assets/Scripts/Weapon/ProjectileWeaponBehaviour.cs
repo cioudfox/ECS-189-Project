@@ -81,6 +81,10 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         {
             EnemyStat enemy = col.GetComponent<EnemyStat>();
             enemy.TakeDamage(currentDamage);
+            //Temporarily solution for projectile attack
+            //if(weaponData.Type == "PierceShot")
+            //else
+            Destroy(gameObject);
         }
     }
 }

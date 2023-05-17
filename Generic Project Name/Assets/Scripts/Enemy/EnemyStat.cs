@@ -37,6 +37,4 @@ public class EnemyStat : MonoBehaviour
         var itemDrop = (GameObject) Instantiate(productDropPrefab, this.gameObject.transform.position, Quaternion.identity);
 
     }
-
-
 }

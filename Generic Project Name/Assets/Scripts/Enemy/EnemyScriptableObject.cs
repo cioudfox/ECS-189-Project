@@ -20,6 +20,6 @@ public class EnemyScriptableObject : ScriptableObject
 
     [SerializeField]
     float maxHp;
-    public float MaxHp { get => speed; private set => speed = value; }
+    public float MaxHp { get => maxHp; private set => maxHp = value; }
     
 }
