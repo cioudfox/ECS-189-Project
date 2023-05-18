@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         if(moveDir.y != 0)
         {
             lastVerticalVector = moveDir.y;
-            lastMovedVector = new Vector2(0f, lastVerticalVector);  //Last moved Y
+            lastMovedVector = new Vector2(0f, lastVerticalVector);      //Last moved Y
         }
 
         if(moveDir.x != 0 && moveDir.y != 0)

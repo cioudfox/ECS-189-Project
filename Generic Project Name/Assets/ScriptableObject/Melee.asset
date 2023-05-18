@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93a43e0466ad5f34ba8220935607573a, type: 3}
-  m_Name: DarkOrb
+  m_Name: Melee
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3432851166608940634, guid: 8b6403975bf108f42b9c5c94a9b4df88, type: 3}
-  damage: 5
-  speed: 5
-  cooldownDuration: 1
+  prefab: {fileID: 7218395821001199859, guid: a64a482dbd81a7042b36f67a230dacb1, type: 3}
+  damage: 10
+  speed: 1
+  cooldownDuration: 2

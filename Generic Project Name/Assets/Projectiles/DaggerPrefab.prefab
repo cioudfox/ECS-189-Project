@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 368335730605868700}
   - component: {fileID: 296321670430375984}
   m_Layer: 0
-  m_Name: DarkOrbPreFab
+  m_Name: DaggerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 1962019153
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9f2c84218713a8c45a9e5c7f4068f2d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9e1e067258bd5741a0f23e39fee4b6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093db6393be15814886f2e7beb077225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 9004c15f7292a324198011b0895ed20b, type: 2}
-  destroyAfterSeconds: 3
+  weaponData: {fileID: 11400000, guid: ccfbff77a77ed034ca2dbfd378af98e0, type: 2}
+  destroyAfterSeconds: 1
 --- !u!50 &368335730605868700
 Rigidbody2D:
   serializedVersion: 4
@@ -121,7 +121,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!60 &296321670430375984
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.22, y: 0.14}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
