@@ -125,7 +125,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.05
+  m_Radius: 0.2
 --- !u!50 &-6775720442331734494
 Rigidbody2D:
   serializedVersion: 4
@@ -146,7 +146,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &-2410247129122056952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,3 +174,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productDropPrefab: {fileID: 7430569447165051818, guid: 77f21b64863ea054896155c22a08b88b, type: 3}
   enemyData: {fileID: 11400000, guid: dae3c0763716e674dab51ce4571dc5ee, type: 2}
+  despawnDistance: 20

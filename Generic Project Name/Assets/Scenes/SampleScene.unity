@@ -673,6 +673,7 @@ GameObject:
   - component: {fileID: 1425545501}
   - component: {fileID: 1425545500}
   - component: {fileID: 1425545502}
+  - component: {fileID: 1425545503}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -727,6 +728,40 @@ MonoBehaviour:
   spawnArea: {x: 18, y: 10}
   spawnTime: 10
   player: {fileID: 137304609}
+--- !u!114 &1425545503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425545499}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e50f739d998364b89e256a45ac2ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnArea: {x: 0, y: 0}
+  spawnTime: 0
+  player: {fileID: 0}
+  waves:
+  - waveName: Gob
+    enemyGroups:
+    - enemyName: Gob
+      enemyPrefab: {fileID: 897527639298260085, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
+      enemyCount: 7
+      spawnCount: 0
+    - enemyName: Red Gob
+      enemyPrefab: {fileID: 897527639298260085, guid: dba29f90af555f44a84b0c922fd80def, type: 3}
+      enemyCount: 6
+      spawnCount: 0
+    waveQuota: 0
+    spawnInterval: 1
+    totalSpawnCount: 0
+  currentWaveIndex: 0
+  enemiesAlive: 0
+  maxenemiesAllowed: 10
+  isMaxEnemies: 0
+  waveInterval: 10
 --- !u!1 &1713097598
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,9 +967,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -774307780905668241, guid: da34b68bd9e3a7f4b930883dbcbd3893, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5496996737557623121, guid: da34b68bd9e3a7f4b930883dbcbd3893, type: 3}
       propertyPath: m_Name
       value: Orc_walk_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673946180392675811, guid: da34b68bd9e3a7f4b930883dbcbd3893, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7681986860275763342, guid: da34b68bd9e3a7f4b930883dbcbd3893, type: 3}
       propertyPath: m_RootOrder

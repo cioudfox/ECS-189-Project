@@ -11,7 +11,9 @@ public class EnemyStat : MonoBehaviour
     float currentDamage;
     float currentSpeed;
     float currentHp;
-    // Controls the horizontal speed at which prefabs are instantiated.
+    public float despawnDistance = 20.0f;
+
+    Transform player;
 
     // Update is called once per frame
     void Awake()
@@ -20,6 +22,19 @@ public class EnemyStat : MonoBehaviour
         currentSpeed = enemyData.Speed;
         currentHp = enemyData.MaxHp;
     }
+
+    void Start()
+    {
+        player = FindObjectOfType<PlayerController>().transform;
+    }
+
+    // void Update()
+    // {
+    //     if (Vector2.Distance(transform.position, player.position) >= despawnDistance)
+    //     {
+    //         ReturnEnemy();
+    //     }
+    // }
 
     public void TakeDamage(float damage)
     {
@@ -44,4 +59,24 @@ public class EnemyStat : MonoBehaviour
         var itemDrop = (GameObject) Instantiate(productDropPrefab, this.gameObject.transform.position, Quaternion.identity);
 
     }
+    // protected virtual void OnTriggerEnter2D(Collider2D col) 
+    // {
+    //     if(col.CompareTag("Player"))
+    //     {
+    //         PlayerStat player = col.GetComponent<EnemyStat>();
+    //         player.TakeDamage(currentDamage);
+    //     }
+    // }
+
+    // private void OnDestroy()
+    // {
+    //     EnemyWave ew = FindObjectOfType<EnemyWave>();
+    //     ew.OnEnemyKilled();
+    // }
+
+    // private void ReturnEnemy()
+    // {
+    //     EnemyWave ew = FindObjectOfType<EnemyWave>();
+    //     transform.position = player.position + ew.GenerateRandomPosition();
+    // }
 }
