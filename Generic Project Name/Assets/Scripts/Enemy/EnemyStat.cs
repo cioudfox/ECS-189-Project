@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
-    [SerializeField]
-    public GameObject productDropPrefab;
+    [SerializeField] public GameObject productDropPrefab;
+
     public EnemyScriptableObject enemyData;
 
     float currentDamage;
@@ -24,12 +24,19 @@ public class EnemyStat : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHp -= damage;
+        
+        bool isCriticalHit = Random.Range(0,100) < 30;
+
+        DamgePopup.Create(this.gameObject.transform.position, (int)damage, isCriticalHit);
+
+        
         if(currentHp <= 0)
         {
             Kill();
         }
     }
-    
+
+
     public void Kill()
     {
         Destroy(gameObject);
