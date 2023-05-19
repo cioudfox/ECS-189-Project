@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
+    // [SerializeField] GameObject enemy;
     [SerializeField] Vector2 spawnArea;
-    [SerializeField] float spawnTime;
+    // [SerializeField] float spawnTime;
     [SerializeField] GameObject player;
-    float timer;
-    // Start is called before the first frame update
+    // float timer;
 
-    // Update is called once per frame
-    private void Update()
-    {
-        timer -= Time.deltaTime;
-        if(timer < 0)
-        {
-            SpawnEnemy();
-            timer = spawnTime;
-        }
-    }
+    // private void Update()
+    // {
+    //     timer -= Time.deltaTime;
+    //     if(timer < 0)
+    //     {
+    //         SpawnEnemy();
+    //         timer = spawnTime;
+    //     }
+    // }
 
-    private void SpawnEnemy()
+    public void SpawnEnemy(GameObject enemy)
     {
         Vector3 position = GenerateRandomPosition();
 

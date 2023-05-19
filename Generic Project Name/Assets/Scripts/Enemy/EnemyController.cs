@@ -42,13 +42,4 @@ public class EnemyController : MonoBehaviour
     //     Debug.Log("Attack!");
     //     // need to arrage with the hp system.
     // }
-
-    // public void TakeDamage(int damage)
-    // {
-    //     enemyData.MaxHp -= damage;
-    //     if (enemyData.MaxHp < 0)
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
 }

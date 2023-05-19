@@ -1,53 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemyWave : MonoBehaviour
 {
     [SerializeField] Vector2 spawnArea;
-    [SerializeField] float spawnTime;
     [SerializeField] GameObject player;
-    [System.Serializable]
-    public class Wave
-    {
-        public string waveName;
-        public List<EnemyGroup> enemyGroups;
-        public int waveQuota; // The total number of enemies spawned in this wave
-        public float spawnInterval; //Interval between spawn times
-        public int totalSpawnCount; // The number of enemies already spawned
-    }
 
-    [System.Serializable]
-    public class EnemyGroup
-    {
-        public string enemyName;
-        public GameObject enemyPrefab;
-        public int enemyCount; // The number of enemy in this wave
-        public int spawnCount;
-    }
+    [SerializeField] List<WaveScriptableObject> waveData;
 
-    public List<Wave> waves;
+    // [SerializeField] EnemySpawner enemySpawner;
+
+    //     [Serializable]
+    // public class Wave
+    // {
+    //     public List<EnemyGroup> enemyGroups;
+    //     public int waveQuota; // The total number of enemies spawned in this wave
+    //     public float spawnInterval; //Interval between spawn times
+    //     public int totalSpawnCount; // The number of enemies already spawned
+    // }
+
+    // [Serializable]
+    // public class EnemyGroup
+    // {
+    //     public GameObject enemyPrefab;
+    //     public int enemyCount; // The number of enemy in this wave
+    //     public int spawnCount;
+    // }
+
     public int currentWaveIndex = 0;
 
     [Header("Spawner Attributes")]
     float timer;
     public int enemiesAlive;
-    public int maxenemiesAllowed;
+    public int maxEnemiesAllowed;
     public bool isMaxEnemies;
     public float waveInterval;
     void Start()
     {
-        CalculateQuata();
+        CalculateQuata(); 
     }
 
     void Update()
     {
-        if(currentWaveIndex < waves.Count && waves[currentWaveIndex].totalSpawnCount == 0)
+        if(currentWaveIndex < waveData.Count && waveData[currentWaveIndex].wave.totalSpawnCount == 0)
         {
             StartCoroutine(BeginNextWave());
         }
         timer += Time.deltaTime;
-        if (timer >= waves[currentWaveIndex].spawnInterval)
+        if (timer >= waveData[currentWaveIndex].wave.spawnInterval)
         {
             timer = 0f;
             spawnEnemies();
@@ -58,33 +60,39 @@ public class EnemyWave : MonoBehaviour
     {
         yield return new WaitForSeconds(waveInterval);
 
-        if (currentWaveIndex < waves.Count -1)
+        if (currentWaveIndex < waveData.Count -1)
         {
             currentWaveIndex++;
             CalculateQuata();
         }
     }
+
     void CalculateQuata()
     {
         int currentWaveQuata = 0;
-        foreach(var enemyGroup in waves[currentWaveIndex].enemyGroups)
+        foreach(var enemyGroup in waveData[currentWaveIndex].wave.enemyGroups)
         {
             currentWaveQuata += enemyGroup.enemyCount;
         }
 
-        waves[currentWaveIndex].waveQuota = currentWaveQuata;
+        waveData[currentWaveIndex].wave.waveQuota = currentWaveQuata;
         Debug.LogWarning(currentWaveQuata);
     }
 
+    /*
+    Troblue with the spawning and calculation. Need to find the way to reset 
+    parameters in the scriptable object.
+    */
+
     void spawnEnemies()
     {
-        if (waves[currentWaveIndex].totalSpawnCount < waves[currentWaveIndex].waveQuota&& !isMaxEnemies)
-        {
-            foreach(var enemyGroup in waves[currentWaveIndex].enemyGroups)
+        if (waveData[currentWaveIndex].wave.totalSpawnCount < waveData[currentWaveIndex].wave.waveQuota&& !isMaxEnemies)
+        {            
+            foreach(var enemyGroup in waveData[currentWaveIndex].wave.enemyGroups)
             {
                 if(enemyGroup.spawnCount < enemyGroup.enemyCount)
                 {
-                    if(enemiesAlive >= maxenemiesAllowed)
+                    if(enemiesAlive >= maxEnemiesAllowed)
                     {
                         isMaxEnemies = true;
                         return;
@@ -97,14 +105,23 @@ public class EnemyWave : MonoBehaviour
                     newEnemy.GetComponent<EnemyController>().SetTarget(player);
                     newEnemy.transform.parent = transform;
 
+                    //To Do: update spawnEnemies to use the EnemySpawner
+                    // for (int i = 0; i < enemyGroup.spawnCount; i++)
+                    // {
+                    //     enemySpawner.SpawnEnemy(enemyGroup.enemyPrefab);
+                    //     enemyGroup.spawnCount++;
+                    //     waveData[currentWaveIndex].wave.totalSpawnCount++;
+                    //     enemiesAlive++;
+                    // }
+
                     enemyGroup.spawnCount++;
-                    waves[currentWaveIndex].totalSpawnCount++;
+                    waveData[currentWaveIndex].wave.totalSpawnCount++;
                     enemiesAlive++;
                 }
             }
         }
 
-        if(enemiesAlive < maxenemiesAllowed)
+        if(enemiesAlive < maxEnemiesAllowed)
         {
             isMaxEnemies = false;
         }
