@@ -1,18 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory
 {
+    public event EventHandler OnItemListChange;
     private List<Item> itemList;
 
     public Inventory()
     {
         itemList = new List<Item>();
-
-        AddItem(new Item {itemType = Item.ItemType.Gem});
-        AddItem(new Item {itemType = Item.ItemType.Mushroom});
-        Debug.Log(itemList.Count);
     }
 
     public List<Item> GetItemList()
@@ -23,5 +21,6 @@ public class Inventory
     public void AddItem(Item item)
     {
         itemList.Add(item);
+        OnItemListChange?.Invoke(this, EventArgs.Empty);
     }
 }

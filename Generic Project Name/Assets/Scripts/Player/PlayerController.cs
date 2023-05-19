@@ -123,8 +123,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Gem" || collision.gameObject.tag == "Mushroom")
+        if (collision.gameObject.tag == "Gem") 
         {
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.Gem});
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Mushroom")
+        {
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.Mushroom});
             Destroy(collision.gameObject);
         }
     }
