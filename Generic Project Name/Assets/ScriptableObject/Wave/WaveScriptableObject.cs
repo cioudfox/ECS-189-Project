@@ -23,5 +23,5 @@ public class EnemyGroup
 [CreateAssetMenu(fileName = "WaveScriptableObject", menuName = "ScriptableObjects/Wave")]
 public class WaveScriptableObject : ScriptableObject 
 {
-    public Wave wave;    
+    public Wave wave;
 }

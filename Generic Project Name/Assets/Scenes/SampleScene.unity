@@ -1449,7 +1449,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1425545501}
   - component: {fileID: 1425545500}
-  - component: {fileID: 1425545503}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -1485,79 +1484,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1425545503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425545499}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e50f739d998364b89e256a45ac2ca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnArea: {x: 10, y: 10}
-  player: {fileID: 137304609}
-  waveData:
-  - {fileID: 11400000, guid: 8c90bfb806acac245aa337d3abed50ac, type: 2}
-  currentWaveIndex: 0
-  enemiesAlive: 0
-  maxEnemiesAllowed: 10
-  isMaxEnemies: 0
-  waveInterval: 60
---- !u!1 &1701816645
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1701816647}
-  - component: {fileID: 1701816646}
-  m_Layer: 0
-  m_Name: WaveSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1701816646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701816645}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e50f739d998364b89e256a45ac2ca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnArea: {x: 0, y: 0}
-  player: {fileID: 0}
-  waveData: []
-  currentWaveIndex: 0
-  enemiesAlive: 0
-  maxEnemiesAllowed: 10
-  isMaxEnemies: 0
-  waveInterval: 0
---- !u!4 &1701816647
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701816645}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.82604766, y: 3.5461226, z: -10.202534}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1713097598
 GameObject:

@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageEvents:
   - time: 5
-    message: wow
     enemyToSpawn: {fileID: 897527639298260085, guid: dba29f90af555f44a84b0c922fd80def, type: 3}
     count: 3
+    spawnInterval: 0.1
   - time: 10
-    message: hello
     enemyToSpawn: {fileID: 7184298815397092472, guid: e0eba2b657223a14381317e6511239f9, type: 3}
     count: 5
-  - time: 15
-    message: nice
+    spawnInterval: 2
+  - time: 20
     enemyToSpawn: {fileID: 897527639298260085, guid: baefac060e87038498d4ed0b5cb918f8, type: 3}
     count: 10
+    spawnInterval: 1

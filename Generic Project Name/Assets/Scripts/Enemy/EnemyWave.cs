@@ -8,26 +8,28 @@ public class EnemyWave : MonoBehaviour
     [SerializeField] Vector2 spawnArea;
     [SerializeField] GameObject player;
 
-    [SerializeField] List<WaveScriptableObject> waveData;
+    // [SerializeField] List<WaveScriptableObject> waveData;
 
     // [SerializeField] EnemySpawner enemySpawner;
 
-    //     [Serializable]
-    // public class Wave
-    // {
-    //     public List<EnemyGroup> enemyGroups;
-    //     public int waveQuota; // The total number of enemies spawned in this wave
-    //     public float spawnInterval; //Interval between spawn times
-    //     public int totalSpawnCount; // The number of enemies already spawned
-    // }
+    [Serializable]
+    public class Wave
+    {
+        public List<EnemyGroup> enemyGroups;
+        public int waveQuota; // The total number of enemies spawned in this wave
+        public float spawnInterval; //Interval between spawn times
+        public int totalSpawnCount; // The number of enemies already spawned
+    }
 
-    // [Serializable]
-    // public class EnemyGroup
-    // {
-    //     public GameObject enemyPrefab;
-    //     public int enemyCount; // The number of enemy in this wave
-    //     public int spawnCount;
-    // }
+    [Serializable]
+    public class EnemyGroup
+    {
+        public GameObject enemyPrefab;
+        public int enemyCount; // The number of enemy in this wave
+        public int spawnCount;
+    }
+
+    public List<Wave> waveData;
 
     public int currentWaveIndex = 0;
 
@@ -44,12 +46,12 @@ public class EnemyWave : MonoBehaviour
 
     void Update()
     {
-        if(currentWaveIndex < waveData.Count && waveData[currentWaveIndex].wave.totalSpawnCount == 0)
+        if(currentWaveIndex < waveData.Count && waveData[currentWaveIndex].totalSpawnCount == 0)
         {
             StartCoroutine(BeginNextWave());
         }
         timer += Time.deltaTime;
-        if (timer >= waveData[currentWaveIndex].wave.spawnInterval)
+        if (timer >= waveData[currentWaveIndex].spawnInterval)
         {
             timer = 0f;
             spawnEnemies();
@@ -70,12 +72,12 @@ public class EnemyWave : MonoBehaviour
     void CalculateQuata()
     {
         int currentWaveQuata = 0;
-        foreach(var enemyGroup in waveData[currentWaveIndex].wave.enemyGroups)
+        foreach(var enemyGroup in waveData[currentWaveIndex].enemyGroups)
         {
             currentWaveQuata += enemyGroup.enemyCount;
         }
 
-        waveData[currentWaveIndex].wave.waveQuota = currentWaveQuata;
+        waveData[currentWaveIndex].waveQuota = currentWaveQuata;
         Debug.LogWarning(currentWaveQuata);
     }
 
@@ -86,9 +88,9 @@ public class EnemyWave : MonoBehaviour
 
     void spawnEnemies()
     {
-        if (waveData[currentWaveIndex].wave.totalSpawnCount < waveData[currentWaveIndex].wave.waveQuota&& !isMaxEnemies)
+        if (waveData[currentWaveIndex].totalSpawnCount < waveData[currentWaveIndex].waveQuota&& !isMaxEnemies)
         {            
-            foreach(var enemyGroup in waveData[currentWaveIndex].wave.enemyGroups)
+            foreach(var enemyGroup in waveData[currentWaveIndex].enemyGroups)
             {
                 if(enemyGroup.spawnCount < enemyGroup.enemyCount)
                 {
@@ -105,17 +107,8 @@ public class EnemyWave : MonoBehaviour
                     newEnemy.GetComponent<EnemyController>().SetTarget(player);
                     newEnemy.transform.parent = transform;
 
-                    //To Do: update spawnEnemies to use the EnemySpawner
-                    // for (int i = 0; i < enemyGroup.spawnCount; i++)
-                    // {
-                    //     enemySpawner.SpawnEnemy(enemyGroup.enemyPrefab);
-                    //     enemyGroup.spawnCount++;
-                    //     waveData[currentWaveIndex].wave.totalSpawnCount++;
-                    //     enemiesAlive++;
-                    // }
-
                     enemyGroup.spawnCount++;
-                    waveData[currentWaveIndex].wave.totalSpawnCount++;
+                    waveData[currentWaveIndex].totalSpawnCount++;
                     enemiesAlive++;
                 }
             }
