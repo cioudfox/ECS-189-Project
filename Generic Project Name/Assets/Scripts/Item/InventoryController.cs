@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryController : MonoBehaviour
 {
@@ -33,7 +34,11 @@ public class InventoryController : MonoBehaviour
             RectTransform slotRectTransform = Instantiate(slotTemplate, inventoryPanel).GetComponent<RectTransform>(); 
             
             slotRectTransform.gameObject.SetActive(true);
+
             slotRectTransform.anchoredPosition = new Vector2(x * slotCellSize, y * slotCellSize);
+            
+            Image image = slotRectTransform.GetComponent<Image>();
+            image.sprite = item.GetSprite();
             x++;
             if (x > 4) 
             { 

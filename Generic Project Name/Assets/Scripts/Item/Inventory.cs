@@ -11,8 +11,7 @@ public class Inventory
         itemList = new List<Item>();
 
         AddItem(new Item {itemType = Item.ItemType.Gem});
-        AddItem(new Item {itemType = Item.ItemType.Gem});
-        AddItem(new Item {itemType = Item.ItemType.Gem});
+        AddItem(new Item {itemType = Item.ItemType.Mushroom});
         Debug.Log(itemList.Count);
     }
 
