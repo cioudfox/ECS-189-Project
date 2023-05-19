@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     private IPlayerCommand rightMouse;
 
 
-    [SerializeField]
-    public float moveSpeed;
+    [SerializeField] public float moveSpeed;
+    [SerializeField] public InventoryController inventoryController;
 
     public Animator animator;
     private Rigidbody2D body;
@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private float lastHorizontalVector;
     private float lastVerticalVector;
     private Vector2 lastMovedVector;
+
+    private Inventory inventory;
 
     public Vector2 GetLastMovedVector() 
     {
@@ -44,6 +46,9 @@ public class PlayerController : MonoBehaviour
 
         this.leftMouse = ScriptableObject.CreateInstance<ShootingTowardsMouseCommand>();
         this.rightMouse = ScriptableObject.CreateInstance<ShootingForwardCommand>();
+    
+        this.inventory = new Inventory();
+        inventoryController.SetInventory(this.inventory);
     }
 
     void Update()
