@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private IPlayerCommand leftMouse;
     private IPlayerCommand rightMouse;
+    private IPlayerCommand Ibutton;
     [SerializeField] public InventoryController inventoryController;
 
     public Animator animator;
@@ -53,7 +54,8 @@ public class PlayerController : MonoBehaviour
 
         this.leftMouse = ScriptableObject.CreateInstance<ShootingTowardsMouseCommand>();
         this.rightMouse = ScriptableObject.CreateInstance<ShootingForwardCommand>();
-    
+        this.Ibutton = ScriptableObject.CreateInstance<toggleInventoryCommand>();
+
         this.inventory = new Inventory(UseItem);
         inventoryController.SetInventory(this.inventory);
     }
@@ -112,6 +114,12 @@ public class PlayerController : MonoBehaviour
         {
             // Right mouse button was clicked
             this.rightMouse.Execute(this.gameObject);
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            // The "I" key was pressed to toggle inventory
+            this.Ibutton.Execute(this.gameObject);
         }
     }
 
