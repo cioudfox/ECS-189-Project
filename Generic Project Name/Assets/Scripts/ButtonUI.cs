@@ -3,12 +3,13 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-public class ButtonUI : MonoBehaviour, IPointerClickHandler
+public class ButtonUI : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public UnityEvent onLeftClick;
     public UnityEvent onRightClick;
     public UnityEvent onMiddleClick;
-
+    public UnityEvent onMouseEnter;
+    public UnityEvent onMouseExit;
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
@@ -23,5 +24,15 @@ public class ButtonUI : MonoBehaviour, IPointerClickHandler
         {
             onMiddleClick.Invoke();
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        onMouseEnter.Invoke();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        onMouseExit.Invoke();
     }
 }

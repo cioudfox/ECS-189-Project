@@ -40,9 +40,11 @@ public class InventoryController : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        int x = 0; 
-        int y = 0;
+        float x = 0.0f; 
+        float y = 0.5f;
 
+        float x2 = 0.0f;
+        float y2 = 2.5f;
         float slotCellSize = 45.0f;
 
         foreach (Item item in inventory.GetItemList()) 
@@ -54,35 +56,35 @@ public class InventoryController : MonoBehaviour
 
 
 
-            slotRectTransform.GetComponent<ButtonUI>().onLeftClick.AddListener( () => {
-                Transform itemInfo = slotRectTransform.Find("Info");
-                if (itemInfo.gameObject.activeInHierarchy)
-                {
-                    itemInfo.gameObject.SetActive(false);
-                }
-                else
-                {
-                    // Make sure to disable other text before showing a new
-                    foreach(GameObject info in GameObject.FindGameObjectsWithTag("ItemInfo"))
-                    {
-                        info.SetActive(false);
-                    }
+            slotRectTransform.GetComponent<ButtonUI>().onMouseEnter.AddListener( () => {
+                Transform inventoryRoot = slotRectTransform.parent.parent;
+                Transform description = inventoryRoot.Find("ItemInfo");
 
-
-                    itemInfo.gameObject.SetActive(true);
-                    TextMeshProUGUI infoDisplay = itemInfo.GetComponent<TextMeshProUGUI>();
-                    switch (item.itemType)
-                    {
-                        case Item.ItemType.Gem:
-                            infoDisplay.SetText("It is a gem.");
-                            break;
-                        case Item.ItemType.Mushroom:
-                            infoDisplay.SetText("It is a mushroom.");
-                            break;
-                    }
+                description.gameObject.SetActive(true);
+                TextMeshProUGUI infoDisplay = description.GetComponent<TextMeshProUGUI>();
+                switch (item.itemType)
+                {
+                    case Item.ItemType.Gem:
+                        infoDisplay.SetText("It is a gem.");
+                        break;
+                    case Item.ItemType.Mushroom:
+                        infoDisplay.SetText("It is a mushroom.");
+                        break;
                 }
             }
             );
+
+            slotRectTransform.GetComponent<ButtonUI>().onMouseExit.AddListener( () => {
+                // Transform itemInfo = slotRectTransform.Find("Info");
+                Transform inventoryRoot = slotRectTransform.parent.parent;
+                Transform description = inventoryRoot.Find("ItemInfo");
+                Debug.Log(description);
+
+                description.gameObject.SetActive(false);
+
+            }
+            );
+
             slotRectTransform.GetComponent<ButtonUI>().onRightClick.AddListener( () => {
                 // use the item
                 Debug.Log("Gonna use item");
@@ -98,21 +100,41 @@ public class InventoryController : MonoBehaviour
 
 
 
+            if (item.itemType == Item.ItemType.Gem)
+            {
+                slotRectTransform.anchoredPosition = new Vector2(x * slotCellSize, -y * slotCellSize);
 
-            slotRectTransform.anchoredPosition = new Vector2(x * slotCellSize, -y * slotCellSize);
+                Image image = slotRectTransform.Find("Image").GetComponent<Image>();
+                image.sprite = item.GetSprite();
 
-            Image image = slotRectTransform.Find("Image").GetComponent<Image>();
-            image.sprite = item.GetSprite();
+                TextMeshProUGUI uiText = slotRectTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
+                
+                uiText.SetText(item.amount.ToString());
 
-            TextMeshProUGUI uiText = slotRectTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
-            
-            uiText.SetText(item.amount.ToString());
+                x++;
+                if (x >= 4) 
+                { 
+                    x = 0;
+                    y++;
+                }
+            }
+            else if (item.itemType == Item.ItemType.Mushroom)
+            {
+                slotRectTransform.anchoredPosition = new Vector2(x2 * slotCellSize, -y2 * slotCellSize);
 
-            x++;
-            if (x >= 4) 
-            { 
-                x = 0;
-                y++;
+                Image image = slotRectTransform.Find("Image").GetComponent<Image>();
+                image.sprite = item.GetSprite();
+
+                TextMeshProUGUI uiText = slotRectTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
+                
+                uiText.SetText(item.amount.ToString());
+
+                x2++;
+                if (x2 >= 4) 
+                { 
+                    x2 = 0;
+                    y2++;
+                }
             }
         }
     }

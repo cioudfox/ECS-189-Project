@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
-    [SerializeField] public GameObject productDropPrefab;
+    [SerializeField] public GameObject gemPrefab;
+    [SerializeField] public GameObject mushroomPrefab;
+    [SerializeField] public GameObject heartPrefab;
+
+    [SerializeField] public GameObject criticalPrefab;
+    [SerializeField] public GameObject swiftPrefab;
 
     public EnemyScriptableObject enemyData;
 
@@ -56,7 +61,11 @@ public class EnemyStat : MonoBehaviour
     {
         Destroy(gameObject);
 
-        var itemDrop = (GameObject) Instantiate(productDropPrefab, this.gameObject.transform.position, Quaternion.identity);
+        Instantiate(gemPrefab, this.gameObject.transform.position, Quaternion.identity);
+        Instantiate(mushroomPrefab, this.gameObject.transform.position, Quaternion.identity);
+        Instantiate(heartPrefab, this.gameObject.transform.position, Quaternion.identity);
+        Instantiate(criticalPrefab, this.gameObject.transform.position, Quaternion.identity);
+        Instantiate(swiftPrefab, this.gameObject.transform.position, Quaternion.identity);
 
     }
     private void OnCollisionStay2D(Collision2D col)
