@@ -7,22 +7,24 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
 {
     public WeaponScriptableObject weaponData;
     protected Vector3 direction;
-
-    public float destroyAfterSeconds;
-
+    List<GameObject> markedEnemies;
+    protected float destroyAfterSeconds;
     protected float currentDamage;
     protected float currentSpeed;
     protected float currentCooldownDuration;
+    protected float currentPierce;
 
     void Awake()
     {
         currentDamage = weaponData.Damage;
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
+        currentPierce = weaponData.Pierce;
     }
     protected virtual void Start()
     {
-        Destroy(gameObject, destroyAfterSeconds);
+        markedEnemies = new List<GameObject>();
+        Destroy(gameObject, weaponData.Lifetime);
     }
 
     public void DirectionChecker(Vector3 dir)
@@ -35,14 +37,16 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D col) 
     {
-        if(col.CompareTag("Enemy"))
+        if(col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
         {
             EnemyStat enemy = col.GetComponent<EnemyStat>();
             enemy.TakeDamage(currentDamage);
-            //Temporarily solution for projectile attack
-            //if(weaponData.Type == "PierceShot")
-            //else
-            Destroy(gameObject);
+            markedEnemies.Add(col.gameObject);
+            currentPierce -= 1;
+            // Destroy(gameObject);
+            if(currentPierce <= 0){
+                Destroy(gameObject);
+            }
         }
     }
 }

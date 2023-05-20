@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3815777238924878859}
   - component: {fileID: 4235024719688862834}
   - component: {fileID: 4437020468298983244}
+  - component: {fileID: 5566953518077298416}
   m_Layer: 0
   m_Name: Swashbuckler_melee_hitbox
   m_TagString: Untagged
@@ -121,3 +122,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 9156dcdf30b2346478845f1f87b2cdcb, type: 2}
   destroyAfterSeconds: 0.4
+--- !u!61 &5566953518077298416
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7218395821001199859}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.875, y: 1.40625}
+    newSize: {x: 1.875, y: 1.40625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.875, y: 1.40625}
+  m_EdgeRadius: 0
