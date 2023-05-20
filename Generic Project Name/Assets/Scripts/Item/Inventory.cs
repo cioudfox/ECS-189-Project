@@ -20,7 +20,20 @@ public class Inventory
 
     public void AddItem(Item item)
     {
-        itemList.Add(item);
+        bool itemAlreadyInInventory = false;
+        foreach (Item inventoryItem in itemList)
+        {
+            if (inventoryItem.itemType == item.itemType)
+            {
+                inventoryItem.amount += 1;
+                itemAlreadyInInventory = true;
+            }
+        }
+        if (!itemAlreadyInInventory)
+        {
+            itemList.Add(item);
+        }
+
         OnItemListChange?.Invoke(this, EventArgs.Empty);
     }
 }

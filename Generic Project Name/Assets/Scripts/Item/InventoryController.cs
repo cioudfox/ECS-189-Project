@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -42,7 +43,7 @@ public class InventoryController : MonoBehaviour
         int x = 0; 
         int y = 0;
 
-        float slotCellSize = 35.0f;
+        float slotCellSize = 45.0f;
 
         foreach (Item item in inventory.GetItemList()) 
         {
@@ -51,9 +52,14 @@ public class InventoryController : MonoBehaviour
             slotRectTransform.gameObject.SetActive(true);
 
             slotRectTransform.anchoredPosition = new Vector2(x * slotCellSize, -y * slotCellSize);
-            
-            Image image = slotRectTransform.GetComponent<Image>();
+
+            Image image = slotRectTransform.Find("Image").GetComponent<Image>();
             image.sprite = item.GetSprite();
+
+            TextMeshProUGUI uiText = slotRectTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
+            
+            uiText.SetText(item.amount.ToString());
+
             x++;
             if (x >= 4) 
             { 

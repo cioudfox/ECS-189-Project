@@ -125,12 +125,12 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Gem") 
         {
-            this.inventory.AddItem(new Item {itemType = Item.ItemType.Gem});
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.Gem, amount = 1});
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Mushroom")
         {
-            this.inventory.AddItem(new Item {itemType = Item.ItemType.Mushroom});
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.Mushroom, amount = 1});
             Destroy(collision.gameObject);
         }
     }
