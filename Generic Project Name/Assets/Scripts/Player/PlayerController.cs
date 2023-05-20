@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 lastMovedVector;
 
     private Inventory inventory;
+    private float itemUsageCooldown = 1.0f;
+    private float itemCooldownTimer = 0.0f;
+
+
 
     public Vector2 GetLastMovedVector() 
     {
@@ -47,7 +51,7 @@ public class PlayerController : MonoBehaviour
         this.leftMouse = ScriptableObject.CreateInstance<ShootingTowardsMouseCommand>();
         this.rightMouse = ScriptableObject.CreateInstance<ShootingForwardCommand>();
     
-        this.inventory = new Inventory();
+        this.inventory = new Inventory(UseItem);
         inventoryController.SetInventory(this.inventory);
     }
 
@@ -55,6 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         InputManagement();
         Move();
+        itemCooldownTimer -= Time.deltaTime;
     }
 
     void InputManagement()
@@ -133,5 +138,39 @@ public class PlayerController : MonoBehaviour
             this.inventory.AddItem(new Item {itemType = Item.ItemType.Mushroom, amount = 1});
             Destroy(collision.gameObject);
         }
+    }
+
+    private void UseItem(Item item)
+    {
+        if (itemCooldownTimer <= 0.0f)
+        {
+            switch (item.itemType)
+            {
+                case Item.ItemType.Gem:
+                    Debug.Log("use a gem");
+                    inventory.RemoveItem(new Item {itemType = Item.ItemType.Gem, amount = 1});
+                    StartCoroutine(FlashObject(this.gameObject, 0.5f));
+                    break;
+                case Item.ItemType.Mushroom:
+                    Debug.Log("use a mushroom");
+                    inventory.RemoveItem(new Item {itemType = Item.ItemType.Mushroom, amount = 1});
+                    StartCoroutine(FlashObject(this.gameObject, 0.5f));
+                    break;
+            }
+            itemCooldownTimer = itemUsageCooldown;
+        }
+
+    }
+
+
+    public static IEnumerator FlashObject(GameObject obj, float flashDuration)
+    {
+        Renderer renderer = obj.GetComponent<Renderer>();
+        Color originalColor = renderer.material.color;
+        Color flashColor = Color.red;
+
+        renderer.material.color = flashColor;
+        yield return new WaitForSeconds(flashDuration);
+        renderer.material.color = originalColor;
     }
 }

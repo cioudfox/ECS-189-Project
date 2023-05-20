@@ -51,6 +51,54 @@ public class InventoryController : MonoBehaviour
             
             slotRectTransform.gameObject.SetActive(true);
 
+
+
+
+            slotRectTransform.GetComponent<ButtonUI>().onLeftClick.AddListener( () => {
+                Transform itemInfo = slotRectTransform.Find("Info");
+                if (itemInfo.gameObject.activeInHierarchy)
+                {
+                    itemInfo.gameObject.SetActive(false);
+                }
+                else
+                {
+                    // Make sure to disable other text before showing a new
+                    foreach(GameObject info in GameObject.FindGameObjectsWithTag("ItemInfo"))
+                    {
+                        info.SetActive(false);
+                    }
+
+
+                    itemInfo.gameObject.SetActive(true);
+                    TextMeshProUGUI infoDisplay = itemInfo.GetComponent<TextMeshProUGUI>();
+                    switch (item.itemType)
+                    {
+                        case Item.ItemType.Gem:
+                            infoDisplay.SetText("It is a gem.");
+                            break;
+                        case Item.ItemType.Mushroom:
+                            infoDisplay.SetText("It is a mushroom.");
+                            break;
+                    }
+                }
+            }
+            );
+            slotRectTransform.GetComponent<ButtonUI>().onRightClick.AddListener( () => {
+                // use the item
+                Debug.Log("Gonna use item");
+                inventory.UseItem(item);
+            }
+            );
+
+
+
+
+
+
+
+
+
+
             slotRectTransform.anchoredPosition = new Vector2(x * slotCellSize, -y * slotCellSize);
 
             Image image = slotRectTransform.Find("Image").GetComponent<Image>();

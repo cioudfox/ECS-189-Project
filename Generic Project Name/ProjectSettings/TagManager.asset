@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Occludable
+  - Gem
+  - Mushroom
+  - ItemInfo
   layers:
   - Default
   - TransparentFX
