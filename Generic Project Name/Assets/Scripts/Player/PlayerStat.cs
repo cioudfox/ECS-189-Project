@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStat : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
-    [SerializeField] HpBar hpBar;
+    [SerializeField] public HpBar hpBar;
     public float currentHealth;
     float currentRecovery;
     public float currentMovespeed;

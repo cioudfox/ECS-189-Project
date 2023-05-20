@@ -25,3 +25,7 @@ MonoBehaviour:
     enemyToSpawn: {fileID: 897527639298260085, guid: baefac060e87038498d4ed0b5cb918f8, type: 3}
     count: 10
     spawnInterval: 1
+  - time: 20
+    enemyToSpawn: {fileID: 8392947708430205325, guid: bfbcf24e6c6255f4c8c342edda358cf8, type: 3}
+    count: 9999
+    spawnInterval: 2

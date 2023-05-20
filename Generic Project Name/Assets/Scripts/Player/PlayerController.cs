@@ -98,20 +98,18 @@ public class PlayerController : MonoBehaviour
             lastMovedVector = new Vector2(lastHorizontalVector, lastVerticalVector);    //While moving
         }
 
-
-
-
-        if (Input.GetMouseButtonDown(0))
+        if (GameObject.FindGameObjectWithTag("Inventory") == null)
         {
-            // Left mouse button was clicked
-            this.leftMouse.Execute(this.gameObject);
-            
-        }
-        
-        if (Input.GetMouseButtonDown(1))
-        {
-            // Right mouse button was clicked
-            this.rightMouse.Execute(this.gameObject);
+            if (Input.GetMouseButtonDown(0))
+            {
+                // Left mouse button was clicked
+                this.leftMouse.Execute(this.gameObject);
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                // Right mouse button was clicked
+                this.rightMouse.Execute(this.gameObject);
+            }
         }
     }
 
