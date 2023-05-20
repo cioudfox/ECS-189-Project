@@ -50,4 +50,18 @@ public class PlayerCollider : MonoBehaviour
             }
         }
     }
+
+    public void RestoreHealth(float amount)
+    {
+        if (playerStat.currentHealth < playerStat.characterData.MaxHp)
+        {
+            playerStat.currentHealth += amount;
+
+            if(playerStat.currentHealth > playerStat.characterData.MaxHp)
+            {
+                playerStat.currentHealth = playerStat.characterData.MaxHp;
+            }
+            hpBar.SetState(playerStat.currentHealth, playerStat.characterData.MaxHp);
+        }
+    }
 }

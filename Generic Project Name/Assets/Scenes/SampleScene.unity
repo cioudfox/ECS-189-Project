@@ -494,6 +494,7 @@ MonoBehaviour:
   characterData: {fileID: 11400000, guid: 56f6dcb4db160b64f920c299a2117cde, type: 2}
   hpBar: {fileID: 1205310468}
   currentHealth: 0
+  currentMovespeed: 0
   experience: 0
   level: 1
   experienceCap: 0
@@ -3160,7 +3161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ef3c531eb62164b856ec895ffa8449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: 56f6dcb4db160b64f920c299a2117cde, type: 2}
   hpBar: {fileID: 1205310468}
 --- !u!1 &1636176263
 GameObject:

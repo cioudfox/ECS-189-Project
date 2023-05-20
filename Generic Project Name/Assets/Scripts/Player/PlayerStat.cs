@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerStat : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
+    [SerializeField] HpBar hpBar;
     public float currentHealth;
     float currentRecovery;
-    float currentMovespeed;
+    public float currentMovespeed;
     float currentMight;
     float currentProjectileSpeed;
 
@@ -26,6 +27,12 @@ public class PlayerStat : MonoBehaviour
 
     public List<LevelRange> levelRanges;
 
+    float buffTimer;
+
+    float buffTimerDuration = 5.0f;
+
+    bool isBuffed;
+
     void Awake()
     {
         currentHealth = characterData.MaxHp;
@@ -38,6 +45,19 @@ public class PlayerStat : MonoBehaviour
     void Start()
     {
         experienceCap = levelRanges[0].experienceCapIncrease;
+    }
+
+    void Update()
+    {
+        if (buffTimer > 0)
+        {
+            buffTimer -= Time.deltaTime;
+        }
+        else if (isBuffed)
+        {
+            isBuffed = false;
+            currentMovespeed = characterData.MovingSpeed;
+        }
     }
     public void IncreaseExperience(int amount)
     {
@@ -72,7 +92,7 @@ public class PlayerStat : MonoBehaviour
         Debug.Log("Player dead");
     }
 
-    public void RestoreHealth(int amount)
+    public void RestoreHealth(float amount)
     {
         if (currentHealth < characterData.MaxHp)
         {
@@ -82,6 +102,19 @@ public class PlayerStat : MonoBehaviour
             {
                 currentHealth = characterData.MaxHp;
             }
+            hpBar.SetState(currentHealth, characterData.MaxHp);
         }
     }
+
+    public void BoostSpeed(float amount)
+    {  
+        if(!isBuffed)
+        {
+            currentMovespeed *= amount;
+
+            buffTimer = buffTimerDuration;
+            isBuffed = true;
+        }
+    }
+
 }

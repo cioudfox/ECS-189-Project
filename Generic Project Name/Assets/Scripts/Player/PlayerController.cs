@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     public CharacterScriptableObject characterData;
 
+    PlayerStat playerStat;
+
     public Vector2 GetLastMovedVector() 
     {
         return lastMovedVector;
@@ -40,6 +42,10 @@ public class PlayerController : MonoBehaviour
         return direction;
     }
 
+    void Awake()
+    {
+        playerStat = FindObjectOfType<PlayerStat>();
+    }
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -120,7 +126,7 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
 
-        body.velocity = new Vector2(moveDir.x * characterData.MovingSpeed, moveDir.y * characterData.MovingSpeed);    //Apply velocity
+        body.velocity = new Vector2(moveDir.x * playerStat.currentMovespeed, moveDir.y * playerStat.currentMovespeed);    //Apply velocity
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -167,6 +173,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("use a Heart");
                     inventory.RemoveItem(new Item {itemType = Item.ItemType.Heart, amount = 1});
                     StartCoroutine(FlashObject(this.gameObject, 0.5f, Color.green));
+                    playerStat.RestoreHealth(15.0f);
                     break;
                 case Item.ItemType.CriticalSurge:
                     Debug.Log("use a CriticalSurge");
@@ -176,6 +183,7 @@ public class PlayerController : MonoBehaviour
                 case Item.ItemType.Swift:
                     Debug.Log("use a Swift");
                     inventory.RemoveItem(new Item {itemType = Item.ItemType.Swift, amount = 1});
+                    playerStat.BoostSpeed(1.5f);
                     StartCoroutine(FlashObject(this.gameObject, 0.5f, Color.gray));
                     break;
             }
