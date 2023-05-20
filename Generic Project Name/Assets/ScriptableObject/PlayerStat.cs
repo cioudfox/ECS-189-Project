@@ -99,7 +99,7 @@ public class PlayerStat : MonoBehaviour
 
             DamgePopup.Create(this.gameObject.transform.position, (int)damage, isCriticalHit);
             
-            // hpBar.SetState(currentHealth, characterData.MaxHp);
+            hpBar.SetState(currentHealth, characterData.MaxHp);
             
             if(currentHealth <= 0)
             {
