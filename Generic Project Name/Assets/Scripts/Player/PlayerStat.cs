@@ -107,7 +107,7 @@ public class PlayerStat : MonoBehaviour
 
     public void Kill()
     {
-        Debug.Log("Player dead");
+        GetComponent<GameOver>().ShowGameOver();
     }
 
     public void RestoreHealth(float amount)
