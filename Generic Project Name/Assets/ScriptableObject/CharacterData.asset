@@ -15,6 +15,5 @@ MonoBehaviour:
   startingWeapon: {fileID: 0}
   maxHp: 100
   recovery: 0
-  might: 0
   movingSpeed: 4
-  projectileSpeed: 0
+  criticalChance: 30

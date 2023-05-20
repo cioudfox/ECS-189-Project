@@ -15,18 +15,13 @@ public class CharacterScriptableObject : ScriptableObject
 
     [SerializeField]
     float recovery;
-    public float Recovery { get => recovery; private set => recovery = value; }
-
-    [SerializeField]
-    float might;
-    public float Might { get => might; private set => might = value; }
-    
+    public float Recovery { get => recovery; private set => recovery = value; }    
     [SerializeField]
     float movingSpeed;
     public float MovingSpeed { get => movingSpeed; private set => movingSpeed = value; }
 
     [SerializeField]
-    float projectileSpeed;
-    public float ProjectileSpeed { get => projectileSpeed; private set => projectileSpeed = value; }
+    float criticalChance;
+    public float CriticalChance { get => criticalChance; private set => criticalChance = value; }
 }
 

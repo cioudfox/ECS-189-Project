@@ -43,8 +43,9 @@ public class EnemyStat : MonoBehaviour
 
     public void TakeDamage(float damage)
     {   
+        float playerCritChance = player.gameObject.GetComponent<PlayerStat>().currentCritChance;
         float realDamage;
-        bool isCriticalHit = Random.Range(0,100) < 30;
+        bool isCriticalHit = Random.Range(0,100) < playerCritChance;
         if(isCriticalHit)
         {
             realDamage = damage * 1.5f;

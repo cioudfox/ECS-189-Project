@@ -185,6 +185,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("use a CriticalSurge");
                     inventory.RemoveItem(new Item {itemType = Item.ItemType.CriticalSurge, amount = 1});
                     StartCoroutine(FlashObject(this.gameObject, 0.5f, Color.yellow));
+                    playerStat.BoostCrit(3.0f);
                     break;
                 case Item.ItemType.Swift:
                     Debug.Log("use a Swift");

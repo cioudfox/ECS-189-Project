@@ -9,7 +9,6 @@ public class PlayerStat : MonoBehaviour
     public float currentHealth;
     float currentRecovery;
     public float currentMovespeed;
-    float currentMight;
     float currentProjectileSpeed;
 
     [Header("Experience/level")]
@@ -27,19 +26,28 @@ public class PlayerStat : MonoBehaviour
 
     public List<LevelRange> levelRanges;
 
-    float buffTimer;
+    float speedBuffTimer;
 
-    float buffTimerDuration = 5.0f;
+    float speedBuffTimerDuration = 5.0f;
 
-    bool isBuffed;
+    bool speedIsBuffed;
+
+//  ###################################################################################################3
+    public float currentCritChance;
+//  ###################################################################################################3
+
+    float critBuffTimer;
+
+    float critBuffTimerDuration = 5.0f;
+
+    bool critIsBuffed;
 
     void Awake()
     {
         currentHealth = characterData.MaxHp;
         currentRecovery = characterData.Recovery;
         currentMovespeed = characterData.MovingSpeed;
-        currentMight = characterData.Might;
-        currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentCritChance = characterData.CriticalChance;
     }
 
     void Start()
@@ -49,14 +57,24 @@ public class PlayerStat : MonoBehaviour
 
     void Update()
     {
-        if (buffTimer > 0)
+        if (speedBuffTimer > 0)
         {
-            buffTimer -= Time.deltaTime;
+            speedBuffTimer -= Time.deltaTime;
         }
-        else if (isBuffed)
+        else if (speedIsBuffed)
         {
-            isBuffed = false;
+            speedIsBuffed = false;
             currentMovespeed = characterData.MovingSpeed;
+        }
+
+        if (critBuffTimer > 0)
+        {
+            critBuffTimer -= Time.deltaTime;
+        }
+        else if (critIsBuffed)
+        {
+            critIsBuffed = false;
+            currentCritChance = characterData.CriticalChance;
         }
     }
     public void IncreaseExperience(int amount)
@@ -108,12 +126,23 @@ public class PlayerStat : MonoBehaviour
 
     public void BoostSpeed(float amount)
     {  
-        if(!isBuffed)
+        if(!speedIsBuffed)
         {
             currentMovespeed *= amount;
 
-            buffTimer = buffTimerDuration;
-            isBuffed = true;
+            speedBuffTimer = speedBuffTimerDuration;
+            speedIsBuffed = true;
+        }
+    }
+
+    public void BoostCrit(float amount)
+    {
+        if(!critIsBuffed)
+        {
+            currentCritChance *= amount;
+
+            critBuffTimer = critBuffTimerDuration;
+            critIsBuffed = true;
         }
     }
 
