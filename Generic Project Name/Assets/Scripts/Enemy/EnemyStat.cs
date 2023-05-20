@@ -42,20 +42,20 @@ public class EnemyStat : MonoBehaviour
     }
 
     public void TakeDamage(float damage)
-    {
+    {   
+        float realDamage;
         bool isCriticalHit = Random.Range(0,100) < 30;
         if(isCriticalHit)
         {
-            currentHp -= (damage*1.5f);
+            realDamage = damage * 1.5f;
         }
         else
         {
-            currentHp -= damage;
+            realDamage = damage;
         }
         
-
-        DamgePopup.Create(this.gameObject.transform.position, (int)damage, isCriticalHit);
-
+        currentHp -= realDamage;
+        DamgePopup.Create(this.gameObject.transform.position, (int)realDamage, isCriticalHit);
         
         if(currentHp <= 0)
         {
