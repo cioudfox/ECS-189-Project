@@ -75,7 +75,7 @@ public class EnemyStat : MonoBehaviour
         Instantiate(swiftPrefab, this.gameObject.transform.position, Quaternion.identity);
 
     }
-    private void OnTriggerEnter2D(Collider2D collider2D)
+    private void OnTriggerStay2D(Collider2D collider2D)
     {
         if (collider2D.gameObject.CompareTag("Collider"))
         {

@@ -8,7 +8,7 @@ public class PlayerCollider : MonoBehaviour
     PlayerStat playerStat;
 
     [Header("I-Frames")]
-    float invincibilityDuration;
+    float invincibilityDuration = 0.5f;
     float invincibilityTimer;
     bool isInvincible;
 
@@ -34,13 +34,12 @@ public class PlayerCollider : MonoBehaviour
         if(!isInvincible)
         {
             playerStat.currentHealth -= damage;
+            StartCoroutine(FlashObject(this.transform.parent.gameObject, 0.25f, Color.red));
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
             
-            bool isCriticalHit = Random.Range(0,100) < 30;
-
-            DamgePopup.Create(this.gameObject.transform.position, (int)damage, isCriticalHit);
+            // DamgePopup.Create(this.gameObject.transform.position, (int)damage, false);
             
             playerStat.hpBar.SetState(playerStat.currentHealth, playerStat.characterData.MaxHp);
             
@@ -49,5 +48,16 @@ public class PlayerCollider : MonoBehaviour
                 playerStat.Kill();
             }
         }
+    }
+
+    public static IEnumerator FlashObject(GameObject obj, float flashDuration, Color c)
+    {
+        Renderer renderer = obj.GetComponent<Renderer>();
+        Color originalColor = renderer.material.color;
+        Color flashColor = c;
+
+        renderer.material.color = flashColor;
+        yield return new WaitForSeconds(flashDuration);
+        renderer.material.color = originalColor;
     }
 }

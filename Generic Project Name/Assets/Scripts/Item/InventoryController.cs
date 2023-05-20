@@ -87,7 +87,6 @@ public class InventoryController : MonoBehaviour
                 // Transform itemInfo = slotRectTransform.Find("Info");
                 Transform inventoryRoot = slotRectTransform.parent.parent;
                 Transform description = inventoryRoot.Find("ItemInfo");
-                Debug.Log(description);
 
                 description.gameObject.SetActive(false);
 
