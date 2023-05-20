@@ -40,11 +40,11 @@ public class InventoryController : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        float x = 0.0f; 
-        float y = 0.5f;
+        float consumableRowX = 0.0f; 
+        float consumableRowY = 0.0f;
 
-        float x2 = 0.0f;
-        float y2 = 2.5f;
+        float treaRowX = 0.0f;
+        float treaRowY = 1.4f;
         float slotCellSize = 45.0f;
 
         foreach (Item item in inventory.GetItemList()) 
@@ -70,6 +70,15 @@ public class InventoryController : MonoBehaviour
                     case Item.ItemType.Mushroom:
                         infoDisplay.SetText("It is a mushroom.");
                         break;
+                    case Item.ItemType.Heart:
+                        infoDisplay.SetText("Heart: Restore health.");
+                        break;
+                    case Item.ItemType.CriticalSurge:
+                        infoDisplay.SetText("CriticalSurge: Increase critical hit chance.");
+                        break;
+                    case Item.ItemType.Swift:
+                        infoDisplay.SetText("Swift: Increase speed.");
+                        break;
                 }
             }
             );
@@ -87,8 +96,10 @@ public class InventoryController : MonoBehaviour
 
             slotRectTransform.GetComponent<ButtonUI>().onRightClick.AddListener( () => {
                 // use the item
-                Debug.Log("Gonna use item");
-                inventory.UseItem(item);
+                if (item.itemType == Item.ItemType.Heart || item.itemType == Item.ItemType.CriticalSurge || item.itemType == Item.ItemType.Swift)
+                {
+                    inventory.UseItem(item);
+                }
             }
             );
 
@@ -98,11 +109,9 @@ public class InventoryController : MonoBehaviour
 
 
 
-
-
-            if (item.itemType == Item.ItemType.Gem)
+            if (item.itemType == Item.ItemType.Heart || item.itemType == Item.ItemType.CriticalSurge || item.itemType == Item.ItemType.Swift)
             {
-                slotRectTransform.anchoredPosition = new Vector2(x * slotCellSize, -y * slotCellSize);
+                slotRectTransform.anchoredPosition = new Vector2(consumableRowX * slotCellSize, -consumableRowY * slotCellSize);
 
                 Image image = slotRectTransform.Find("Image").GetComponent<Image>();
                 image.sprite = item.GetSprite();
@@ -111,16 +120,16 @@ public class InventoryController : MonoBehaviour
                 
                 uiText.SetText(item.amount.ToString());
 
-                x++;
-                if (x >= 4) 
+                consumableRowX++;
+                if (consumableRowX >= 4) 
                 { 
-                    x = 0;
-                    y++;
+                    consumableRowX = 0;
+                    consumableRowY++;
                 }
             }
-            else if (item.itemType == Item.ItemType.Mushroom)
+            else
             {
-                slotRectTransform.anchoredPosition = new Vector2(x2 * slotCellSize, -y2 * slotCellSize);
+                slotRectTransform.anchoredPosition = new Vector2(treaRowX * slotCellSize, -treaRowY * slotCellSize);
 
                 Image image = slotRectTransform.Find("Image").GetComponent<Image>();
                 image.sprite = item.GetSprite();
@@ -129,11 +138,11 @@ public class InventoryController : MonoBehaviour
                 
                 uiText.SetText(item.amount.ToString());
 
-                x2++;
-                if (x2 >= 4) 
+                treaRowX++;
+                if (treaRowX >= 4) 
                 { 
-                    x2 = 0;
-                    y2++;
+                    treaRowX = 0;
+                    treaRowY++;
                 }
             }
         }

@@ -190,7 +190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: -21.1}
+  m_AnchoredPosition: {x: -10.7, y: -22}
   m_SizeDelta: {x: 54.9839, y: 14.6302}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &121552605
@@ -1133,7 +1133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.4, y: 40.6}
+  m_AnchoredPosition: {x: -3, y: 40}
   m_SizeDelta: {x: 72.2328, y: 14.1516}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &557950218
@@ -1653,6 +1653,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gemSprite: {fileID: 21300000, guid: e39e089a4e9b9b047abbd4593d393680, type: 3}
   mushroomSprite: {fileID: 21300000, guid: 521f111126a7aa04c87206596cee7b5f, type: 3}
+  heartSprite: {fileID: 21300000, guid: fd03deee6d5feae4aa95a1285f675012, type: 3}
+  critSprite: {fileID: 21300000, guid: dd02a6e2f5bf6004fbd7b6c13e3e45a6, type: 3}
+  swiftSprite: {fileID: 21300000, guid: 176e07a5c9b756b4dace2ddbfbf020cf, type: 3}
 --- !u!4 &823833141
 Transform:
   m_ObjectHideFlags: 0
@@ -1838,8 +1841,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -61.49849}
-  m_SizeDelta: {x: 115.600006, y: 123.98001}
+  m_AnchoredPosition: {x: 35.8184, y: -106.2}
+  m_SizeDelta: {x: 187.2368, y: 213.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &878610532
 MonoBehaviour:

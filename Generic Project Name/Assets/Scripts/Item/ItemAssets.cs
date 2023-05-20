@@ -13,4 +13,7 @@ public class ItemAssets : MonoBehaviour
 
     public Sprite gemSprite;
     public Sprite mushroomSprite;
+    public Sprite heartSprite;
+    public Sprite critSprite;
+    public Sprite swiftSprite;
 }

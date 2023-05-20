@@ -140,6 +140,21 @@ public class PlayerController : MonoBehaviour
             this.inventory.AddItem(new Item {itemType = Item.ItemType.Mushroom, amount = 1});
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.tag == "Heart")
+        {
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.Heart, amount = 1});
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "CriticalSurge")
+        {
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.CriticalSurge, amount = 1});
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Swift")
+        {
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.Swift, amount = 1});
+            Destroy(collision.gameObject);
+        }
     }
 
     private void UseItem(Item item)
@@ -148,15 +163,20 @@ public class PlayerController : MonoBehaviour
         {
             switch (item.itemType)
             {
-                case Item.ItemType.Gem:
-                    Debug.Log("use a gem");
-                    inventory.RemoveItem(new Item {itemType = Item.ItemType.Gem, amount = 1});
-                    StartCoroutine(FlashObject(this.gameObject, 0.5f));
+                case Item.ItemType.Heart:
+                    Debug.Log("use a Heart");
+                    inventory.RemoveItem(new Item {itemType = Item.ItemType.Heart, amount = 1});
+                    StartCoroutine(FlashObject(this.gameObject, 0.5f, Color.green));
                     break;
-                case Item.ItemType.Mushroom:
-                    Debug.Log("use a mushroom");
-                    inventory.RemoveItem(new Item {itemType = Item.ItemType.Mushroom, amount = 1});
-                    StartCoroutine(FlashObject(this.gameObject, 0.5f));
+                case Item.ItemType.CriticalSurge:
+                    Debug.Log("use a CriticalSurge");
+                    inventory.RemoveItem(new Item {itemType = Item.ItemType.CriticalSurge, amount = 1});
+                    StartCoroutine(FlashObject(this.gameObject, 0.5f, Color.yellow));
+                    break;
+                case Item.ItemType.Swift:
+                    Debug.Log("use a Swift");
+                    inventory.RemoveItem(new Item {itemType = Item.ItemType.Swift, amount = 1});
+                    StartCoroutine(FlashObject(this.gameObject, 0.5f, Color.gray));
                     break;
             }
             itemCooldownTimer = itemUsageCooldown;
@@ -165,11 +185,11 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public static IEnumerator FlashObject(GameObject obj, float flashDuration)
+    public static IEnumerator FlashObject(GameObject obj, float flashDuration, Color c)
     {
         Renderer renderer = obj.GetComponent<Renderer>();
         Color originalColor = renderer.material.color;
-        Color flashColor = Color.red;
+        Color flashColor = c;
 
         renderer.material.color = flashColor;
         yield return new WaitForSeconds(flashDuration);

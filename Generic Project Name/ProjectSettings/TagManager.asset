@@ -9,6 +9,9 @@ TagManager:
   - Gem
   - Mushroom
   - ItemInfo
+  - Heart
+  - CriticalSurge
+  - Swift
   layers:
   - Default
   - TransparentFX

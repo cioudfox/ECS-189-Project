@@ -7,7 +7,10 @@ public class Item
     public enum ItemType 
     {
         Gem,
-        Mushroom
+        Mushroom,
+        Heart,
+        CriticalSurge,
+        Swift
     }
 
     public ItemType itemType;
@@ -21,6 +24,12 @@ public class Item
                 return ItemAssets.Instance.gemSprite;
             case ItemType.Mushroom:
                 return ItemAssets.Instance.mushroomSprite;
+            case ItemType.Heart:
+                return ItemAssets.Instance.heartSprite;
+            case ItemType.CriticalSurge:
+                return ItemAssets.Instance.critSprite;
+            case ItemType.Swift:
+                return ItemAssets.Instance.swiftSprite;
             default:
                 Debug.Log("Invalid Item Type.");
                 return null;
