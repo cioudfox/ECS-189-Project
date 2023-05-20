@@ -12,6 +12,7 @@ TagManager:
   - Heart
   - CriticalSurge
   - Swift
+  - Inventory
   layers:
   - Default
   - TransparentFX
