@@ -16,5 +16,5 @@ MonoBehaviour:
   maxHp: 100
   recovery: 0
   might: 0
-  movingSpeed: 5
+  movingSpeed: 4
   projectileSpeed: 0

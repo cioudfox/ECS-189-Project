@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d614236f86454d54c954953e994622ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 506ea6a28d499764285a414b7f507c16, type: 2}
+  enemyData: {fileID: 11400000, guid: 6f07994f6b989ee41ae665e13c8ac2ca, type: 2}
 --- !u!114 &1876816605223184706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,5 +177,5 @@ MonoBehaviour:
   heartPrefab: {fileID: 8726295988651649588, guid: fd50e57aa90078e42b366c1150a12fee, type: 3}
   criticalPrefab: {fileID: 4466612313801792375, guid: c12eabd3f8e43f743bfe24c2b93bfeee, type: 3}
   swiftPrefab: {fileID: 8040398528883429238, guid: ce45456c0a0046140bb6f1a7305598f1, type: 3}
-  enemyData: {fileID: 11400000, guid: 506ea6a28d499764285a414b7f507c16, type: 2}
+  enemyData: {fileID: 11400000, guid: 6f07994f6b989ee41ae665e13c8ac2ca, type: 2}
   despawnDistance: 20

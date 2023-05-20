@@ -33,13 +33,13 @@ public class EnemyStat : MonoBehaviour
         player = FindObjectOfType<PlayerController>().transform;
     }
 
-    // void Update()
-    // {
-    //     if (Vector2.Distance(transform.position, player.position) >= despawnDistance)
-    //     {
-    //         ReturnEnemy();
-    //     }
-    // }
+    void Update()
+    {
+        if (Vector2.Distance(transform.position, player.position) >= despawnDistance)
+        {
+            ReturnEnemy();
+        }
+    }
 
     public void TakeDamage(float damage)
     {
@@ -68,12 +68,12 @@ public class EnemyStat : MonoBehaviour
         Instantiate(swiftPrefab, this.gameObject.transform.position, Quaternion.identity);
 
     }
-    private void OnCollisionStay2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D collider2D)
     {
-        if(col.gameObject.CompareTag("Player"))
+        if (collider2D.gameObject.CompareTag("Collider"))
         {
-            PlayerStat player = col.gameObject.GetComponent<PlayerStat>();
-            player.TakeDamage(currentDamage);
+            PlayerCollider playerCollider = collider2D.gameObject.GetComponent<PlayerCollider>();
+            playerCollider.TakeDamage(currentDamage);
         }
     }
 
@@ -83,9 +83,10 @@ public class EnemyStat : MonoBehaviour
     //     ew.OnEnemyKilled();
     // }
 
-    // private void ReturnEnemy()
-    // {
-    //     EnemyWave ew = FindObjectOfType<EnemyWave>();
-    //     transform.position = player.position + ew.GenerateRandomPosition();
-    // }
+    private void ReturnEnemy()
+    {
+        EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        //  ew = FindObjectOfType<EnemyWave>();
+        transform.position = player.position + es.GenerateRandomPosition();
+    }
 }

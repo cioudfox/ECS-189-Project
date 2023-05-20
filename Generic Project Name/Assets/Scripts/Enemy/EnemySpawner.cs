@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
         newEnemy.transform.parent = transform;
     }
 
-    private Vector3 GenerateRandomPosition()
+    public Vector3 GenerateRandomPosition()
     {
         float f = UnityEngine.Random.value > 0.5f ? -1f : 1f;
         Vector3 position = new Vector3();

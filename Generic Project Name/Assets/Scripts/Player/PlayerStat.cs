@@ -5,9 +5,7 @@ using UnityEngine;
 public class PlayerStat : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
-    [SerializeField] HpBar hpBar;
-
-    float currentHealth;
+    public float currentHealth;
     float currentRecovery;
     float currentMovespeed;
     float currentMight;
@@ -26,12 +24,7 @@ public class PlayerStat : MonoBehaviour
         public int experienceCapIncrease;        
     }
 
-    [Header("I-Frames")]
-    public float invincibilityDuration;
-    float invincibilityTimer;
-    bool isInvincible;
     public List<LevelRange> levelRanges;
-
 
     void Awake()
     {
@@ -45,18 +38,6 @@ public class PlayerStat : MonoBehaviour
     void Start()
     {
         experienceCap = levelRanges[0].experienceCapIncrease;
-    }
-
-    void Update() 
-    {
-        if (invincibilityTimer > 0)
-        {
-            invincibilityTimer -= Time.deltaTime;
-        }
-        else if (isInvincible)
-        {
-            isInvincible = false;
-        }
     }
     public void IncreaseExperience(int amount)
     {
@@ -83,28 +64,6 @@ public class PlayerStat : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
-        }
-    }
-
-    public void TakeDamage(float damage)
-    {
-        if(!isInvincible)
-        {
-            currentHealth -= damage;
-
-            invincibilityTimer = invincibilityDuration;
-            isInvincible = true;
-            
-            bool isCriticalHit = Random.Range(0,100) < 30;
-
-            DamgePopup.Create(this.gameObject.transform.position, (int)damage, isCriticalHit);
-            
-            hpBar.SetState(currentHealth, characterData.MaxHp);
-            
-            if(currentHealth <= 0)
-            {
-                Kill();
-            }
         }
     }
 
