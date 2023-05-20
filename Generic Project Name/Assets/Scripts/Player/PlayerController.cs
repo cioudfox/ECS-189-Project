@@ -7,9 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     private IPlayerCommand leftMouse;
     private IPlayerCommand rightMouse;
-
-
-    [SerializeField] public float moveSpeed;
     [SerializeField] public InventoryController inventoryController;
 
     public Animator animator;
@@ -25,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private float itemUsageCooldown = 1.0f;
     private float itemCooldownTimer = 0.0f;
 
-
+    public CharacterScriptableObject characterData;
 
     public Vector2 GetLastMovedVector() 
     {
@@ -123,11 +120,16 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
 
-        body.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);    //Apply velocity
+        body.velocity = new Vector2(moveDir.x * characterData.MovingSpeed, moveDir.y * characterData.MovingSpeed);    //Apply velocity
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.TryGetComponent(out ICollectible collectible))
+        {
+            collectible.Collect();
+        }
+        
         if (collision.gameObject.tag == "Gem") 
         {
             this.inventory.AddItem(new Item {itemType = Item.ItemType.Gem, amount = 1});

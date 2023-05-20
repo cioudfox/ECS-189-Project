@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Blue Goblin
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
-  damage: 0
+  damage: 30
   speed: 0
   maxHp: 7

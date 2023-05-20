@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2228920993151096744}
   - component: {fileID: 6677275438675082005}
   - component: {fileID: 7546178929173191934}
+  - component: {fileID: -1962094768645857682}
   m_Layer: 0
   m_Name: BlueGem
   m_TagString: Gem
@@ -170,7 +171,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 07f1fcd409748ec4484caa5c0e5e2099, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: -2.29
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -270,3 +271,16 @@ MonoBehaviour:
   itemLifetime: 10
   itemCollectSpeed: 10
   itemCollectRange: 3.5
+--- !u!114 &-1962094768645857682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7430569447165051818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c1c150f1a19864483bc08cd93afec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experienceGranted: 50

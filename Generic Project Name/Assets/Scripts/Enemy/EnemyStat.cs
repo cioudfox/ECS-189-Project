@@ -59,14 +59,14 @@ public class EnemyStat : MonoBehaviour
         var itemDrop = (GameObject) Instantiate(productDropPrefab, this.gameObject.transform.position, Quaternion.identity);
 
     }
-    // protected virtual void OnTriggerEnter2D(Collider2D col) 
-    // {
-    //     if(col.CompareTag("Player"))
-    //     {
-    //         PlayerStat player = col.GetComponent<EnemyStat>();
-    //         player.TakeDamage(currentDamage);
-    //     }
-    // }
+    private void OnCollisionStay2D(Collision2D col)
+    {
+        if(col.gameObject.CompareTag("Player"))
+        {
+            PlayerStat player = col.gameObject.GetComponent<PlayerStat>();
+            player.TakeDamage(currentDamage);
+        }
+    }
 
     // private void OnDestroy()
     // {
