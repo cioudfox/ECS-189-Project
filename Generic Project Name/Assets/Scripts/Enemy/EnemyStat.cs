@@ -84,20 +84,14 @@ public class EnemyStat : MonoBehaviour
         Instantiate(swiftPrefab, this.gameObject.transform.position, Quaternion.identity);
 
     }
-    private void OnTriggerStay2D(Collider2D collider2D)
+    private void OnCollisionStay2D(Collision2D collision2D)
     {
-        if (collider2D.gameObject.CompareTag("Collider"))
+        if (collision2D.gameObject.CompareTag("Player"))
         {
-            PlayerCollider playerCollider = collider2D.gameObject.GetComponent<PlayerCollider>();
-            playerCollider.TakeDamage(currentDamage);
+            PlayerStat ps = collision2D.gameObject.GetComponent<PlayerStat>();
+            ps.TakeDamage(currentDamage);
         }
     }
-
-    // private void OnDestroy()
-    // {
-    //     EnemyWave ew = FindObjectOfType<EnemyWave>();
-    //     ew.OnEnemyKilled();
-    // }
 
     private void ReturnEnemy()
     {

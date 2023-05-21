@@ -24,20 +24,20 @@ public class PlayerStat : MonoBehaviour
         public int experienceCapIncrease;        
     }
 
+
+    [Header("I-Frames")]
+    float invincibilityDuration = 0.5f;
+    float invincibilityTimer;
+    bool isInvincible;
+
     public List<LevelRange> levelRanges;
-
     float speedBuffTimer;
-
     float speedBuffTimerDuration = 5.0f;
-
     bool speedIsBuffed;
 
     public float currentCritChance;
-
     float critBuffTimer;
-
     float critBuffTimerDuration = 5.0f;
-
     bool critIsBuffed;
     float currentRecoveryTimer;
 
@@ -59,6 +59,15 @@ public class PlayerStat : MonoBehaviour
 
     void Update()
     {
+        if (invincibilityTimer > 0)
+        {
+            invincibilityTimer -= Time.deltaTime;
+        }
+        else if (isInvincible)
+        {
+            isInvincible = false;
+        }
+
         if (speedBuffTimer > 0)
         {
             speedBuffTimer -= Time.deltaTime;
@@ -116,6 +125,24 @@ public class PlayerStat : MonoBehaviour
                 }
             }
             experienceCap += experienceCapIncrease;
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if(!isInvincible)
+        {
+            currentHealth -= damage;
+            // StartCoroutine(FlashObject(this.transform.parent.gameObject, 0.25f, Color.red));
+
+            invincibilityTimer = invincibilityDuration;
+            isInvincible = true;
+            hpBar.SetState(currentHealth, characterData.MaxHp);
+            
+            if(currentHealth <= 0)
+            {
+                Kill();
+            }
         }
     }
 

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField] GameObject playerCollider;
     [SerializeField] GameObject weapon;
     public GameObject gameOverPanel;
 
@@ -15,6 +14,6 @@ public class GameOver : MonoBehaviour
         gameOverPanel.SetActive(true);
         GetComponent<PlayerController>().enabled = false;
         weapon.SetActive(false);
-        playerCollider.SetActive(false);
+        GetComponent<PlayerStat>().enabled = false;
     }
 }
