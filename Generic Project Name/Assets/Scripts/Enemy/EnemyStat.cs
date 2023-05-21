@@ -54,8 +54,16 @@ public class EnemyStat : MonoBehaviour
         {
             realDamage = damage;
         }
+        realDamage -= enemyData.Defence;
+        if(realDamage <= 1)
+        {
+            currentHp -= 1;
+        }
+        else
+        {
+            currentHp -= realDamage;
+        }
         
-        currentHp -= realDamage;
         DamgePopup.Create(this.gameObject.transform.position, (int)realDamage, isCriticalHit);
         
         if(currentHp <= 0)

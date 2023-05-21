@@ -41,7 +41,7 @@ public class PlayerStat : MonoBehaviour
     float critBuffTimerDuration = 5.0f;
 
     bool critIsBuffed;
-
+    float currentRecoveryTimer;
     void Awake()
     {
         currentHealth = characterData.MaxHp;
@@ -76,6 +76,17 @@ public class PlayerStat : MonoBehaviour
             critIsBuffed = false;
             currentCritChance = characterData.CriticalChance;
         }
+        currentRecoveryTimer-= Time.deltaTime;
+        if(currentHealth < characterData.MaxHp && 0 < currentHealth &&  currentRecoveryTimer < 0.0f){
+            currentHealth += currentRecovery;
+            if(currentHealth > characterData.MaxHp)
+            {
+                currentHealth = characterData.MaxHp;
+            }
+            hpBar.SetState(currentHealth, characterData.MaxHp);
+            currentRecoveryTimer = 1.0f;
+        }
+       
     }
     public void IncreaseExperience(int amount)
     {

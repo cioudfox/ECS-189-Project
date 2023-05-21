@@ -51,7 +51,6 @@ public class MeleeWeaponBehaviour : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStat enemy = col.GetComponent<EnemyStat>();
-            Debug.Log("melee hit");
             enemy.TakeDamage(currentDamage);
         }
     }

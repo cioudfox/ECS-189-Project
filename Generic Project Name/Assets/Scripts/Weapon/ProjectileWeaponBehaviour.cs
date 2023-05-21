@@ -49,4 +49,18 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
             }
         }
     }
+
+    // Below Does not work
+    // void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.tag == "Enemy")
+    //     {
+    //         EnemyStat enemy = collision.gameObject.GetComponent<EnemyStat>();
+    //         enemy.TakeDamage(currentDamage);
+    //         currentPierce -= 1;
+    //         if(currentPierce <= 0){
+    //             Destroy(gameObject);
+    //         }
+    //     }
+    // }
 }

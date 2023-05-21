@@ -21,5 +21,9 @@ public class EnemyScriptableObject : ScriptableObject
     [SerializeField]
     float maxHp;
     public float MaxHp { get => maxHp; private set => maxHp = value; }
-    
+
+    [SerializeField]
+    float defence;
+    public float Defence { get => defence; private set => defence = value; }
+
 }

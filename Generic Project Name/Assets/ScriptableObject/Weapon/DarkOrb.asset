@@ -17,4 +17,4 @@ MonoBehaviour:
   speed: 5
   cooldownDuration: 1
   pierce: 5
-  lifetime: 5
+  lifetime: 3

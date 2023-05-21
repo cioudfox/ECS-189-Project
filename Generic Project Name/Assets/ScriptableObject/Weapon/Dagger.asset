@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Dagger
   m_EditorClassIdentifier: 
   prefab: {fileID: 3432851166608940634, guid: 43ec8bc5b14e02848bab4ebfe403ce49, type: 3}
-  damage: 4
+  damage: 3
   speed: 10
-  cooldownDuration: 0.8
+  cooldownDuration: 0.7
   pierce: 2
   lifetime: 1
