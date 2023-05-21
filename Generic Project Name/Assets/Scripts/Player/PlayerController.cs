@@ -199,7 +199,6 @@ public class PlayerController : MonoBehaviour
             }
             itemCooldownTimer = itemUsageCooldown;
         }
-
     }
 
 
@@ -212,5 +211,32 @@ public class PlayerController : MonoBehaviour
         renderer.material.color = flashColor;
         yield return new WaitForSeconds(flashDuration);
         renderer.material.color = originalColor;
+    }
+
+    public int GetScore()
+    {
+        Debug.Log("Called?");
+        int score = 0000;
+        var list = this.inventory.GetItemList();
+        // Item itemClass = GetComponent<Item>();
+        Debug.Log("Called2");
+
+        foreach (var item in list)
+        {
+            var type = item.itemType;
+            if (type == Item.ItemType.Gem)
+            {
+                Debug.Log("Gem :" + item.amount);
+                score += 200 * item.amount;
+            }
+            if (type == Item.ItemType.Mushroom)
+            {
+                Debug.Log("Mush :" + item.amount);
+                score += 500 * item.amount;
+            }
+        }
+        Debug.Log("Called?3");
+
+        return score;
     }
 }
