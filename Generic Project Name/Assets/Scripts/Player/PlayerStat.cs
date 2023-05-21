@@ -32,9 +32,7 @@ public class PlayerStat : MonoBehaviour
 
     bool speedIsBuffed;
 
-//  ###################################################################################################3
     public float currentCritChance;
-//  ###################################################################################################3
 
     float critBuffTimer;
 
@@ -42,12 +40,16 @@ public class PlayerStat : MonoBehaviour
 
     bool critIsBuffed;
     float currentRecoveryTimer;
+
+    float originalWeaponAttackSpeed;
+
     void Awake()
     {
         currentHealth = characterData.MaxHp;
         currentRecovery = characterData.Recovery;
         currentMovespeed = characterData.MovingSpeed;
         currentCritChance = characterData.CriticalChance;
+        originalWeaponAttackSpeed = this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.CooldownDuration;
     }
 
     void Start()
@@ -65,6 +67,7 @@ public class PlayerStat : MonoBehaviour
         {
             speedIsBuffed = false;
             currentMovespeed = characterData.MovingSpeed;
+            this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = originalWeaponAttackSpeed;
         }
 
         if (critBuffTimer > 0)
@@ -140,7 +143,8 @@ public class PlayerStat : MonoBehaviour
         if(!speedIsBuffed)
         {
             currentMovespeed *= amount;
-
+            // Debug.Log(this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.CooldownDuration);
+            this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = 0.2f;
             speedBuffTimer = speedBuffTimerDuration;
             speedIsBuffed = true;
         }

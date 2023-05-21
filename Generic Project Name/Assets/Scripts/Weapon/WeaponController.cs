@@ -7,7 +7,8 @@ public class WeaponController : MonoBehaviour
 {
     [Header("Weapon Stats")]
     public WeaponScriptableObject weaponData;
-    float currentCooldown;
+    public float weaponCooldown;
+    public float currentCooldownTimer;
     //public type?;
 
     protected PlayerController player;
@@ -15,13 +16,14 @@ public class WeaponController : MonoBehaviour
     protected virtual void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        currentCooldown = weaponData.CooldownDuration;
+        weaponCooldown = weaponData.CooldownDuration;
+        currentCooldownTimer = weaponData.CooldownDuration;
     }   
     
     protected virtual void Update()
     {
-        currentCooldown -=  Time.deltaTime;
-        if(currentCooldown <= 0f)
+        currentCooldownTimer -=  Time.deltaTime;
+        if(currentCooldownTimer <= 0f)
         {
             // Debug.Log(currentCooldown);
             Attack();
@@ -31,6 +33,6 @@ public class WeaponController : MonoBehaviour
     {
         // Debug.Log("fire2");
         // Debug.Log(currentCooldown);
-        currentCooldown = weaponData.CooldownDuration;
+        currentCooldownTimer = weaponCooldown;
     }
 }

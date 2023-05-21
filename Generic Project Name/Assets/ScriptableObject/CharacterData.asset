@@ -16,4 +16,4 @@ MonoBehaviour:
   maxHp: 100
   recovery: 1
   movingSpeed: 4
-  criticalChance: 30
+  criticalChance: 20
