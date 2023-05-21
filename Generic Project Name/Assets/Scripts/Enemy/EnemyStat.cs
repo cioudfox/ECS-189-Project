@@ -48,7 +48,7 @@ public class EnemyStat : MonoBehaviour
         bool isCriticalHit = Random.Range(0,100) < playerCritChance;
         if(isCriticalHit)
         {
-            realDamage = damage * 1.5f;
+            realDamage = damage * 2.0f;
         }
         else
         {
@@ -77,11 +77,26 @@ public class EnemyStat : MonoBehaviour
     {
         Destroy(gameObject);
 
-        Instantiate(gemPrefab, this.gameObject.transform.position, Quaternion.identity);
-        Instantiate(mushroomPrefab, this.gameObject.transform.position, Quaternion.identity);
-        Instantiate(heartPrefab, this.gameObject.transform.position, Quaternion.identity);
-        Instantiate(criticalPrefab, this.gameObject.transform.position, Quaternion.identity);
-        Instantiate(swiftPrefab, this.gameObject.transform.position, Quaternion.identity);
+        float gemChance = Random.value;
+        float mushroomChance = Random.value;
+        float heartChance = Random.value;
+        float criticalChance = Random.value;
+        float swiftChance = Random.value;
+
+        if (gemChance < 0.6f) 
+            Instantiate(gemPrefab, transform.position, Quaternion.identity);
+
+        if (mushroomChance < 0.4f) 
+            Instantiate(mushroomPrefab, transform.position, Quaternion.identity);
+
+        if (heartChance < 0.3f) 
+            Instantiate(heartPrefab, transform.position, Quaternion.identity);
+
+        if (criticalChance < 0.25f) 
+            Instantiate(criticalPrefab, transform.position, Quaternion.identity);
+
+        if (swiftChance < 0.2f) 
+            Instantiate(swiftPrefab, transform.position, Quaternion.identity);
 
     }
     private void OnCollisionStay2D(Collision2D collision2D)
