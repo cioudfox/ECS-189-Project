@@ -30,7 +30,10 @@ public class StageEventManager : MonoBehaviour
                 if (timer >= stageData.stageEvents[eventIndex].spawnInterval)
                 {
                     timer = 0f;
-                    enemySpawner.SpawnEnemy(stageData.stageEvents[eventIndex].enemyToSpawn);
+                    int indexForEnemySpawn = Random.Range(0, stageData.stageEvents[eventIndex].enemyToSpawn.Count);
+
+                    Debug.Log(indexForEnemySpawn);
+                    enemySpawner.SpawnEnemy(stageData.stageEvents[eventIndex].enemyToSpawn[indexForEnemySpawn]);
                     spawnCount++;
                 }
             }
