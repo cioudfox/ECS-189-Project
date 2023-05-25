@@ -139,6 +139,8 @@ public class PlayerStat : MonoBehaviour
             isInvincible = true;
             hpBar.SetState(currentHealth, characterData.MaxHp);
             
+            StartCoroutine(PlayerController.FlashObject(this.gameObject, 0.25f, Color.red));
+
             if(currentHealth <= 0)
             {
                 Kill();
