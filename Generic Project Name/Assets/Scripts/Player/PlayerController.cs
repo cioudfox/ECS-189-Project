@@ -119,6 +119,57 @@ public class PlayerController : MonoBehaviour
             // The "I" key was pressed to toggle inventory
             this.Ibutton.Execute(this.gameObject);
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Keypad1) || (Input.GetKeyDown(KeyCode.Alpha1)))
+        {
+            // Debug.Log("Number 1 clicked");
+            // this.inventory.UseItem(this.inventory.GetItemList);
+            Item targetItem = null;
+            foreach (Item item in this.inventory.GetItemList())
+            {
+                if (item.itemType == Item.ItemType.Heart)
+                {
+                    targetItem = item;
+                }
+            }
+            if (targetItem != null)
+            {
+                inventory.UseItem(targetItem);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad2) || (Input.GetKeyDown(KeyCode.Alpha2)))
+        {
+            Item targetItem = null;
+            foreach (Item item in this.inventory.GetItemList())
+            {
+                if (item.itemType == Item.ItemType.CriticalSurge)
+                {
+                    targetItem = item;
+                }
+            }
+            if (targetItem != null)
+            {
+                inventory.UseItem(targetItem);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Keypad3) || (Input.GetKeyDown(KeyCode.Alpha3)))
+        {
+            Item targetItem = null;
+            foreach (Item item in this.inventory.GetItemList())
+            {
+                if (item.itemType == Item.ItemType.Swift)
+                {
+                    targetItem = item;
+                }
+            }
+            if (targetItem != null)
+            {
+                inventory.UseItem(targetItem);
+            }
+        }
     }
 
     void Move()

@@ -110,6 +110,18 @@ public class InventoryController : MonoBehaviour
 
             if (item.itemType == Item.ItemType.Heart || item.itemType == Item.ItemType.CriticalSurge || item.itemType == Item.ItemType.Swift)
             {
+                if (item.itemType == Item.ItemType.Heart)
+                {
+                    consumableRowX = 0.0f;
+                }
+                else if (item.itemType == Item.ItemType.CriticalSurge)
+                {
+                    consumableRowX = 1.0f;
+                }
+                else if (item.itemType == Item.ItemType.Swift)
+                {
+                    consumableRowX = 2.0f;
+                }
                 slotRectTransform.anchoredPosition = new Vector2(consumableRowX * slotCellSize, -consumableRowY * slotCellSize);
 
                 Image image = slotRectTransform.Find("Image").GetComponent<Image>();
@@ -118,13 +130,6 @@ public class InventoryController : MonoBehaviour
                 TextMeshProUGUI uiText = slotRectTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
                 
                 uiText.SetText(item.amount.ToString());
-
-                consumableRowX++;
-                if (consumableRowX >= 4) 
-                { 
-                    consumableRowX = 0;
-                    consumableRowY++;
-                }
             }
             else
             {
