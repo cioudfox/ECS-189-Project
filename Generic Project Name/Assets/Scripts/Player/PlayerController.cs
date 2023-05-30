@@ -23,8 +23,6 @@ public class PlayerController : MonoBehaviour
     private float itemUsageCooldown = 1.0f;
     private float itemCooldownTimer = 0.0f;
 
-    public CharacterScriptableObject characterData;
-
     PlayerStat playerStat;
 
     Color playerOriginalColor;

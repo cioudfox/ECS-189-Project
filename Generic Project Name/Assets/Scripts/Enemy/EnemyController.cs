@@ -7,7 +7,9 @@ public class EnemyController : MonoBehaviour
     Transform tragetDestination;
     GameObject targetGameObject;
     
-    public EnemyScriptableObject enemyData;
+    // public EnemyScriptableObject enemyData;
+
+    EnemyStat enemyStat;
 
     Rigidbody2D rgdbd2d;
     // Start is called before the first frame update
@@ -16,30 +18,20 @@ public class EnemyController : MonoBehaviour
         rgdbd2d = GetComponent<Rigidbody2D>();
     }
 
+    void Start()
+    {
+        enemyStat = GetComponent<EnemyStat>();
+    }
+
     public void SetTarget(GameObject target)
     {
         targetGameObject = target;
         tragetDestination = target.transform;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         Vector3 direction = (tragetDestination.position - transform.position).normalized;
-        rgdbd2d.velocity = direction * enemyData.Speed;       
+        rgdbd2d.velocity = direction * enemyStat.currentSpeed;       
     }
-
-    // private void OnCollisionStay2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject == targetGameObject)
-    //     {
-    //         Attack();
-    //     }
-    // }
-
-    // private void Attack()
-    // {
-    //     Debug.Log("Attack!");
-    //     // need to arrage with the hp system.
-    // }
 }

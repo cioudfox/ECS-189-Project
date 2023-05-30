@@ -13,9 +13,9 @@ public class EnemyStat : MonoBehaviour
 
     public EnemyScriptableObject enemyData;
 
-    float currentDamage;
-    float currentSpeed;
-    float currentHp;
+    public float currentDamage;
+    public float currentSpeed;
+    public float currentHp;
     public float despawnDistance = 20.0f;
 
     Transform player;
