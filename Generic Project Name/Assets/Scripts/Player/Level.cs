@@ -16,17 +16,21 @@ public class Level : MonoBehaviour
         public int endLevel;
         public int experienceCapIncrease;        
     }
+    [SerializeField] ExpBar expBar;
 
     public List<LevelRange> levelRanges;
 
     void Start()
     {
+        expBar.UpdateExperienceSlider(experience,experienceCap);
+        expBar.SetLevelText(level);
         experienceCap = levelRanges[0].experienceCapIncrease;
     }
     public void IncreaseExperience(int amount)
     {
         experience += amount;
         LevleUpChecker();
+        expBar.UpdateExperienceSlider(experience,experienceCap);
     }
 
     void LevleUpChecker()
@@ -34,6 +38,7 @@ public class Level : MonoBehaviour
         if(experience >= experienceCap)
         {
             level++;
+            expBar.SetLevelText(level);
             experience -= experienceCap;
 
             int experienceCapIncrease = 0;
