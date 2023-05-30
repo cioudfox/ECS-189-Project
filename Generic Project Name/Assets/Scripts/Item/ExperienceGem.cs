@@ -8,7 +8,7 @@ public class ExperienceGem : MonoBehaviour, ICollectible
 
     public void Collect()
     {
-        PlayerStat player = FindObjectOfType<PlayerStat>();
-        player.IncreaseExperience(experienceGranted);
+        Level level = FindObjectOfType<Level>();
+        level.IncreaseExperience(experienceGranted);
     }
 }

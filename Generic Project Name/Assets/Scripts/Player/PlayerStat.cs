@@ -11,26 +11,11 @@ public class PlayerStat : MonoBehaviour
     public float currentMovespeed;
     float currentProjectileSpeed;
 
-    [Header("Experience/level")]
-    public int experience;
-    public int level;
-    public int experienceCap;
-
-    [System.Serializable]
-    public class LevelRange
-    {
-        public int startLevel;
-        public int endLevel;
-        public int experienceCapIncrease;        
-    }
-
-
     [Header("I-Frames")]
     float invincibilityDuration = 0.5f;
     float invincibilityTimer;
     bool isInvincible;
 
-    public List<LevelRange> levelRanges;
     float speedBuffTimer;
     float speedBuffTimerDuration = 5.0f;
     bool speedIsBuffed;
@@ -50,11 +35,6 @@ public class PlayerStat : MonoBehaviour
         currentMovespeed = characterData.MovingSpeed;
         currentCritChance = characterData.CriticalChance;
         originalWeaponAttackSpeed = this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.CooldownDuration;
-    }
-
-    void Start()
-    {
-        experienceCap = levelRanges[0].experienceCapIncrease;
     }
 
     void Update()
@@ -99,33 +79,6 @@ public class PlayerStat : MonoBehaviour
             currentRecoveryTimer = 1.0f;
         }
        
-    }
-    public void IncreaseExperience(int amount)
-    {
-        experience += amount;
-        LevleUpChecker();
-    }
-
-    void LevleUpChecker()
-    {
-        Debug.Log("Before Level: " + level + "Experience: " + experience + "Experience Cap: " + experienceCap);
-        if(experience >= experienceCap)
-        {
-            level++;
-            experience -= experienceCap;
-            Debug.Log("After Level: " + level + "Experience: " + experience + "Experience Cap: " + experienceCap);
-
-            int experienceCapIncrease = 0;
-            foreach(LevelRange range in levelRanges)
-            {
-                if(level >= range.startLevel && level <= range.endLevel)
-                {
-                    experienceCapIncrease = range.experienceCapIncrease;
-                    break;
-                }
-            }
-            experienceCap += experienceCapIncrease;
-        }
     }
 
     public void TakeDamage(float damage)

@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 137304616}
   - component: {fileID: 137304617}
   - component: {fileID: 137304618}
+  - component: {fileID: 137304619}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -494,16 +495,6 @@ MonoBehaviour:
   hpBar: {fileID: 1205310468}
   currentHealth: 0
   currentMovespeed: 0
-  experience: 0
-  level: 1
-  experienceCap: 0
-  levelRanges:
-  - startLevel: 1
-    endLevel: 3
-    experienceCapIncrease: 100
-  - startLevel: 4
-    endLevel: 6
-    experienceCapIncrease: 200
   currentCritChance: 0
 --- !u!114 &137304618
 MonoBehaviour:
@@ -520,6 +511,28 @@ MonoBehaviour:
   weapon: {fileID: 784336639}
   gameOverPanel: {fileID: 1700775634}
   scoreUI: {fileID: 501858156}
+--- !u!114 &137304619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137304609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d771ae69daa07489774977efa7a837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experience: 0
+  level: 0
+  experienceCap: 0
+  levelRanges:
+  - startLevel: 1
+    endLevel: 3
+    experienceCapIncrease: 50
+  - startLevel: 3
+    endLevel: 10
+    experienceCapIncrease: 100
 --- !u!1 &210991505
 GameObject:
   m_ObjectHideFlags: 0
