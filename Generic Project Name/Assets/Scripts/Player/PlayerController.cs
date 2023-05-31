@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour
 
     PlayerStat playerStat;
 
-    Color playerOriginalColor;
-    float colorResetPeriod = 0.5f;
-    float colorRestTimer = 0.0f;
+    static Color playerOriginalColor;
+    // float colorResetPeriod = 0.5f;
+    // float colorRestTimer = 0.0f;
 
     public Vector2 GetLastMovedVector() 
     {
@@ -70,12 +70,12 @@ public class PlayerController : MonoBehaviour
         Move();
         itemCooldownTimer -= Time.deltaTime;
 
-        colorRestTimer += Time.deltaTime;
-        if (colorRestTimer >= colorResetPeriod)
-        {
-            this.gameObject.GetComponent<Renderer>().material.color = playerOriginalColor;
-            colorRestTimer = 0.0f;
-        }
+        // colorRestTimer += Time.deltaTime;
+        // if (colorRestTimer >= colorResetPeriod)
+        // {
+        //     this.gameObject.GetComponent<Renderer>().material.color = playerOriginalColor;
+        //     colorRestTimer = 0.0f;
+        // }
     }
 
     void InputManagement()
@@ -267,12 +267,11 @@ public class PlayerController : MonoBehaviour
     public static IEnumerator FlashObject(GameObject obj, float flashDuration, Color c)
     {
         Renderer renderer = obj.GetComponent<Renderer>();
-        Color originalColor = renderer.material.color;
         Color flashColor = c;
 
         renderer.material.color = flashColor;
         yield return new WaitForSeconds(flashDuration);
-        renderer.material.color = originalColor;
+        renderer.material.color = playerOriginalColor;
     }
 
     public int GetScore()
