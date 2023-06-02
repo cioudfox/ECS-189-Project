@@ -13,8 +13,6 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected float currentSpeed;
     protected float currentCooldownDuration;
     protected float currentPierce;
-    protected bool chain;
-    protected bool explosive;
 
     void Awake()
     {
@@ -22,8 +20,6 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
         currentPierce = weaponData.Pierce;
-        chain = weaponData.Chain;
-        explosive = weaponData.Explosive;
     }
     protected virtual void Start()
     {
@@ -47,50 +43,12 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
             enemy.TakeDamage(currentDamage);
             markedEnemies.Add(col.gameObject);
             currentPierce -= 1;
+            // Destroy(gameObject);
             if(currentPierce <= 0){
                 Destroy(gameObject);
             }
-            if(chain)
-            {
-                // Find the next nearest enemy
-                GameObject nextEnemy = FindNextNearestEnemy(col.transform.position);
-                if (nextEnemy != null)
-                {
-                    Vector3 nextDirection = nextEnemy.transform.position - transform.position;
-                    DirectionChecker(nextDirection.normalized);
-                }
-            }
-            if(explosive)
-            {
-                
-            }
         }
     }
-
-
-
-    private GameObject FindNextNearestEnemy(Vector3 currentPosition)
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject nearestEnemy = null;
-        float nearestDistance = Mathf.Infinity;
-
-        foreach (GameObject enemy in enemies)
-        {
-            if (!markedEnemies.Contains(enemy))
-            {
-                float distance = Vector3.Distance(currentPosition, enemy.transform.position);
-                if (distance < nearestDistance)
-                {
-                    nearestDistance = distance;
-                    nearestEnemy = enemy;
-                }
-            }
-        }
-
-        return nearestEnemy;
-    }
-
 
     // Below Does not work
     // void OnCollisionEnter2D(Collision2D collision)
