@@ -29,4 +29,17 @@ public class WeaponScriptableObject : ScriptableObject
     [SerializeField]
     float lifetime;
     public float Lifetime { get => lifetime; private set => lifetime = value; }
+
+    [SerializeField]
+    bool chain;
+    public bool Chain { get => chain; private set => chain = value; }
+
+    [SerializeField]
+    bool explosive;
+    public bool Explosive { get => explosive; private set => explosive = value; }
+    
+    [SerializeField]
+    float aoe;
+    public float Aoe { get => aoe; private set => aoe = value; }
+    
 }
