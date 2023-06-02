@@ -12,7 +12,10 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected float currentDamage;
     protected float currentSpeed;
     protected float currentCooldownDuration;
-    protected float currentPierce;
+    protected int currentPierce;
+    protected bool chain;
+    protected bool explosive;
+    protected int additionalProjectileCount;
 
     void Awake()
     {
@@ -20,6 +23,9 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         currentSpeed = weaponData.Speed;
         currentCooldownDuration = weaponData.CooldownDuration;
         currentPierce = weaponData.Pierce;
+        chain = weaponData.Chain;
+        explosive = weaponData.Explosive;
+        additionalProjectileCount = weaponData.ProjectileNumber;
     }
     protected virtual void Start()
     {
@@ -43,24 +49,59 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
             enemy.TakeDamage(currentDamage);
             markedEnemies.Add(col.gameObject);
             currentPierce -= 1;
-            // Destroy(gameObject);
             if(currentPierce <= 0){
                 Destroy(gameObject);
             }
+            if(chain)
+            {
+                // Find the next nearest enemy
+                GameObject nextEnemy = FindNextNearestEnemy(col.transform.position);
+                if (nextEnemy != null)
+                {
+                    Vector3 nextDirection = nextEnemy.transform.position - transform.position;
+                    DirectionChecker(nextDirection.normalized);
+                }
+            }
+            // if(explosive)
+            // {
+            //     GameObject explosionEffect = Instantiate(weaponData.ExplosionEffectPrefab, transform.position, Quaternion.identity);
+            //     Destroy(explosionEffect, weaponData.ExplosionEffectLifetime);
+
+            //     // Apply damage to nearby enemies within explosion radius
+            //     Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, weaponData.ExplosionRadius);
+            //     foreach (Collider2D collider in colliders)
+            //     {
+            //         if (collider.CompareTag("Enemy"))
+            //         {
+            //             EnemyStat enemy = collider.GetComponent<EnemyStat>();
+            //             if (enemy != null)
+            //             {
+            //                 enemy.TakeDamage(currentDamage);
+            //             }
+            //         }
+            //     }
+            // }
         }
+        
+    }
+    private GameObject FindNextNearestEnemy(Vector3 currentPosition)
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject nearestEnemy = null;
+        float nearestDistance = Mathf.Infinity;
+        foreach (GameObject enemy in enemies)
+        {
+            if (!markedEnemies.Contains(enemy))
+            {
+                float distance = Vector3.Distance(currentPosition, enemy.transform.position);
+                if (distance < nearestDistance)
+                {
+                    nearestDistance = distance;
+                    nearestEnemy = enemy;
+                }
+            }
+        }
+        return nearestEnemy;
     }
 
-    // Below Does not work
-    // void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.tag == "Enemy")
-    //     {
-    //         EnemyStat enemy = collision.gameObject.GetComponent<EnemyStat>();
-    //         enemy.TakeDamage(currentDamage);
-    //         currentPierce -= 1;
-    //         if(currentPierce <= 0){
-    //             Destroy(gameObject);
-    //         }
-    //     }
-    // }
 }

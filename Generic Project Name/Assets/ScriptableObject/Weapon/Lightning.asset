@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93a43e0466ad5f34ba8220935607573a, type: 3}
-  m_Name: Dagger
+  m_Name: Lightning
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3432851166608940634, guid: 43ec8bc5b14e02848bab4ebfe403ce49, type: 3}
+  prefab: {fileID: 3432851166608940634, guid: 92015f4438f4f9147ae1b499b0a90854, type: 3}
   damage: 3
-  speed: 10
+  speed: 15
   cooldownDuration: 0.7
-  pierce: 2
-  lifetime: 1
-  chain: 0
+  pierce: 4
+  lifetime: 3
+  chain: 1
   explosive: 0
   aoe: 0
-  projectileNumber: 3
+  projectileNumber: 1

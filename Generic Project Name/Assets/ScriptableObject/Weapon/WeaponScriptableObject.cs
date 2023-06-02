@@ -23,10 +23,27 @@ public class WeaponScriptableObject : ScriptableObject
     public float CooldownDuration { get => cooldownDuration; private set => cooldownDuration = value; }
     
     [SerializeField]
-    float pierce;
-    public float Pierce { get => pierce; private set => pierce = value; }
+    int pierce;
+    public int Pierce { get => pierce; private set => pierce = value; }
 
     [SerializeField]
     float lifetime;
     public float Lifetime { get => lifetime; private set => lifetime = value; }
+
+    [SerializeField]
+    bool chain;
+    public bool Chain { get => chain; private set => chain = value; }
+
+    [SerializeField]
+    bool explosive;
+    public bool Explosive { get => explosive; private set => explosive = value; }
+    
+    [SerializeField]
+    float aoe;
+    public float Aoe { get => aoe; private set => aoe = value; }
+
+    [SerializeField]
+    int projectileNumber;
+    public int ProjectileNumber { get => projectileNumber; private set => projectileNumber = value; }
+    
 }

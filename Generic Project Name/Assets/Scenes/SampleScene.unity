@@ -919,7 +919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed78b2dd41979647b1da49bb24ab458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: ccfbff77a77ed034ca2dbfd378af98e0, type: 2}
+  weaponData: {fileID: 11400000, guid: de198f2b53ef97a4eadc54dcbc5d930e, type: 2}
   weaponCooldown: 0
   currentCooldownTimer: 0
 --- !u!1 &340594750

@@ -15,7 +15,6 @@ public class testWeaponController : WeaponController
     public void SetShootDir(ShootingDirection shootDir)
     {
         this.shootDir = shootDir;
-        Debug.Log(this.shootDir);
 
     }
 
