@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8244464800715313979}
   - component: {fileID: 7295167771038570119}
-  - component: {fileID: 1596492890079457020}
+  - component: {fileID: 4773274362186319203}
   - component: {fileID: 368335730605868700}
   - component: {fileID: 296321670430375984}
   m_Layer: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1596492890079457020
+--- !u!114 &4773274362186319203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
