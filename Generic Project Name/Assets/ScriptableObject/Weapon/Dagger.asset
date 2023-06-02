@@ -18,7 +18,3 @@ MonoBehaviour:
   cooldownDuration: 0.7
   pierce: 2
   lifetime: 1
-  chain: 0
-  explosive: 0
-  aoe: 0
-  projectileNumber: 3

@@ -14,11 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3432851166608940634, guid: 8b6403975bf108f42b9c5c94a9b4df88, type: 3}
   damage: 5
-  speed: 7.5
+  speed: 5
   cooldownDuration: 1
   pierce: 5
   lifetime: 3
-  chain: 1
-  explosive: 0
-  aoe: 0
-  projectileNumber: 1

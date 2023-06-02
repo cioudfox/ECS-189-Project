@@ -12,10 +12,9 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected float currentDamage;
     protected float currentSpeed;
     protected float currentCooldownDuration;
-    protected int currentPierce;
+    protected float currentPierce;
     protected bool chain;
     protected bool explosive;
-    protected int additionalProjectileCount;
 
     void Awake()
     {
@@ -25,7 +24,6 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         currentPierce = weaponData.Pierce;
         chain = weaponData.Chain;
         explosive = weaponData.Explosive;
-        additionalProjectileCount = weaponData.ProjectileNumber;
     }
     protected virtual void Start()
     {
@@ -62,25 +60,10 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
                     DirectionChecker(nextDirection.normalized);
                 }
             }
-            // if(explosive)
-            // {
-            //     GameObject explosionEffect = Instantiate(weaponData.ExplosionEffectPrefab, transform.position, Quaternion.identity);
-            //     Destroy(explosionEffect, weaponData.ExplosionEffectLifetime);
-
-            //     // Apply damage to nearby enemies within explosion radius
-            //     Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, weaponData.ExplosionRadius);
-            //     foreach (Collider2D collider in colliders)
-            //     {
-            //         if (collider.CompareTag("Enemy"))
-            //         {
-            //             EnemyStat enemy = collider.GetComponent<EnemyStat>();
-            //             if (enemy != null)
-            //             {
-            //                 enemy.TakeDamage(currentDamage);
-            //             }
-            //         }
-            //     }
-            // }
+            if(explosive)
+            {
+                
+            }
         }
     }
 
