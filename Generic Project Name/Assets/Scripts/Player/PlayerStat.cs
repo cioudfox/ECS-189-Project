@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStat : MonoBehaviour
 {
-    public CharacterScriptableObject characterData;
+    CharacterScriptableObject characterData;
     [SerializeField] public HpBar hpBar;
 
     public float currentHealth;
@@ -27,9 +27,15 @@ public class PlayerStat : MonoBehaviour
     float currentRecoveryTimer;
 
     float originalWeaponAttackSpeed;
-
+    
+    // WeaponForge forge;
     void Awake()
     {
+        characterData = CharacterSelector.getData();
+        CharacterSelector.instance.DestroySingleton();
+
+        // forge = GetComponent<WeaponForge>();
+
         currentHealth = characterData.MaxHp;
         currentRecovery = characterData.Recovery;
         currentMovespeed = characterData.MovingSpeed;
@@ -142,5 +148,9 @@ public class PlayerStat : MonoBehaviour
             critIsBuffed = true;
         }
     }
+
+    // public void SpawnWeapon()
+    // {
+    // }
 
 }

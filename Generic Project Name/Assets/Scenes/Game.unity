@@ -318,7 +318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.7, y: -22}
+  m_AnchoredPosition: {x: -11.624, y: -7.3151}
   m_SizeDelta: {x: 54.9839, y: 14.6302}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &121552605
@@ -618,7 +618,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f1bd41623698d48b5390aa7211fa98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: 56f6dcb4db160b64f920c299a2117cde, type: 2}
   hpBar: {fileID: 1205310468}
   currentHealth: 0
   currentRecovery: 0
@@ -1828,6 +1827,7 @@ GameObject:
   - component: {fileID: 610300752}
   - component: {fileID: 610300753}
   - component: {fileID: 610300754}
+  - component: {fileID: 610300755}
   m_Layer: 0
   m_Name: GameMenu
   m_TagString: Untagged
@@ -1888,6 +1888,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 213971090}
+--- !u!114 &610300755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610300750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eed8810e7cc69541a18ee6260fa6275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &617024109
 GameObject:
   m_ObjectHideFlags: 0
@@ -3512,7 +3524,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1370930886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 610300755}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: SceneChange
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 610300753}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: UnPauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1370930886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4612,7 +4648,6 @@ GameObject:
   - component: {fileID: 1869299118}
   - component: {fileID: 1869299117}
   - component: {fileID: 1869299116}
-  - component: {fileID: 1869299119}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4685,16 +4720,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1869299119}
-        m_TargetAssemblyTypeName: ExitToMenu, Assembly-CSharp
-        m_MethodName: BackToMenu
-        m_Mode: 1
+      - m_Target: {fileID: 610300755}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: SceneChange
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1869299117
@@ -4735,18 +4770,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869299114}
   m_CullTransparentMesh: 1
---- !u!114 &1869299119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869299114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9205c2b14d80e941b9b7c9ceda5b340, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2003175904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5672890811736825587, guid: d88e535a38f840f4a81609c2cc21a7b5, type: 3}

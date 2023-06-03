@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class StartGame : MonoBehaviour
+
+public class SceneController : MonoBehaviour
 {
-    public void StartGameplay()
+    public void SceneChange(string name)
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(name);
     }
 }
