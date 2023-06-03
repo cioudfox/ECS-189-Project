@@ -13,9 +13,24 @@ MonoBehaviour:
   m_Name: Stage1
   m_EditorClassIdentifier: 
   stageEvents:
-  - time: 3
+  - time: 0
     enemyToSpawn:
-    - {fileID: 897527639298260085, guid: baefac060e87038498d4ed0b5cb918f8, type: 3}
-    - {fileID: 897527639298260085, guid: dba29f90af555f44a84b0c922fd80def, type: 3}
-    count: 50
+    - {fileID: 897527639298260085, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
+    count: 10
     spawnInterval: 1
+  - time: 10
+    enemyToSpawn:
+    - {fileID: 897527639298260085, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
+    - {fileID: 897527639298260085, guid: dba29f90af555f44a84b0c922fd80def, type: 3}
+    - {fileID: 897527639298260085, guid: baefac060e87038498d4ed0b5cb918f8, type: 3}
+    count: 30
+    spawnInterval: 0.8
+  - time: 24
+    enemyToSpawn:
+    - {fileID: 897527639298260085, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
+    - {fileID: 897527639298260085, guid: dba29f90af555f44a84b0c922fd80def, type: 3}
+    - {fileID: 897527639298260085, guid: baefac060e87038498d4ed0b5cb918f8, type: 3}
+    - {fileID: 897527639298260085, guid: baefac060e87038498d4ed0b5cb918f8, type: 3}
+    - {fileID: 897527639298260085, guid: baefac060e87038498d4ed0b5cb918f8, type: 3}
+    count: 50
+    spawnInterval: 0.8

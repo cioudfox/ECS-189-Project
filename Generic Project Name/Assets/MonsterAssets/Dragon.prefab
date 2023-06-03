@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7254093233827383580}
   - component: {fileID: 2599855655040313058}
   - component: {fileID: 868557083203348338}
+  - component: {fileID: 6126818321100649152}
   m_Layer: 8
   m_Name: Dragon
   m_TagString: Enemy
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3330331093645558178}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.938649, y: 3.9468303, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -130,7 +131,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7254093233827383580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,3 +207,15 @@ PolygonCollider2D:
       - {x: 1, y: -0.25}
       - {x: 0.9375, y: -0.125}
       - {x: 1.46875, y: -0.09375}
+--- !u!114 &6126818321100649152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3330331093645558178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d855456c049ee41ad0d4d9e59b17d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

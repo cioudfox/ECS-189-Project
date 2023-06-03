@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Red Goblin
   m_EditorClassIdentifier: 
   prefab: {fileID: 897527639298260085, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
-  damage: 2
+  damage: 7
   speed: 4
-  maxHp: 10
+  maxHp: 15
+  defence: 0

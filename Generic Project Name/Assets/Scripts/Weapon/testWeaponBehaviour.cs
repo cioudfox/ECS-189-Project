@@ -14,7 +14,7 @@ public class testWeaponBehaviour: ProjectileWeaponBehaviour
     void Update()
     {
         transform.position += direction * weaponData.Speed *Time.deltaTime;
-        Debug.Log(direction);
+        // Debug.Log(direction);
         if (additionalProjectileCount > 1)
         {
             for (int i = 1; i < additionalProjectileCount; i++)

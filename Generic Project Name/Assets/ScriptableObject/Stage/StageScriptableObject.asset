@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec3b57d6d26dc3540a6ceed7165c4595, type: 3}
-  m_Name: Goblin
+  m_Script: {fileID: 11500000, guid: 94076ceb8d733e143bcb749bad8de928, type: 3}
+  m_Name: StageScriptableObject
   m_EditorClassIdentifier: 
-  prefab: {fileID: 897527639298260085, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
-  damage: 3
-  speed: 3
-  maxHp: 10
-  defence: 0
+  stageEvents:
+  - time: 0
+    enemyToSpawn:
+    - {fileID: 3330331093645558178, guid: 53d0f4c47bef70d44afba36c1f4e2189, type: 3}
+    count: 1
+    spawnInterval: 0.5
