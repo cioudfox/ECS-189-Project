@@ -2471,7 +2471,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 35.8184, y: -106.2}
+  m_AnchoredPosition: {x: 35.8184, y: -106.20001}
   m_SizeDelta: {x: 187.2368, y: 213.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &878610532
@@ -4598,6 +4598,8 @@ MonoBehaviour:
   - {fileID: 5672890811736825587, guid: 256d5178417d8c84f8cae403c59bc333, type: 3}
   - {fileID: 5672890811736825587, guid: fbd052ca379b0de448645b66ad33b59e, type: 3}
   - {fileID: 5672890811736825587, guid: 465a71926ae134c42a268020225cb943, type: 3}
+  - {fileID: 5672890811736825587, guid: 5a9bfcd04fa81f04aacbb90c90bd1587, type: 3}
+  - {fileID: 5672890811736825587, guid: 4c34f0bd828898e409444b7d0cf7fd1b, type: 3}
   player: {fileID: 137304609}
   checkerRadius: 0.2
   noTerrainPosition: {x: 0, y: 0, z: 0}
