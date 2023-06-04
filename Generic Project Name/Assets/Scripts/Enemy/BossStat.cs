@@ -2,26 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStat : MonoBehaviour
+public class BossStat : MonoBehaviour
 {
-    [SerializeField] public GameObject gemPrefab;
-    [SerializeField] public GameObject mushroomPrefab;
-    [SerializeField] public GameObject heartPrefab;
-
-    [SerializeField] public GameObject criticalPrefab;
-    [SerializeField] public GameObject swiftPrefab;
-
     public EnemyScriptableObject enemyData;
 
     public float currentDamage;
     public float currentSpeed;
     public float currentHp;
-    public float despawnDistance = 20.0f;
+    public float despawnDistance = 10.0f;
 
     Transform player;
 
-    public bool isThisBoss;
-
+    // Update is called once per frame
     void Awake()
     {
         currentDamage = enemyData.Damage;
@@ -40,7 +32,7 @@ public class EnemyStat : MonoBehaviour
         {
             ReturnEnemy();
         }
-        else if(isThisBoss)
+        else
         {
             currentSpeed = enemyData.Speed;
         }
@@ -81,28 +73,7 @@ public class EnemyStat : MonoBehaviour
     public void Kill()
     {
         Destroy(gameObject);
-
-        float gemChance = Random.value;
-        float mushroomChance = Random.value;
-        float heartChance = Random.value;
-        float criticalChance = Random.value;
-        float swiftChance = Random.value;
-
-        if (gemChance < 0.6f) 
-            Instantiate(gemPrefab, transform.position, Quaternion.identity);
-
-        if (mushroomChance < 0.4f) 
-            Instantiate(mushroomPrefab, transform.position, Quaternion.identity);
-
-        if (heartChance < 0.3f) 
-            Instantiate(heartPrefab, transform.position, Quaternion.identity);
-
-        if (criticalChance < 0.25f) 
-            Instantiate(criticalPrefab, transform.position, Quaternion.identity);
-
-        if (swiftChance < 0.2f) 
-            Instantiate(swiftPrefab, transform.position, Quaternion.identity);
-
+        // Winning();
     }
     private void OnCollisionStay2D(Collision2D collision2D)
     {
@@ -115,14 +86,6 @@ public class EnemyStat : MonoBehaviour
 
     private void ReturnEnemy()
     {
-        if(!isThisBoss)
-        {
-            EnemySpawner es = FindObjectOfType<EnemySpawner>();
-            transform.position = player.position + es.GenerateRandomPosition();
-        }
-        else
-        {
-            currentSpeed = 5*enemyData.Speed;
-        }
+        currentSpeed = 5*currentSpeed;
     }
 }

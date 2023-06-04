@@ -6,6 +6,12 @@ public class EnemyAnimator : MonoBehaviour
 {
     Animator animator;
     Transform player;
+    public LayerMask whatIsPlayer;
+
+    public bool isInAttackRadius;
+
+    public float attackRadius = 20.0f;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -15,13 +21,21 @@ public class EnemyAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((transform.position.x - player.position.x) > 0)
+        isInAttackRadius = Physics2D.OverlapCircle(transform.position,attackRadius,whatIsPlayer);
+
+        if(isInAttackRadius)
         {
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            animator.SetBool("IsAttacking",true);
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            animator.SetBool("IsAttacking",false);
         }
+        Vector3  direction = (player.position - transform.position).normalized;
+        Debug.Log("x:"+direction.x);
+        Debug.Log("y:"+direction.y);
+        animator.SetFloat("X", direction.x);
+        animator.SetFloat("Y", direction.y);
     }
+
 }
