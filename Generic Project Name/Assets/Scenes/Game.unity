@@ -889,7 +889,6 @@ MonoBehaviour:
   weapon: {fileID: 784336639}
   winningPanel: {fileID: 1195364252}
   scoreUI: {fileID: 1669805955}
-  gameManager: {fileID: 610300750}
 --- !u!1 &210991505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,7 +2209,6 @@ GameObject:
   - component: {fileID: 610300753}
   - component: {fileID: 610300754}
   - component: {fileID: 610300755}
-  - component: {fileID: 610300756}
   m_Layer: 0
   m_Name: GameMenu
   m_TagString: Untagged
@@ -2281,18 +2279,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8eed8810e7cc69541a18ee6260fa6275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &610300756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610300750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64bf2a6636e24bc41af0bdad666cb04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &617024109
@@ -6125,7 +6111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3ea5e9ff5a29241bdfd2c30e1272b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageData: {fileID: 11400000, guid: 6b22b8261e390844e93934744c3c7176, type: 2}
+  stageData: {fileID: 11400000, guid: 3ae84b9ec6a22d04697b4183b310ca2a, type: 2}
   enemySpawner: {fileID: 1425545500}
 --- !u!1 &1869299114
 GameObject:
