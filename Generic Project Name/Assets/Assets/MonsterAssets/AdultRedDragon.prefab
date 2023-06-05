@@ -203,7 +203,7 @@ MonoBehaviour:
   currentSpeed: 0
   currentHp: 0
   despawnDistance: 40
-  isThisBoss: 0
+  isThisBoss: 1
 --- !u!114 &8673547518126796947
 MonoBehaviour:
   m_ObjectHideFlags: 0

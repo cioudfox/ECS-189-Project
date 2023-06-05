@@ -80,28 +80,35 @@ public class EnemyStat : MonoBehaviour
 
     public void Kill()
     {
-        Destroy(gameObject);
+        if(isThisBoss)
+        {
+            Winning();
+        }
+        else
+        {
+            Destroy(gameObject);
 
-        float gemChance = Random.value;
-        float mushroomChance = Random.value;
-        float heartChance = Random.value;
-        float criticalChance = Random.value;
-        float swiftChance = Random.value;
+            float gemChance = Random.value;
+            float mushroomChance = Random.value;
+            float heartChance = Random.value;
+            float criticalChance = Random.value;
+            float swiftChance = Random.value;
 
-        if (gemChance < 0.6f) 
-            Instantiate(gemPrefab, transform.position, Quaternion.identity);
+            if (gemChance < 0.6f) 
+                Instantiate(gemPrefab, transform.position, Quaternion.identity);
 
-        if (mushroomChance < 0.4f) 
-            Instantiate(mushroomPrefab, transform.position, Quaternion.identity);
+            if (mushroomChance < 0.4f) 
+                Instantiate(mushroomPrefab, transform.position, Quaternion.identity);
 
-        if (heartChance < 0.3f) 
-            Instantiate(heartPrefab, transform.position, Quaternion.identity);
+            if (heartChance < 0.3f) 
+                Instantiate(heartPrefab, transform.position, Quaternion.identity);
 
-        if (criticalChance < 0.25f) 
-            Instantiate(criticalPrefab, transform.position, Quaternion.identity);
+            if (criticalChance < 0.25f) 
+                Instantiate(criticalPrefab, transform.position, Quaternion.identity);
 
-        if (swiftChance < 0.2f) 
-            Instantiate(swiftPrefab, transform.position, Quaternion.identity);
+            if (swiftChance < 0.2f) 
+                Instantiate(swiftPrefab, transform.position, Quaternion.identity);            
+        }
 
     }
     private void OnCollisionStay2D(Collision2D collision2D)
@@ -124,5 +131,11 @@ public class EnemyStat : MonoBehaviour
         {
             currentSpeed = 5*enemyData.Speed;
         }
+    }
+
+    public void Winning()
+    {
+        FindObjectOfType<BossAnimator>().Die();
+        FindObjectOfType<Winning>().ShowWinning();
     }
 }

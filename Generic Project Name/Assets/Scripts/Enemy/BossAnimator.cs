@@ -32,10 +32,14 @@ public class BossAnimator : MonoBehaviour
             animator.SetBool("IsAttacking",false);
         }
         Vector3  direction = (player.position - transform.position).normalized;
-        Debug.Log("x:"+direction.x);
-        Debug.Log("y:"+direction.y);
+        // Debug.Log("x:"+direction.x);
+        // Debug.Log("y:"+direction.y);
         animator.SetFloat("X", direction.x);
         animator.SetFloat("Y", direction.y);
     }
 
+    public void Die()
+    {
+        animator.SetBool("IsDie",true);
+    }
 }

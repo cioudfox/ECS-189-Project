@@ -8,6 +8,7 @@ public class PlayerStat : MonoBehaviour
     [SerializeField] public HpBar hpBar;
 
     public float currentHealth;
+    public float currentMaxHp;
     public float currentRecovery;
     public float currentMovespeed;
 
@@ -37,6 +38,7 @@ public class PlayerStat : MonoBehaviour
         // forge = GetComponent<WeaponForge>();
 
         currentHealth = characterData.MaxHp;
+        currentMaxHp = characterData.MaxHp;
         currentRecovery = characterData.Recovery;
         currentMovespeed = characterData.MovingSpeed;
         currentCritChance = characterData.CriticalChance;
@@ -96,7 +98,7 @@ public class PlayerStat : MonoBehaviour
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
-            hpBar.SetState(currentHealth, characterData.MaxHp);
+            hpBar.SetState(currentHealth, currentMaxHp);
             
             StartCoroutine(PlayerController.FlashObject(this.gameObject, 0.25f, Color.red));
 
@@ -114,15 +116,15 @@ public class PlayerStat : MonoBehaviour
 
     public void RestoreHealth(float amount)
     {
-        if (currentHealth < characterData.MaxHp)
+        if (currentHealth < currentMaxHp)
         {
             currentHealth += amount;
 
-            if(currentHealth > characterData.MaxHp)
+            if(currentHealth > currentMaxHp)
             {
-                currentHealth = characterData.MaxHp;
+                currentHealth = currentMaxHp;
             }
-            hpBar.SetState(currentHealth, characterData.MaxHp);
+            hpBar.SetState(currentHealth, currentMaxHp);
         }
     }
 
@@ -148,9 +150,17 @@ public class PlayerStat : MonoBehaviour
             critIsBuffed = true;
         }
     }
+    public void UpgradeHealth()
+    {
+        currentMaxHp += 50f;
+        currentHealth = currentMaxHp;
+        hpBar.SetState(currentHealth, currentMaxHp);
+        Debug.Log("Upgrading MaxHP applied speed: " + currentMaxHp);
+    }
 
-    // public void SpawnWeapon()
-    // {
-    // }
-
+    public void UpgradeSpeed()
+    {
+        currentMovespeed += 0.2f;
+        Debug.Log("Upgrading Movement applied speed: " + currentMovespeed);
+    }
 }

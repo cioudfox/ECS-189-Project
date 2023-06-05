@@ -17,8 +17,12 @@ public class Level : MonoBehaviour
         public int experienceCapIncrease;        
     }
     [SerializeField] ExpBar expBar;
-
+    [SerializeField] UpgradePanelManager upgradePanel;
     public List<LevelRange> levelRanges;
+
+    // [SerializeField] List<UpgradeScriptableObject> upgrades;
+    // List<UpgradeScriptableObject> selectedUpgrades;
+    // [SerializeField] List<UpgradeScriptableObject> acquiredUpgrades;
 
     void Start()
     {
@@ -29,28 +33,65 @@ public class Level : MonoBehaviour
     public void IncreaseExperience(int amount)
     {
         experience += amount;
-        LevleUpChecker();
+        LevelUpChecker();
         expBar.UpdateExperienceSlider(experience,experienceCap);
     }
 
-    void LevleUpChecker()
+    void LevelUpChecker()
     {
         if(experience >= experienceCap)
         {
-            level++;
-            expBar.SetLevelText(level);
-            experience -= experienceCap;
-
-            int experienceCapIncrease = 0;
-            foreach(LevelRange range in levelRanges)
-            {
-                if(level >= range.startLevel && level <= range.endLevel)
-                {
-                    experienceCapIncrease = range.experienceCapIncrease;
-                    break;
-                }
-            }
-            experienceCap += experienceCapIncrease;
+            LevelUp();
         }
     }
+
+    private void LevelUp()
+    {
+        // if (selectedUpgrades == null) { selectedUpgrades = new List<UpgradeScriptableObject>();}
+        // selectedUpgrades.Clear();
+        // selectedUpgrades.AddRange(GetUpgrade(3));
+
+        upgradePanel.OpenMenu();
+        level++;
+        expBar.SetLevelText(level);
+        experience -= experienceCap;
+
+        int experienceCapIncrease = 0;
+        foreach(LevelRange range in levelRanges)
+        {
+            if(level >= range.startLevel && level <= range.endLevel)
+            {
+                experienceCapIncrease = range.experienceCapIncrease;
+                break;
+            }
+        }
+        experienceCap += experienceCapIncrease;
+
+    }
+
+    // public List<UpgradeScriptableObject> GetUpgrade(int count)
+    // {
+    //     List<UpgradeScriptableObject> upgradeList = new List<UpgradeScriptableObject>();
+
+    //     if(count > upgrades.Count)
+    //     {
+    //         count = upgrades.Count;
+    //     }
+
+    //     for (int i = 0; i < count; i++)
+    //     {
+    //         upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]);
+
+    //     }
+        
+    //     return upgradeList;
+    // }
+
+    // public void Upgrade(int selectedButtonID)
+    // {
+    //     if (acquiredUpgrades == null) { acquiredUpgrades = new List<UpgradeScriptableObject>();}
+    //     UpgradeScriptableObject upgradeData = selectedUpgrades[selectedButtonID];
+    //     acquiredUpgrades.Add(upgradeData);
+    //     upgrades.Remove(upgradeData);
+    // }
 }
