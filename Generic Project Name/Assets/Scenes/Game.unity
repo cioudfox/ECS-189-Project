@@ -3899,7 +3899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e768bb4969e66444ae2616048e64169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnArea: {x: 10, y: 10}
+  spawnArea: {x: 14, y: 9}
   player: {fileID: 137304609}
 --- !u!4 &1425545501
 Transform:

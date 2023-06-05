@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -9080439346191608490}
   - component: {fileID: -3348215375130184471}
   - component: {fileID: -7442998420964056097}
+  - component: {fileID: 965203777871447739}
   m_Layer: 8
   m_Name: Hellhound
   m_TagString: Enemy
@@ -182,3 +183,15 @@ MonoBehaviour:
   currentHp: 0
   despawnDistance: 20
   isThisBoss: 0
+--- !u!114 &965203777871447739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6299988261493011413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6986b63020a742846ad91cf655a13bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
