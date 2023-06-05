@@ -13,15 +13,35 @@ public class testWeaponBehaviour: ProjectileWeaponBehaviour
 
     void Update()
     {
-        transform.position += direction * weaponData.Speed *Time.deltaTime;
-        // Debug.Log(direction);
-        if (additionalProjectileCount > 1)
-        {
-            for (int i = 1; i < additionalProjectileCount; i++)
+        if(!onReturn){
+            transform.position += direction * weaponData.Speed *Time.deltaTime;
+            // Debug.Log(direction);
+            if (additionalProjectileCount > 1)
             {
-                ShootAdditionalProjectile(i);
+                for (int i = 1; i < additionalProjectileCount; i++)
+                {
+                    ShootAdditionalProjectile(i);
+                }
+                additionalProjectileCount = 1;
             }
-            additionalProjectileCount = 1;
+            float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+            if (distanceToPlayer > weaponData.Speed*1f)
+            {
+                onReturn = true;
+            }
+        }
+        if (onReturn){
+            // Move back towards the player
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+             // Move back towards the player
+            Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
+            transform.position += (Vector3)directionToPlayer * weaponData.Speed * Time.deltaTime;
+
+            // Check if the projectile has reached the player
+            if (Vector2.Distance(transform.position, playerTransform.position) <= 0.1f)
+            {
+                Destroy(gameObject);
+            }
         }
     }    
     private void ShootAdditionalProjectile(int index)

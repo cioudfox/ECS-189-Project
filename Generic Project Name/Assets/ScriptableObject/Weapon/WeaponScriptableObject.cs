@@ -45,5 +45,9 @@ public class WeaponScriptableObject : ScriptableObject
     [SerializeField]
     int projectileNumber;
     public int ProjectileNumber { get => projectileNumber; private set => projectileNumber = value; }
+
+    [SerializeField]
+    bool boomerang;
+    public bool Boomerang { get => boomerang; private set => boomerang = value; }
     
 }

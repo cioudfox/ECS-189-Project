@@ -8,6 +8,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     public WeaponScriptableObject weaponData;
     protected Vector3 direction;
     List<GameObject> markedEnemies;
+    protected Transform playerTransform;
     protected float destroyAfterSeconds;
     protected float currentDamage;
     protected float currentSpeed;
@@ -16,6 +17,8 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected bool chain;
     protected bool explosive;
     protected int additionalProjectileCount;
+    protected bool boomerang;
+    protected bool onReturn = false;
 
     void Awake()
     {
@@ -26,6 +29,8 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         chain = weaponData.Chain;
         explosive = weaponData.Explosive;
         additionalProjectileCount = weaponData.ProjectileNumber;
+        boomerang = weaponData.Boomerang;
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
     protected virtual void Start()
     {

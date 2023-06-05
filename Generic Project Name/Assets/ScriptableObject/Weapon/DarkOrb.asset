@@ -16,9 +16,10 @@ MonoBehaviour:
   damage: 5
   speed: 7
   cooldownDuration: 1
-  pierce: 5
+  pierce: 3
   lifetime: 3
   chain: 1
   explosive: 0
   aoe: 0
   projectileNumber: 0
+  boomerang: 1
