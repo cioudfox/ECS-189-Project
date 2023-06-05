@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAnimator : MonoBehaviour
+public class BossAnimator : MonoBehaviour
 {
     Animator animator;
     Transform player;
