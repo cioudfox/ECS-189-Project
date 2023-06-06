@@ -74,6 +74,7 @@ public class EnemyStat : MonoBehaviour
         if(currentHp <= 0)
         {
             Kill();
+            FindObjectOfType<SoundManager>().PlaySoundEffect("enemyDie");
         }
     }
 

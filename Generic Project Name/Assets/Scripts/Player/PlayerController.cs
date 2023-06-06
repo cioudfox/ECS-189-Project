@@ -70,12 +70,6 @@ public class PlayerController : MonoBehaviour
         Move();
         itemCooldownTimer -= Time.deltaTime;
 
-        // colorRestTimer += Time.deltaTime;
-        // if (colorRestTimer >= colorResetPeriod)
-        // {
-        //     this.gameObject.GetComponent<Renderer>().material.color = playerOriginalColor;
-        //     colorRestTimer = 0.0f;
-        // }
     }
 
     void InputManagement()
@@ -259,6 +253,7 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine(FlashObject(this.gameObject, 0.25f, Color.gray));
                     break;
             }
+            FindObjectOfType<SoundManager>().PlaySoundEffect("useItem");
             itemCooldownTimer = itemUsageCooldown;
         }
     }

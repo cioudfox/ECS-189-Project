@@ -42,6 +42,7 @@ public class Level : MonoBehaviour
         if(experience >= experienceCap)
         {
             LevelUp();
+            FindObjectOfType<SoundManager>().PlaySoundEffect("levelUp");
         }
     }
 

@@ -94,7 +94,9 @@ public class PlayerStat : MonoBehaviour
         if(!isInvincible)
         {
             currentHealth -= damage;
-            // StartCoroutine(FlashObject(this.transform.parent.gameObject, 0.25f, Color.red));
+
+            FindObjectOfType<SoundManager>().PlaySoundEffect("playerGetHit");
+
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
