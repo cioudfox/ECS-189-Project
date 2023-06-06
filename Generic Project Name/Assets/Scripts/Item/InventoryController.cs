@@ -45,7 +45,7 @@ public class InventoryController : MonoBehaviour
 
         float treaRowX = 0.0f;
         float treaRowY = 1.4f;
-        float slotCellSize = 45.0f;
+        float slotCellSize = 100.0f;
 
         foreach (Item item in inventory.GetItemList()) 
         {
