@@ -19,5 +19,6 @@ public class GameOver : MonoBehaviour
         GetComponent<PlayerController>().enabled = false;
         weapon.SetActive(false);
         GetComponent<PlayerStat>().enabled = false;
+        FindObjectOfType<SoundManager>().PlaySoundEffect("gameOver");
     }
 }
