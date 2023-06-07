@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d614236f86454d54c954953e994622ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: c72970ad7cccb5943bb8cf63b3a8d356, type: 2}
+  animator: {fileID: 7037797276374978114}
 --- !u!114 &6673946180392675811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,4 +178,8 @@ MonoBehaviour:
   criticalPrefab: {fileID: 4466612313801792375, guid: c12eabd3f8e43f743bfe24c2b93bfeee, type: 3}
   swiftPrefab: {fileID: 8040398528883429238, guid: ce45456c0a0046140bb6f1a7305598f1, type: 3}
   enemyData: {fileID: 11400000, guid: c72970ad7cccb5943bb8cf63b3a8d356, type: 2}
+  currentDamage: 0
+  currentSpeed: 0
+  currentHp: 0
   despawnDistance: 20
+  isThisBoss: 0

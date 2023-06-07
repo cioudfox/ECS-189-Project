@@ -15,13 +15,6 @@ public class EnemyAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((transform.position.x - player.position.x) > 0)
-        {
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
-        }
-        else
-        {
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
-        }
+
     }
 }
