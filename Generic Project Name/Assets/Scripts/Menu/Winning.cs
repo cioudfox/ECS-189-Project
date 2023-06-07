@@ -18,6 +18,7 @@ public class Winning : MonoBehaviour
         weapon.SetActive(false);
         GetComponent<PlayerStat>().enabled = false;
         Time.timeScale = 0f;
+        FindObjectOfType<SoundManager>().PlaySoundEffect("gameWin");
     }
 }
 

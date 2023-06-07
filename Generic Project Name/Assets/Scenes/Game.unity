@@ -685,7 +685,13 @@ MonoBehaviour:
     loop: 0
   - clip: {fileID: 8300000, guid: f8488779aceb7f54e845ba114c81a4be, type: 3}
     audioSource: {fileID: 0}
-    title: gameOver
+    title: gameLose
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 8300000, guid: addfd0ba345bdb046bd85461c78eb2b8, type: 3}
+    audioSource: {fileID: 0}
+    title: gameWin
     volume: 1
     pitch: 1
     loop: 0
