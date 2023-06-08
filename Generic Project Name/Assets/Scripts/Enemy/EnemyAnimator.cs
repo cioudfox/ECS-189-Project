@@ -15,6 +15,10 @@ public class EnemyAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Vector3  direction = (player.position - transform.position).normalized;
+        // Debug.Log("x:"+direction.x);
+        // Debug.Log("y:"+direction.y);
+        animator.SetFloat("X", direction.x);
+        animator.SetFloat("Y", direction.y);
     }
 }

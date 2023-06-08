@@ -6,8 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     Transform tragetDestination;
     GameObject targetGameObject;
-    public Animator animator;
-    
+
     // public EnemyScriptableObject enemyData;
 
     EnemyStat enemyStat;
@@ -34,18 +33,5 @@ public class EnemyController : MonoBehaviour
     {
         Vector3 direction = (tragetDestination.position - transform.position).normalized;
         rgdbd2d.velocity = direction * enemyStat.currentSpeed;
-
-        var xMovement = transform.position.x - tragetDestination.position.x;
-        var yMovement = transform.position.y - tragetDestination.position.y;
-        animator.SetFloat("XMovement", xMovement);
-        animator.SetFloat("YMovement", yMovement);
-        if(Mathf.Abs(transform.position.y - tragetDestination.position.y) < 3)
-        {
-            animator.SetBool("Horizontal", true);
-        }
-        else
-        {
-            animator.SetBool("Horizontal", false);
-        }
     }
 }

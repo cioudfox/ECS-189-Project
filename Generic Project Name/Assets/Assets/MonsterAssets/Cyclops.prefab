@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5633326370264283271}
   - component: {fileID: -8659190972848050418}
   - component: {fileID: 595592403067161038}
+  - component: {fileID: 1431705129508910787}
   m_Layer: 8
   m_Name: Cyclops
   m_TagString: Enemy
@@ -143,7 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d614236f86454d54c954953e994622ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 8392947708430205298}
 --- !u!114 &-8659190972848050418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,3 +202,15 @@ PolygonCollider2D:
       - {x: 0.08372068, y: 0.005417267}
       - {x: 0.08093919, y: 0.03260639}
       - {x: 0.06991918, y: 0.04266844}
+--- !u!114 &1431705129508910787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8392947708430205325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6986b63020a742846ad91cf655a13bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

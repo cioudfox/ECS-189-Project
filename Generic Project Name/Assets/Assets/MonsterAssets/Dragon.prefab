@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7254093233827383580}
   - component: {fileID: 2599855655040313058}
   - component: {fileID: 868557083203348338}
+  - component: {fileID: -5724135357552995637}
   m_Layer: 8
   m_Name: Dragon
   m_TagString: Enemy
@@ -165,6 +166,7 @@ MonoBehaviour:
   currentSpeed: 0
   currentHp: 0
   despawnDistance: 20
+  isThisBoss: 0
 --- !u!60 &868557083203348338
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -206,3 +208,15 @@ PolygonCollider2D:
       - {x: 1, y: -0.25}
       - {x: 0.9375, y: -0.125}
       - {x: 1.46875, y: -0.09375}
+--- !u!114 &-5724135357552995637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3330331093645558178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6986b63020a742846ad91cf655a13bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

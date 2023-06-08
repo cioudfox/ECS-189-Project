@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2947536768210735165}
   - component: {fileID: -8231315014243400515}
   - component: {fileID: -1265027448150805654}
+  - component: {fileID: -2887309082016008487}
   m_Layer: 8
   m_Name: Ogre
   m_TagString: Enemy
@@ -159,7 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d614236f86454d54c954953e994622ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 4412959878675716400}
 --- !u!114 &-1265027448150805654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,3 +183,15 @@ MonoBehaviour:
   currentHp: 0
   despawnDistance: 20
   isThisBoss: 0
+--- !u!114 &-2887309082016008487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7184298815397092472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6986b63020a742846ad91cf655a13bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
