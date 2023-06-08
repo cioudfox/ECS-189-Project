@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Hellhound
   m_EditorClassIdentifier: 
   prefab: {fileID: 6299988261493011413, guid: a9589a0971091f6439384a8de4f728ee, type: 3}
+  gemPrefab: {fileID: 7430569447165051818, guid: 4ce9a356590128345afa5bd2386c3cbb, type: 3}
   damage: 3
   speed: 3
   maxHp: 10

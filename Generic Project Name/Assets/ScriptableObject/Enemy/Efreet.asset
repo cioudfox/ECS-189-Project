@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Efreet
   m_EditorClassIdentifier: 
   prefab: {fileID: 3467713711041625639, guid: 8cc009df0ed156a49a2f9e702771afcd, type: 3}
+  gemPrefab: {fileID: 7430569447165051818, guid: 794c7186e8db67c4bb5bb50bd7836823, type: 3}
   damage: 3
   speed: 3
   maxHp: 10

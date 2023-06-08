@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Cyclops
   m_EditorClassIdentifier: 
   prefab: {fileID: 8392947708430205325, guid: bfbcf24e6c6255f4c8c342edda358cf8, type: 3}
+  gemPrefab: {fileID: 7430569447165051818, guid: a66a70fb9f580224f8fb6b2cfec864f8, type: 3}
   damage: 0
   speed: 2
   maxHp: 100

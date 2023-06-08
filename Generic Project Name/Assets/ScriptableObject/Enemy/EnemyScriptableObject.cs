@@ -8,7 +8,10 @@ public class EnemyScriptableObject : ScriptableObject
     [SerializeField]
     GameObject prefab;
     public GameObject Prefab { get => prefab; private set => prefab = value; }
-    
+
+    [SerializeField]
+    GameObject gemPrefab;
+    public GameObject GemPrefab { get => gemPrefab; private set => gemPrefab = value; }
     
     [SerializeField]
     float damage;

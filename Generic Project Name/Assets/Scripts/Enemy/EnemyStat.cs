@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
-    [SerializeField] public GameObject gemPrefab;
-    [SerializeField] public GameObject mushroomPrefab;
+    // [SerializeField] public GameObject gemPrefab;
+    // [SerializeField] public GameObject mushroomPrefab;
     [SerializeField] public GameObject heartPrefab;
-
     [SerializeField] public GameObject criticalPrefab;
     [SerializeField] public GameObject swiftPrefab;
 
@@ -90,16 +89,16 @@ public class EnemyStat : MonoBehaviour
             Destroy(gameObject);
 
             float gemChance = Random.value;
-            float mushroomChance = Random.value;
+            // float mushroomChance = Random.value;
             float heartChance = Random.value;
             float criticalChance = Random.value;
             float swiftChance = Random.value;
 
             if (gemChance < 0.6f) 
-                Instantiate(gemPrefab, transform.position, Quaternion.identity);
+                Instantiate(enemyData.GemPrefab, transform.position, Quaternion.identity);
 
-            if (mushroomChance < 0.4f) 
-                Instantiate(mushroomPrefab, transform.position, Quaternion.identity);
+            // if (mushroomChance < 0.4f) 
+            //     Instantiate(mushroomPrefab, transform.position, Quaternion.identity);
 
             if (heartChance < 0.3f) 
                 Instantiate(heartPrefab, transform.position, Quaternion.identity);

@@ -13,6 +13,11 @@ TagManager:
   - CriticalSurge
   - Swift
   - Inventory
+  - DiaGem
+  - GreenGem
+  - RedGem
+  - TearGem
+  - YellowGem
   layers:
   - Default
   - TransparentFX

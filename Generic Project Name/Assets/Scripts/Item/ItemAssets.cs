@@ -11,7 +11,12 @@ public class ItemAssets : MonoBehaviour
         Instance = this;
     }
 
-    public Sprite gemSprite;
+    public Sprite blueGemSprite;
+    public Sprite diaGemSprite;
+    public Sprite greenGemSprite;
+    public Sprite redGemSprite;
+    public Sprite tearGemSprite;
+    public Sprite yellowGemSprite;
     public Sprite mushroomSprite;
     public Sprite heartSprite;
     public Sprite critSprite;

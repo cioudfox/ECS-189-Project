@@ -200,13 +200,33 @@ public class PlayerController : MonoBehaviour
         
         if (collision.gameObject.tag == "Gem") 
         {
-            this.inventory.AddItem(new Item {itemType = Item.ItemType.Gem, amount = 1});
-            Destroy(collision.gameObject);
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.BlueGem, amount = 1});
+            Destroy(collision.gameObject);            
         }
-        if (collision.gameObject.tag == "Mushroom")
+        if (collision.gameObject.tag == "DiaGem") 
         {
-            this.inventory.AddItem(new Item {itemType = Item.ItemType.Mushroom, amount = 1});
-            Destroy(collision.gameObject);
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.DiaGem, amount = 1});
+            Destroy(collision.gameObject);            
+        }
+        if (collision.gameObject.tag == "GreenGem") 
+        {
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.GreenGem, amount = 1});
+            Destroy(collision.gameObject);            
+        }
+        if (collision.gameObject.tag == "RedGem") 
+        {
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.RedGem, amount = 1});
+            Destroy(collision.gameObject);            
+        }
+        if (collision.gameObject.tag == "TearGem") 
+        {
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.TearGem, amount = 1});
+            Destroy(collision.gameObject);            
+        }
+        if (collision.gameObject.tag == "YellowGem") 
+        {
+            this.inventory.AddItem(new Item {itemType = Item.ItemType.YellowGem, amount = 1});
+            Destroy(collision.gameObject);            
         }
         if (collision.gameObject.tag == "Heart")
         {
@@ -223,6 +243,7 @@ public class PlayerController : MonoBehaviour
             this.inventory.AddItem(new Item {itemType = Item.ItemType.Swift, amount = 1});
             Destroy(collision.gameObject);
         }
+
     }
 
     private void UseItem(Item item)
@@ -280,14 +301,34 @@ public class PlayerController : MonoBehaviour
         foreach (var item in list)
         {
             var type = item.itemType;
-            if (type == Item.ItemType.Gem)
+            if (type == Item.ItemType.BlueGem)
             {
-                Debug.Log("Gem :" + item.amount);
-                score += 200 * item.amount;
+                Debug.Log("BlueGem :" + item.amount);
+                score += 100 * item.amount;
             }
-            if (type == Item.ItemType.Mushroom)
+            if (type == Item.ItemType.DiaGem)
             {
-                Debug.Log("Mush :" + item.amount);
+                Debug.Log("DiaGem :" + item.amount);
+                score += 1000 * item.amount;
+            }
+            if (type == Item.ItemType.GreenGem)
+            {
+                Debug.Log("GreenGem :" + item.amount);
+                score += 300 * item.amount;
+            }
+            if (type == Item.ItemType.RedGem)
+            {
+                Debug.Log("RedGem :" + item.amount);
+                score += 700 * item.amount;
+            }
+            if (type == Item.ItemType.TearGem)
+            {
+                Debug.Log("TearGem :" + item.amount);
+                score += 900 * item.amount;
+            }
+            if (type == Item.ItemType.YellowGem)
+            {
+                Debug.Log("YellowGem :" + item.amount);
                 score += 500 * item.amount;
             }
         }

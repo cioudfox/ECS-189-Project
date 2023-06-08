@@ -64,8 +64,23 @@ public class InventoryController : MonoBehaviour
                 TextMeshProUGUI infoDisplay = description.GetComponent<TextMeshProUGUI>();
                 switch (item.itemType)
                 {
-                    case Item.ItemType.Gem:
-                        infoDisplay.SetText("It is a gem.");
+                    case Item.ItemType.BlueGem:
+                        infoDisplay.SetText("It is a Blue gem.");
+                        break;
+                    case Item.ItemType.DiaGem:
+                        infoDisplay.SetText("It is a Dia gem.");
+                        break;
+                    case Item.ItemType.GreenGem:
+                        infoDisplay.SetText("It is a Green gem.");
+                        break;
+                    case Item.ItemType.RedGem:
+                        infoDisplay.SetText("It is a Red gem.");
+                        break;
+                    case Item.ItemType.TearGem:
+                        infoDisplay.SetText("It is a Tear gem.");
+                        break;
+                    case Item.ItemType.YellowGem:
+                        infoDisplay.SetText("It is a Yellow gem.");
                         break;
                     case Item.ItemType.Mushroom:
                         infoDisplay.SetText("It is a mushroom.");

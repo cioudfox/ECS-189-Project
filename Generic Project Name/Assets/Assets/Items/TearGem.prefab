@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 6677275438675082005}
   - component: {fileID: 7546178929173191934}
   - component: {fileID: -1962094768645857682}
-  - component: {fileID: 1711931810136774785}
+  - component: {fileID: 352632575814975918}
   m_Layer: 0
-  m_Name: RedGem
-  m_TagString: RedGem
+  m_Name: TearGem
+  m_TagString: TearGem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: -1238599507
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1a9cb46de2afa724192352dcd605eee8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 72f2f4caa85c1e94787fb268a541c22f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experienceGranted: 50
---- !u!60 &1711931810136774785
+--- !u!60 &352632575814975918
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,11 +261,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.02, y: 0.16}
-      - {x: -0.14, y: 0.04}
-      - {x: -0.14, y: -0.04}
-      - {x: -0.02, y: -0.16}
-      - {x: 0.02, y: -0.16}
-      - {x: 0.14, y: -0.04}
-      - {x: 0.14, y: 0.04}
-      - {x: 0.02, y: 0.16}
+    - - {x: 0.02, y: 0.16}
+      - {x: -0.04, y: 0.16}
+      - {x: -0.14, y: 0.06}
+      - {x: -0.14, y: -0.099999994}
+      - {x: -0.11, y: -0.16}
+      - {x: 0.06, y: -0.16}
+      - {x: 0.14, y: -0.099999994}
+      - {x: 0.14, y: 0.01}
+      - {x: 0.13, y: 0.049999997}

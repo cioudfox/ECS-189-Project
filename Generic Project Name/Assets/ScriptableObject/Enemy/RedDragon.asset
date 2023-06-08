@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3b57d6d26dc3540a6ceed7165c4595, type: 3}
   m_Name: RedDragon
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 1383458557642867234, guid: 46c89ce7f6dcfaf4795ecb97608dd0e8, type: 3}
+  gemPrefab: {fileID: 0}
   damage: 30
   speed: 2
   maxHp: 10

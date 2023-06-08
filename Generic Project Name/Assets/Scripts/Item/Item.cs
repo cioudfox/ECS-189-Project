@@ -6,7 +6,12 @@ public class Item
 {
     public enum ItemType 
     {
-        Gem,
+        BlueGem,
+        DiaGem,
+        GreenGem,
+        RedGem,
+        TearGem,
+        YellowGem,
         Mushroom,
         Heart,
         CriticalSurge,
@@ -20,8 +25,18 @@ public class Item
     {
         switch (itemType)
         {
-            case ItemType.Gem:
-                return ItemAssets.Instance.gemSprite;
+            case ItemType.BlueGem:
+                return ItemAssets.Instance.blueGemSprite;
+            case ItemType.DiaGem:
+                return ItemAssets.Instance.diaGemSprite;
+            case ItemType.GreenGem:
+                return ItemAssets.Instance.greenGemSprite;
+            case ItemType.RedGem:
+                return ItemAssets.Instance.redGemSprite;
+            case ItemType.TearGem:
+                return ItemAssets.Instance.tearGemSprite;
+            case ItemType.YellowGem:
+                return ItemAssets.Instance.yellowGemSprite;
             case ItemType.Mushroom:
                 return ItemAssets.Instance.mushroomSprite;
             case ItemType.Heart:
