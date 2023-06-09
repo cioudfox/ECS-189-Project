@@ -5146,7 +5146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e768bb4969e66444ae2616048e64169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnArea: {x: 4, y: 4}
+  spawnArea: {x: 14, y: 9}
   player: {fileID: 137304609}
 --- !u!4 &1425545501
 Transform:
@@ -6580,7 +6580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3ea5e9ff5a29241bdfd2c30e1272b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageData: {fileID: 11400000, guid: 3ae84b9ec6a22d04697b4183b310ca2a, type: 2}
+  stageData: {fileID: 11400000, guid: 09646b252ff12bc40aa4afdc5e684526, type: 2}
   enemySpawner: {fileID: 1425545500}
 --- !u!1 &1869299114
 GameObject:

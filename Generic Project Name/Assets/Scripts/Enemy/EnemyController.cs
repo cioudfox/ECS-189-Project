@@ -14,16 +14,20 @@ public class EnemyController : MonoBehaviour
 
     private bool isRunning;
     private float timer;
-
+    private float speed;
+    private float statSpeed;
+    
     private void Awake()
     {
         rgdbd2d = GetComponent<Rigidbody2D>();
+        enemyStat = GetComponent<EnemyStat>();
     }
 
     void Start()
     {
-        enemyStat = GetComponent<EnemyStat>();
         isRunning = true;
+        statSpeed = enemyStat.currentSpeed;
+        speed = enemyStat.currentSpeed;
     }
 
     public void SetTarget(GameObject target)
@@ -43,12 +47,13 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+
     void FixedUpdate()
     {
         Vector3 direction = (tragetDestination.position - transform.position).normalized;
         if(isRunning)
         {
-            rgdbd2d.velocity = direction * enemyStat.currentSpeed;
+            rgdbd2d.velocity = direction * speed;
         }
         else
         {
@@ -60,5 +65,17 @@ public class EnemyController : MonoBehaviour
     {
         timer = coolTime;
         isRunning = false;
+    }
+
+    public void SlowMoving()
+    {
+        speed *= 0.2f;
+        Debug.Log("Spped : " + speed);
+    }
+
+    public void FastMoving()
+    {
+        speed = statSpeed;
+        Debug.Log("Spped : " + speed);
     }
 }
