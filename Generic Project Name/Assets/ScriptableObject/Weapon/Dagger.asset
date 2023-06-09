@@ -22,3 +22,4 @@ MonoBehaviour:
   explosive: 0
   aoe: 0
   projectileNumber: 3
+  boomerang: 0
