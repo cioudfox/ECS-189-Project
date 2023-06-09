@@ -10,9 +10,11 @@ public class EnemyController : MonoBehaviour
     // public EnemyScriptableObject enemyData;
 
     EnemyStat enemyStat;
-
     Rigidbody2D rgdbd2d;
-    // Start is called before the first frame update
+
+    private bool isRunning;
+    private float timer;
+
     private void Awake()
     {
         rgdbd2d = GetComponent<Rigidbody2D>();
@@ -21,6 +23,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         enemyStat = GetComponent<EnemyStat>();
+        isRunning = true;
     }
 
     public void SetTarget(GameObject target)
@@ -29,9 +32,33 @@ public class EnemyController : MonoBehaviour
         tragetDestination = target.transform;
     }
 
+    private void Update() 
+    {
+        if(!isRunning)
+        {
+            timer -= Time.deltaTime;
+            if(timer < 0)
+            {
+                isRunning = true;
+            }
+        }
+    }
     void FixedUpdate()
     {
         Vector3 direction = (tragetDestination.position - transform.position).normalized;
-        rgdbd2d.velocity = direction * enemyStat.currentSpeed;
+        if(isRunning)
+        {
+            rgdbd2d.velocity = direction * enemyStat.currentSpeed;
+        }
+        else
+        {
+            rgdbd2d.velocity = direction *0;
+        }
+    }
+
+    public void StopMoving(float coolTime)
+    {
+        timer = coolTime;
+        isRunning = false;
     }
 }

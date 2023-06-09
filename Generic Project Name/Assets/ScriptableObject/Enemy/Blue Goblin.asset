@@ -15,6 +15,6 @@ MonoBehaviour:
   prefab: {fileID: 897527639298260085, guid: baefac060e87038498d4ed0b5cb918f8, type: 3}
   gemPrefab: {fileID: 7430569447165051818, guid: e51f6e60f6caec444a52f33616a3bdde, type: 3}
   damage: 5
-  speed: 5
+  speed: 3
   maxHp: 8
   defence: 0

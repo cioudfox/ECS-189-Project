@@ -10,7 +10,7 @@ public class BossAnimator : MonoBehaviour
 
     public bool isInAttackRadius;
 
-    public float attackRadius = 20.0f;
+    public float attackRadius = 25.0f;
 
     void Awake()
     {

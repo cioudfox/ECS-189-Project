@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1883115664703339551}
   - component: {fileID: 1876816605223184706}
   - component: {fileID: 2263615606319708007}
+  - component: {fileID: 4968607272211418752}
   m_Layer: 8
   m_Name: Blue Goblin
   m_TagString: Enemy
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 897527639298260085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.84, y: -1.21, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -172,8 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27debe7d0ef3d5d43899e641a1c966ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gemPrefab: {fileID: 7430569447165051818, guid: 77f21b64863ea054896155c22a08b88b, type: 3}
-  mushroomPrefab: {fileID: 3125093301620040353, guid: a1b364e9db186084faaf9de42d8a59e8, type: 3}
   heartPrefab: {fileID: 8726295988651649588, guid: fd50e57aa90078e42b366c1150a12fee, type: 3}
   criticalPrefab: {fileID: 4466612313801792375, guid: c12eabd3f8e43f743bfe24c2b93bfeee, type: 3}
   swiftPrefab: {fileID: 8040398528883429238, guid: ce45456c0a0046140bb6f1a7305598f1, type: 3}
@@ -195,3 +194,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6986b63020a742846ad91cf655a13bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4968607272211418752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897527639298260085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27c916d370f54409b42c95b4667884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 2605510749884169229, guid: cda5d916218fd734a8af75bfcc211e7e, type: 3}
+  coolTime: 2
+  range: 5

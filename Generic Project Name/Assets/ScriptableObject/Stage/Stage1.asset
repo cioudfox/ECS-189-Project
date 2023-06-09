@@ -119,3 +119,10 @@ MonoBehaviour:
     - {fileID: 1383458557642867234, guid: 46c89ce7f6dcfaf4795ecb97608dd0e8, type: 3}
     count: 1
     spawnInterval: 0
+  - time: 300
+    enemyToSpawn:
+    - {fileID: 5609003025666032966, guid: 4c85d226f0b920e45af81d944c82f522, type: 3}
+    - {fileID: 6299988261493011413, guid: a9589a0971091f6439384a8de4f728ee, type: 3}
+    - {fileID: 3467713711041625639, guid: 8cc009df0ed156a49a2f9e702771afcd, type: 3}
+    count: 500
+    spawnInterval: 2
