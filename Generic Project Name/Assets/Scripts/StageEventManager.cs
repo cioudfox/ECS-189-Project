@@ -32,7 +32,7 @@ public class StageEventManager : MonoBehaviour
                     timer = 0f;
                     int indexForEnemySpawn = Random.Range(0, stageData.stageEvents[eventIndex].enemyToSpawn.Count);
 
-                    Debug.Log(indexForEnemySpawn);
+                    // Debug.Log(indexForEnemySpawn);
                     enemySpawner.SpawnEnemy(stageData.stageEvents[eventIndex].enemyToSpawn[indexForEnemySpawn]);
                     spawnCount++;
                 }

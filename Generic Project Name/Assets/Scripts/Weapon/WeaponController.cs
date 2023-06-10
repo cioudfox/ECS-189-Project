@@ -9,7 +9,6 @@ public class WeaponController : MonoBehaviour
     public WeaponScriptableObject weaponData;
     public float weaponCooldown;
     public float currentCooldownTimer;
-    //public type?;
 
     protected PlayerController player;
     
