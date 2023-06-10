@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c1c150f1a19864483bc08cd93afec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experienceGranted: 50
+  experienceGranted: 150
 --- !u!60 &-1612616453032860024
 PolygonCollider2D:
   m_ObjectHideFlags: 0

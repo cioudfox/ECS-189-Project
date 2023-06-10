@@ -1002,17 +1002,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experience: 0
-  level: 0
+  level: 1
   experienceCap: 0
   expBar: {fileID: 1701478245}
   upgradePanel: {fileID: 610300754}
   levelRanges:
   - startLevel: 1
-    endLevel: 3
+    endLevel: 5
     experienceCapIncrease: 50
-  - startLevel: 3
+  - startLevel: 6
     endLevel: 10
-    experienceCapIncrease: 100
+    experienceCapIncrease: 150
+  - startLevel: 11
+    endLevel: 15
+    experienceCapIncrease: 250
+  - startLevel: 16
+    endLevel: 20
+    experienceCapIncrease: 350
+  - startLevel: 21
+    endLevel: 25
+    experienceCapIncrease: 500
 --- !u!114 &137304620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1289,7 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed78b2dd41979647b1da49bb24ab458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 9004c15f7292a324198011b0895ed20b, type: 2}
+  weaponData: {fileID: 11400000, guid: ccfbff77a77ed034ca2dbfd378af98e0, type: 2}
   weaponCooldown: 0
   currentCooldownTimer: 0
 --- !u!1 &340594750
@@ -1825,7 +1834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &484323565
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2912,7 +2921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: 0}
+  m_AnchoredPosition: {x: -170, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669795962
@@ -3158,7 +3167,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 60, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706179171
@@ -5489,7 +5498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ee77af3bdc703a441a4cd094a408fe66, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5cddb4926040704d9c611011d00874a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6199,7 +6208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 0}
+  m_AnchoredPosition: {x: 170, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1752046130
@@ -6580,7 +6589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3ea5e9ff5a29241bdfd2c30e1272b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageData: {fileID: 11400000, guid: 09646b252ff12bc40aa4afdc5e684526, type: 2}
+  stageData: {fileID: 11400000, guid: 3ae84b9ec6a22d04697b4183b310ca2a, type: 2}
   enemySpawner: {fileID: 1425545500}
 --- !u!1 &1869299114
 GameObject:
