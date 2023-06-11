@@ -11,10 +11,12 @@ public class WeaponController : MonoBehaviour
     public float currentCooldownTimer;
 
     protected PlayerController player;
+    protected PlayerStat playerStat; 
     
     protected virtual void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        playerStat = FindObjectOfType<PlayerStat>();
         weaponCooldown = weaponData.CooldownDuration;
         currentCooldownTimer = weaponData.CooldownDuration;
     }   

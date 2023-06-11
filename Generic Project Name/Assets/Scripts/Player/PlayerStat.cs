@@ -11,9 +11,11 @@ public class PlayerStat : MonoBehaviour
     public float currentMaxHp;
     public float currentRecovery;
     public float currentMovespeed;
+    public float damageMultiplier;
+    public float attackSpeedMultiplier;
 
     [Header("I-Frames")]
-    float invincibilityDuration = 0.5f;
+    float invincibilityDuration = 0.1f;
     float invincibilityTimer;
     bool isInvincible;
 
@@ -26,7 +28,7 @@ public class PlayerStat : MonoBehaviour
     float critBuffTimerDuration = 5.0f;
     bool critIsBuffed;
     float currentRecoveryTimer;
-
+    float originalWeaponDamage;
     float originalWeaponAttackSpeed;
     
     // WeaponForge forge;
@@ -43,6 +45,9 @@ public class PlayerStat : MonoBehaviour
         currentMovespeed = characterData.MovingSpeed;
         currentCritChance = characterData.CriticalChance;
         originalWeaponAttackSpeed = this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.CooldownDuration;
+        originalWeaponDamage = this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.Damage;
+        damageMultiplier = 1.0f;
+        attackSpeedMultiplier = 1.0f;
     }
 
     void Update()
@@ -64,7 +69,7 @@ public class PlayerStat : MonoBehaviour
         {
             speedIsBuffed = false;
             currentMovespeed = characterData.MovingSpeed;
-            this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = originalWeaponAttackSpeed;
+            // this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = originalWeaponAttackSpeed;
         }
 
         if (critBuffTimer > 0)
@@ -136,7 +141,7 @@ public class PlayerStat : MonoBehaviour
         {
             currentMovespeed *= amount;
             // Debug.Log(this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.CooldownDuration);
-            this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = 0.2f;
+            // this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = 0.2f;
             speedBuffTimer = speedBuffTimerDuration;
             speedIsBuffed = true;
         }
@@ -154,8 +159,10 @@ public class PlayerStat : MonoBehaviour
     }
     public void UpgradeHealth()
     {
-        currentMaxHp += 50f;
-        currentHealth = currentMaxHp;
+        float currentHPPercentage = currentHealth/currentMaxHp;
+        currentMaxHp += 10f;
+        currentRecovery += 0.5f;
+        currentHealth = currentMaxHp*currentHPPercentage;
         hpBar.SetState(currentHealth, currentMaxHp);
         Debug.Log("Upgrading MaxHP applied speed: " + currentMaxHp);
     }
@@ -164,5 +171,19 @@ public class PlayerStat : MonoBehaviour
     {
         currentMovespeed += 0.2f;
         Debug.Log("Upgrading Movement applied speed: " + currentMovespeed);
+    }
+
+    public void UpgradeDamage()
+    {
+        damageMultiplier += 0.05f;
+        this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = originalWeaponDamage * damageMultiplier;
+        Debug.Log("Upgrading Damage by 5%");
+    }
+
+    public void UpgradeAttackSpeed()
+    {
+        attackSpeedMultiplier += 0.05f;
+        this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = originalWeaponAttackSpeed / attackSpeedMultiplier;
+        Debug.Log("Upgrading AttackSpeed by 5%");
     }
 }

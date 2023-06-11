@@ -100,10 +100,10 @@ public class EnemyStat : MonoBehaviour
             // if (mushroomChance < 0.4f) 
             //     Instantiate(mushroomPrefab, transform.position, Quaternion.identity);
 
-            if (heartChance < 0.3f) 
+            if (heartChance < 0.2f) 
                 Instantiate(heartPrefab, transform.position, Quaternion.identity);
 
-            if (criticalChance < 0.25f) 
+            if (criticalChance < 0.2f) 
                 Instantiate(criticalPrefab, transform.position, Quaternion.identity);
 
             if (swiftChance < 0.2f) 

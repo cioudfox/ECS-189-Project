@@ -37,9 +37,17 @@ public class UpgradePanelManager : MonoBehaviour
         panel.SetActive(false);
     }
 
-    public void UpgradeWeapon()
+    public void UpgradeDamage()
     {
-        
+        Debug.Log("Upgrading Damage");
+        playerStat.UpgradeDamage();
+        CloseMenu();
+    }
+
+    public void UpgradeAttackSpeed()
+    {
+        Debug.Log("Upgrading AttackSpeed");
+        playerStat.UpgradeAttackSpeed();
         CloseMenu();
     }
     public void UpgradeHealth()

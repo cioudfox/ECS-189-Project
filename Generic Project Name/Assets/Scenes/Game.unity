@@ -973,6 +973,8 @@ MonoBehaviour:
   currentMaxHp: 0
   currentRecovery: 0
   currentMovespeed: 0
+  damageMultiplier: 0
+  attackSpeedMultiplier: 0
   currentCritChance: 0
 --- !u!114 &137304618
 MonoBehaviour:
@@ -1915,7 +1917,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 610300754}
         m_TargetAssemblyTypeName: UpgradePanelManager, Assembly-CSharp
-        m_MethodName: UpgradeProjectile
+        m_MethodName: UpgradeAttackSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2970,7 +2972,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 610300754}
         m_TargetAssemblyTypeName: UpgradePanelManager, Assembly-CSharp
-        m_MethodName: UpgradeWeapon
+        m_MethodName: UpgradeDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6589,7 +6591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3ea5e9ff5a29241bdfd2c30e1272b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageData: {fileID: 11400000, guid: 3ae84b9ec6a22d04697b4183b310ca2a, type: 2}
+  stageData: {fileID: 11400000, guid: 09646b252ff12bc40aa4afdc5e684526, type: 2}
   enemySpawner: {fileID: 1425545500}
 --- !u!1 &1869299114
 GameObject:

@@ -21,5 +21,5 @@ MonoBehaviour:
   chain: 1
   explosive: 0
   aoe: 0
-  projectileNumber: 0
+  projectileNumber: 3
   boomerang: 1
