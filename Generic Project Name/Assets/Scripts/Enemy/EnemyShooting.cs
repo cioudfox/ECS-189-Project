@@ -15,7 +15,7 @@ public class EnemyShooting : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>().transform;
         bulletPosition = gameObject.transform;
-        Debug.Log("BulletPosition: " + bulletPosition.position);
+        // Debug.Log("BulletPosition: " + bulletPosition.position);
         timer = 0;
     }
 

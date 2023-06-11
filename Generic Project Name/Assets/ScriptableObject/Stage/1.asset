@@ -15,6 +15,16 @@ MonoBehaviour:
   stageEvents:
   - time: 0
     enemyToSpawn:
+    - {fileID: 3467713711041625639, guid: 8cc009df0ed156a49a2f9e702771afcd, type: 3}
+    count: 1
+    spawnInterval: 0
+  - time: 0
+    enemyToSpawn:
     - {fileID: 897527639298260085, guid: baefac060e87038498d4ed0b5cb918f8, type: 3}
-    count: 100
+    count: 1
+    spawnInterval: 0
+  - time: 0
+    enemyToSpawn:
+    - {fileID: 8392947708430205325, guid: bfbcf24e6c6255f4c8c342edda358cf8, type: 3}
+    count: 1
     spawnInterval: 0
