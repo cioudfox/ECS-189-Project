@@ -19,6 +19,8 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
     protected int additionalProjectileCount;
     protected bool boomerang;
     protected bool onReturn = false;
+    protected float damageMultiplier;
+    protected int burstProjectileNum;
 
     void Awake()
     {
@@ -30,7 +32,9 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         explosive = weaponData.Explosive;
         additionalProjectileCount = weaponData.ProjectileNumber;
         boomerang = weaponData.Boomerang;
+        damageMultiplier = weaponData.DamageMultiplier;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        burstProjectileNum= weaponData.BurstProjectileCount;
     }
     protected virtual void Start()
     {
@@ -51,7 +55,7 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
         if(col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
         {
             EnemyStat enemy = col.GetComponent<EnemyStat>();
-            enemy.TakeDamage(currentDamage);
+            enemy.TakeDamage(currentDamage * damageMultiplier);
             markedEnemies.Add(col.gameObject);
             currentPierce -= 1;
             if(currentPierce <= 0){
@@ -67,25 +71,10 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
                     DirectionChecker(nextDirection.normalized);
                 }
             }
-            // if(explosive)
-            // {
-            //     GameObject explosionEffect = Instantiate(weaponData.ExplosionEffectPrefab, transform.position, Quaternion.identity);
-            //     Destroy(explosionEffect, weaponData.ExplosionEffectLifetime);
-
-            //     // Apply damage to nearby enemies within explosion radius
-            //     Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, weaponData.ExplosionRadius);
-            //     foreach (Collider2D collider in colliders)
-            //     {
-            //         if (collider.CompareTag("Enemy"))
-            //         {
-            //             EnemyStat enemy = collider.GetComponent<EnemyStat>();
-            //             if (enemy != null)
-            //             {
-            //                 enemy.TakeDamage(currentDamage);
-            //             }
-            //         }
-            //     }
-            // }
+            if(explosive)
+            {
+                Explode();
+            }
         }
         
     }
@@ -107,6 +96,29 @@ public class ProjectileWeaponBehaviour : MonoBehaviour
             }
         }
         return nearestEnemy;
+    }
+    private void Explode()
+    {
+        // Spawn smaller projectiles in a spread pattern
+        float angleIncrement = 360f / burstProjectileNum;
+
+        // Spawn smaller projectiles evenly in all directions
+        for (int i = 0; i < burstProjectileNum; i++)
+        {
+            float angle = i * angleIncrement;
+            Vector3 direction = Quaternion.Euler(0f, 0f, angle) * transform.right;
+            SpawnSmallProjectile(direction);
+        }
+
+        // Destroy the original projectile
+        Destroy(gameObject);
+    }
+
+    private void SpawnSmallProjectile(Vector3 direction)
+    {
+        GameObject smallProjectile = Instantiate(weaponData.SmallPrefab, transform.position, Quaternion.identity);
+        smallProjectile.GetComponent<testWeaponBehaviour>().DirectionChecker(direction);
+        // smallProjectile.SetData(weaponData.SmallPrefab);
     }
 
 }

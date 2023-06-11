@@ -48,6 +48,7 @@ public class PlayerStat : MonoBehaviour
         originalWeaponDamage = this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.Damage;
         damageMultiplier = 1.0f;
         attackSpeedMultiplier = 1.0f;
+        this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.setDamageMultiplier(damageMultiplier);
     }
 
     void Update()
@@ -80,6 +81,7 @@ public class PlayerStat : MonoBehaviour
         {
             critIsBuffed = false;
             currentCritChance = characterData.CriticalChance;
+            this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = originalWeaponAttackSpeed / attackSpeedMultiplier;
         }
         currentRecoveryTimer-= Time.deltaTime;
         if(currentHealth < characterData.MaxHp && 0 < currentHealth &&  currentRecoveryTimer < 0.0f){
@@ -152,7 +154,7 @@ public class PlayerStat : MonoBehaviour
         if(!critIsBuffed)
         {
             currentCritChance *= amount;
-
+            this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = originalWeaponAttackSpeed / attackSpeedMultiplier/2;
             critBuffTimer = critBuffTimerDuration;
             critIsBuffed = true;
         }
@@ -176,14 +178,14 @@ public class PlayerStat : MonoBehaviour
     public void UpgradeDamage()
     {
         damageMultiplier += 0.05f;
-        this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = originalWeaponDamage * damageMultiplier;
+        this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.setDamageMultiplier(damageMultiplier);
         Debug.Log("Upgrading Damage by 5%");
     }
 
     public void UpgradeAttackSpeed()
     {
-        attackSpeedMultiplier += 0.05f;
+        attackSpeedMultiplier += 0.10f;
         this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = originalWeaponAttackSpeed / attackSpeedMultiplier;
-        Debug.Log("Upgrading AttackSpeed by 5%");
+        Debug.Log("Upgrading AttackSpeed by 10%");
     }
 }

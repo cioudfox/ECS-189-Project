@@ -54,8 +54,7 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         lastMovedVector = new Vector2(1, 0f); //If we don't do this and game starts up and don't move, the projectile weapon will have no momentum
 
-        this.leftMouse = ScriptableObject.CreateInstance<ShootingTowardsMouseCommand>();
-        this.rightMouse = ScriptableObject.CreateInstance<ShootingForwardCommand>();
+        // this.leftMouse = ScriptableObject.CreateInstance<ShootingTowardsMouseCommand>();
         this.Ibutton = ScriptableObject.CreateInstance<toggleInventoryCommand>();
 
         this.inventory = new Inventory(UseItem);
@@ -107,16 +106,16 @@ public class PlayerController : MonoBehaviour
 
         if (GameObject.FindGameObjectWithTag("Inventory") == null)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                // Left mouse button was clicked
-                this.leftMouse.Execute(this.gameObject);
-            }
-            if (Input.GetMouseButtonDown(1))
-            {
-                // Right mouse button was clicked
-                this.rightMouse.Execute(this.gameObject);
-            }
+            // if (Input.GetMouseButtonDown(0))
+            // {
+            //     // Left mouse button was clicked
+            //     this.leftMouse.Execute(this.gameObject);
+            // }
+            // if (Input.GetMouseButtonDown(1))
+            // {
+            //     // Right mouse button was clicked
+            //     this.rightMouse.Execute(this.gameObject);
+            // }
         }
 
         if (Input.GetKeyDown(KeyCode.I))

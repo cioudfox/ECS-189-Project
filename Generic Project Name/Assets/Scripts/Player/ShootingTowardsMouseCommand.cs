@@ -16,7 +16,6 @@ namespace Player.Command
             {
                 Debug.LogError("Test Weapon Controller not found!");
             }
-            weaponController.SetShootDir(ShootingDirection.Mouse);
         }
     }
 }

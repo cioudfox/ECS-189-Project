@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3432851166608940634, guid: 43ec8bc5b14e02848bab4ebfe403ce49, type: 3}
   damage: 3
-  speed: 10
+  speed: 8
   cooldownDuration: 0.7
   pierce: 2
   lifetime: 1
   chain: 0
   explosive: 0
   aoe: 0
-  projectileNumber: 3
+  smallPrefab: {fileID: 0}
+  smallProjectileData: {fileID: 0}
+  projectileNumber: 5
   boomerang: 0
+  damageMultiplier: 1.1499999

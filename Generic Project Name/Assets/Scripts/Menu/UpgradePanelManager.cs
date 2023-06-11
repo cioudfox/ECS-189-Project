@@ -52,7 +52,7 @@ public class UpgradePanelManager : MonoBehaviour
     }
     public void UpgradeHealth()
     {
-        Debug.Log("Upgrading Movement");
+        Debug.Log("Upgrading Health");
         playerStat.UpgradeHealth();
         CloseMenu();
     }

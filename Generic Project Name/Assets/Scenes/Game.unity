@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed78b2dd41979647b1da49bb24ab458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: ccfbff77a77ed034ca2dbfd378af98e0, type: 2}
+  weaponData: {fileID: 11400000, guid: 32f01694d8b13664ca83ece2a2426924, type: 2}
   weaponCooldown: 0
   currentCooldownTimer: 0
 --- !u!1 &340594750
@@ -6754,7 +6754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3ea5e9ff5a29241bdfd2c30e1272b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageData: {fileID: 11400000, guid: 09646b252ff12bc40aa4afdc5e684526, type: 2}
+  stageData: {fileID: 11400000, guid: 3ae84b9ec6a22d04697b4183b310ca2a, type: 2}
   enemySpawner: {fileID: 1425545500}
 --- !u!1 &1869299114
 GameObject:

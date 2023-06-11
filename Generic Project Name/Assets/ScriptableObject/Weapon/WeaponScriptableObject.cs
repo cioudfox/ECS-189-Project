@@ -39,8 +39,17 @@ public class WeaponScriptableObject : ScriptableObject
     public bool Explosive { get => explosive; private set => explosive = value; }
     
     [SerializeField]
-    float aoe;
-    public float Aoe { get => aoe; private set => aoe = value; }
+    int burstProjectileCount;
+    public int BurstProjectileCount { get => burstProjectileCount; private set => burstProjectileCount = value; }
+
+    [SerializeField]
+    GameObject smallPrefab;
+    public GameObject SmallPrefab { get => smallPrefab; private set => prefab = smallPrefab; }
+
+    
+    [SerializeField]
+    WeaponScriptableObject smallProjectileData;
+    public WeaponScriptableObject SmallProjectileData { get => smallProjectileData; private set => smallProjectileData = value; }
 
     [SerializeField]
     int projectileNumber;
@@ -50,4 +59,12 @@ public class WeaponScriptableObject : ScriptableObject
     bool boomerang;
     public bool Boomerang { get => boomerang; private set => boomerang = value; }
     
+    [SerializeField]
+    float damageMultiplier;
+    public float DamageMultiplier {get => damageMultiplier; private set => damageMultiplier = value;}
+
+    public void setDamageMultiplier (float value){
+        damageMultiplier = value;
+    }
 }
+
