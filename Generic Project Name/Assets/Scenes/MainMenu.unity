@@ -623,7 +623,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.6981132, g: 0.48797163, b: 0.0026343374, a: 1}
+    m_NormalColor: {r: 0.003921569, g: 0.5647059, b: 0.69803923, a: 1}
     m_HighlightedColor: {r: 1, g: 0.69491524, b: 0, a: 0.78039217}
     m_PressedColor: {r: 1, g: 0.7058824, b: 0.03137255, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1053,7 +1053,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.69803923, g: 0.4862745, b: 0.003921569, a: 1}
+    m_NormalColor: {r: 0.003921568, g: 0.5659119, b: 0.69803923, a: 1}
     m_HighlightedColor: {r: 1, g: 0.69411767, b: 0, a: 0.78039217}
     m_PressedColor: {r: 1, g: 0.70470095, b: 0.032075405, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title Game
+  m_text: Dragon Slayer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1333,7 +1333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7456ccc90dfebab49a2fce55f1b5f194, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e8be5dd44e25a145878ae6a250dec04, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
