@@ -9,12 +9,13 @@ public class InventoryController : MonoBehaviour
     private Inventory inventory;
     private Transform inventoryPanel;
     private Transform slotTemplate;
+    private PlayerController playerController;
 
     void Awake()
     {
         inventoryPanel = transform.Find("InventoryPanel");
         slotTemplate = inventoryPanel.Find("SlotTemplate");
-
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
 
     public void SetInventory(Inventory inventory)
@@ -31,6 +32,7 @@ public class InventoryController : MonoBehaviour
 
     private void RefreshInventoryItems() 
     {
+        Debug.Log(playerController.GetMouseDirection());
         foreach (Transform child in inventoryPanel)
         {
             if (child == slotTemplate)
@@ -145,6 +147,12 @@ public class InventoryController : MonoBehaviour
                 TextMeshProUGUI uiText = slotRectTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
                 
                 uiText.SetText(item.amount.ToString());
+
+                // Cooldown visuals
+                if (playerController.GetItemCooldownTimer() > 0.0f)
+                {
+                    StartCoroutine(FillCooldownOverTime(slotRectTransform.Find("Cooldown").GetComponent<Image>()));
+                }
             }
             else
             {
@@ -158,12 +166,31 @@ public class InventoryController : MonoBehaviour
                 uiText.SetText(item.amount.ToString());
 
                 treaRowX++;
-                if (treaRowX >= 4) 
+                if (treaRowX >= 3) 
                 { 
                     treaRowX = 0;
                     treaRowY++;
                 }
             }
         }
+    }
+
+    private System.Collections.IEnumerator FillCooldownOverTime(Image image)
+    {
+
+        while (playerController.GetItemCooldownTimer() > 0.0f)
+        {
+            float fillAmount = playerController.GetItemCooldownTimer() / playerController.GetItemUsageCooldown();
+
+            // Clamp the fill amount to ensure it stays between 0 and 1
+            // fillAmount = Mathf.Clamp01(fillAmount);
+
+            // Update the image fill amount
+            image.fillAmount = fillAmount;
+
+            yield return null;
+        }
+
+        image.fillAmount = 0f; // Set the fill amount to 0 when the cooldown ends
     }
 }
