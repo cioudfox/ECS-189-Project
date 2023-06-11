@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 7999311424875505796}
   - component: {fileID: 5633326370264283271}
   - component: {fileID: -8659190972848050418}
-  - component: {fileID: 595592403067161038}
   - component: {fileID: 1431705129508910787}
+  - component: {fileID: 5603243586951432176}
+  - component: {fileID: 5936166984265797573}
   m_Layer: 8
   m_Name: Cyclops
   m_TagString: Enemy
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 8392947708430205325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.718, y: -2.11, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -156,8 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27debe7d0ef3d5d43899e641a1c966ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gemPrefab: {fileID: 7430569447165051818, guid: 77f21b64863ea054896155c22a08b88b, type: 3}
-  mushroomPrefab: {fileID: 3125093301620040353, guid: a1b364e9db186084faaf9de42d8a59e8, type: 3}
   heartPrefab: {fileID: 8726295988651649588, guid: fd50e57aa90078e42b366c1150a12fee, type: 3}
   criticalPrefab: {fileID: 4466612313801792375, guid: c12eabd3f8e43f743bfe24c2b93bfeee, type: 3}
   swiftPrefab: {fileID: 8040398528883429238, guid: ce45456c0a0046140bb6f1a7305598f1, type: 3}
@@ -167,7 +166,34 @@ MonoBehaviour:
   currentHp: 0
   despawnDistance: 20
   isThisBoss: 0
---- !u!60 &595592403067161038
+--- !u!114 &1431705129508910787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8392947708430205325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6986b63020a742846ad91cf655a13bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5603243586951432176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8392947708430205325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27c916d370f54409b42c95b4667884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3102614500761691265, guid: 5ee6a01c0ffae3e4d8d16a18c18c706f, type: 3}
+  coolTime: 2
+  range: 4
+--- !u!60 &5936166984265797573
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,8 +209,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.32}
+    pivot: {x: 0.5, y: 0.3}
+    oldSize: {x: 0.5, y: 1}
     newSize: {x: 0.16, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -192,25 +218,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.04159013, y: 0.0607547}
-      - {x: -0.041509327, y: 0.061671115}
-      - {x: -0.079104245, y: 0.025777297}
-      - {x: -0.08, y: -0.16}
-      - {x: 0.07, y: -0.16}
-      - {x: 0.08, y: -0.14816713}
-      - {x: 0.08258752, y: 0.001286986}
-      - {x: 0.08372068, y: 0.005417267}
-      - {x: 0.08093919, y: 0.03260639}
-      - {x: 0.06991918, y: 0.04266844}
---- !u!114 &1431705129508910787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8392947708430205325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6986b63020a742846ad91cf655a13bdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    - - {x: 0.15739916, y: 0.39110333}
+      - {x: -0.16656305, y: 0.39110333}
+      - {x: -0.24973002, y: 0.32270682}
+      - {x: -0.25, y: -0.29999995}
+      - {x: 0.21875, y: -0.29999995}
+      - {x: 0.25, y: -0.26874995}
+      - {x: 0.25, y: 0.35625005}
