@@ -45,6 +45,15 @@ public class PlayerController : MonoBehaviour
         return direction;
     }
 
+    public float GetItemUsageCooldown()
+    {
+        return this.itemUsageCooldown;
+    }
+    public float GetItemCooldownTimer()
+    {
+        return this.itemCooldownTimer;
+    }
+
     void Awake()
     {
         playerStat = FindObjectOfType<PlayerStat>();
@@ -249,6 +258,8 @@ public class PlayerController : MonoBehaviour
     {
         if (itemCooldownTimer <= 0.0f)
         {
+            FindObjectOfType<SoundManager>().PlaySoundEffect("useItem");
+            itemCooldownTimer = itemUsageCooldown;
             switch (item.itemType)
             {
                 case Item.ItemType.Heart:
@@ -273,8 +284,6 @@ public class PlayerController : MonoBehaviour
                     StartCoroutine(FlashObject(this.gameObject, 0.25f, Color.gray));
                     break;
             }
-            FindObjectOfType<SoundManager>().PlaySoundEffect("useItem");
-            itemCooldownTimer = itemUsageCooldown;
         }
     }
 
