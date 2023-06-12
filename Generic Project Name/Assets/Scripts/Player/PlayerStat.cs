@@ -44,6 +44,8 @@ public class PlayerStat : MonoBehaviour
         currentRecovery = characterData.Recovery;
         currentMovespeed = characterData.MovingSpeed;
         currentCritChance = characterData.CriticalChance;
+
+        spawnedWeapon(characterData.StartingWeapon);
         originalWeaponAttackSpeed = this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.CooldownDuration;
         originalWeaponDamage = this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.Damage;
         damageMultiplier = 1.0f;
@@ -162,11 +164,11 @@ public class PlayerStat : MonoBehaviour
     public void UpgradeHealth()
     {
         float currentHPPercentage = currentHealth/currentMaxHp;
-        currentMaxHp += 20f;
-        currentRecovery += 1f;
+        currentMaxHp += 10f;
+        currentRecovery += 0.5f;
         currentHealth = currentMaxHp*currentHPPercentage;
         hpBar.SetState(currentHealth, currentMaxHp);
-        Debug.Log("Upgrading MaxHP applied: " + currentMaxHp);
+        Debug.Log("Upgrading MaxHP applied speed: " + currentMaxHp);
     }
 
     public void UpgradeSpeed()
@@ -187,5 +189,12 @@ public class PlayerStat : MonoBehaviour
         attackSpeedMultiplier += 0.10f;
         this.gameObject.GetComponentInChildren<testWeaponController>().weaponCooldown = originalWeaponAttackSpeed / attackSpeedMultiplier;
         Debug.Log("Upgrading AttackSpeed by 10%");
+    }
+
+    public void spawnedWeapon(GameObject weapon)
+    {
+        Debug.Log(weapon);
+        GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+        spawnedWeapon.transform.SetParent(transform);
     }
 }
