@@ -17,4 +17,4 @@ MonoBehaviour:
   damage: 10
   speed: 3
   maxHp: 30
-  defence: 0
+  defence: 2

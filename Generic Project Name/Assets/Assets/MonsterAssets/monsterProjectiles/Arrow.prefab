@@ -122,9 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b086ea2b1559200479e99e59b67f717c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   angle: 180
-  damage: 3
+  damage: 5
   fireball: 0
 --- !u!68 &9213099564860750009
 EdgeCollider2D:

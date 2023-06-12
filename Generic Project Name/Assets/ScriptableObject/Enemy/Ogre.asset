@@ -16,5 +16,5 @@ MonoBehaviour:
   gemPrefab: {fileID: 7430569447165051818, guid: 87dd3ff930d50ca428e42b7674972b2c, type: 3}
   damage: 10
   speed: 2
-  maxHp: 40
+  maxHp: 75
   defence: 1

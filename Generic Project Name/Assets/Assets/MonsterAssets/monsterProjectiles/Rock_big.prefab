@@ -137,9 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b086ea2b1559200479e99e59b67f717c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   angle: 0
-  damage: 10
+  damage: 20
   fireball: 0
 --- !u!95 &4024844654799283438
 Animator:

@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   angle: 0
-  damage: 5
+  damage: 15
   fireball: 1
 --- !u!60 &8672710468950117920
 PolygonCollider2D:

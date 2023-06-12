@@ -277,7 +277,7 @@ public class PlayerController : MonoBehaviour
                 case Item.ItemType.Swift:
                     Debug.Log("use a Swift");
                     inventory.RemoveItem(new Item {itemType = Item.ItemType.Swift, amount = 1});
-                    playerStat.BoostSpeed(2.0f);
+                    playerStat.BoostSpeed(1.5f);
                     
                     // this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.CooldownDuration = 0.1f;
 

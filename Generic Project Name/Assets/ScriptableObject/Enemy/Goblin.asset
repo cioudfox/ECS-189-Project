@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 897527639298260085, guid: 43753ceeed87a174abc2eb09357a5b7e, type: 3}
   gemPrefab: {fileID: 7430569447165051818, guid: 77f21b64863ea054896155c22a08b88b, type: 3}
-  damage: 3
+  damage: 4
   speed: 3
   maxHp: 10
   defence: 0

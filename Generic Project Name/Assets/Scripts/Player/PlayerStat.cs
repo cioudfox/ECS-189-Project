@@ -183,9 +183,9 @@ public class PlayerStat : MonoBehaviour
 
     public void UpgradeDamage()
     {
-        damageMultiplier += 0.05f;
+        damageMultiplier += 0.075f;
         this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.setDamageMultiplier(damageMultiplier);
-        Debug.Log("Upgrading Damage by 5%");
+        Debug.Log("Upgrading Damage by 7.5%");
     }
 
     public void UpgradeAttackSpeed()

@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: MagicMissile
   m_EditorClassIdentifier: 
   prefab: {fileID: 3432851166608940634, guid: 49a796adf30da9a47986994245152ac1, type: 3}
-  damage: 10
+  damage: 15
   speed: 7
   cooldownDuration: 2
   pierce: 1
   lifetime: 2
   chain: 0
   explosive: 1
-  burstProjectileCount: 8
+  burstProjectileCount: 20
   smallPrefab: {fileID: 3432851166608940634, guid: 8b6403975bf108f42b9c5c94a9b4df88, type: 3}
   smallProjectileData: {fileID: 11400000, guid: 9004c15f7292a324198011b0895ed20b, type: 2}
   projectileNumber: 1
