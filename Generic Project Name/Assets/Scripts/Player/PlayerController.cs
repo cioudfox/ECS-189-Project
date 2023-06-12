@@ -266,7 +266,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("use a Heart");
                     inventory.RemoveItem(new Item {itemType = Item.ItemType.Heart, amount = 1});
                     StartCoroutine(FlashObject(this.gameObject, 0.25f, Color.green));
-                    playerStat.RestoreHealth(20.0f);
+                    playerStat.RestoreHealth();
                     break;
                 case Item.ItemType.CriticalSurge:
                     Debug.Log("use a CriticalSurge");
@@ -277,7 +277,7 @@ public class PlayerController : MonoBehaviour
                 case Item.ItemType.Swift:
                     Debug.Log("use a Swift");
                     inventory.RemoveItem(new Item {itemType = Item.ItemType.Swift, amount = 1});
-                    playerStat.BoostSpeed(1.5f);
+                    playerStat.BoostSpeed(2.0f);
                     
                     // this.gameObject.GetComponentInChildren<testWeaponController>().weaponData.CooldownDuration = 0.1f;
 

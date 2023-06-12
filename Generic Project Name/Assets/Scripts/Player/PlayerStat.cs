@@ -15,7 +15,7 @@ public class PlayerStat : MonoBehaviour
     public float attackSpeedMultiplier;
 
     [Header("I-Frames")]
-    float invincibilityDuration = 0.1f;
+    float invincibilityDuration = 0.2f;
     float invincibilityTimer;
     bool isInvincible;
 
@@ -115,6 +115,8 @@ public class PlayerStat : MonoBehaviour
 
             if(currentHealth <= 0)
             {
+                currentMovespeed = 0;
+                attackSpeedMultiplier = 0.00001f;
                 Kill();
             }
         }
@@ -122,14 +124,16 @@ public class PlayerStat : MonoBehaviour
 
     public void Kill()
     {
+        
         GetComponent<GameOver>().ShowGameOver();
+        Destroy(gameObject, 2.0f);
     }
 
-    public void RestoreHealth(float amount)
+    public void RestoreHealth()
     {
         if (currentHealth < currentMaxHp)
         {
-            currentHealth += amount;
+            currentHealth += currentMaxHp *0.2f;
 
             if(currentHealth > currentMaxHp)
             {

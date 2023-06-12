@@ -63,6 +63,7 @@ public class EnemyStat : MonoBehaviour
         if(realDamage <= 1)
         {
             currentHp -= 1;
+            realDamage = 1;
         }
         else
         {
@@ -89,25 +90,19 @@ public class EnemyStat : MonoBehaviour
         else
         {
             Destroy(gameObject);
-
-            float gemChance = Random.value;
-            // float mushroomChance = Random.value;
             float heartChance = Random.value;
             float criticalChance = Random.value;
             float swiftChance = Random.value;
 
             Instantiate(enemyData.GemPrefab, transform.position, Quaternion.identity);
 
-            // if (mushroomChance < 0.4f) 
-            //     Instantiate(mushroomPrefab, transform.position, Quaternion.identity);
-
-            if (heartChance < 0.2f) 
+            if (heartChance < 0.1f) 
                 Instantiate(heartPrefab, transform.position, Quaternion.identity);
 
-            if (criticalChance < 0.2f) 
+            if (criticalChance < 0.05f) 
                 Instantiate(criticalPrefab, transform.position, Quaternion.identity);
 
-            if (swiftChance < 0.2f) 
+            if (swiftChance < 0.1f) 
                 Instantiate(swiftPrefab, transform.position, Quaternion.identity);            
         }
 
