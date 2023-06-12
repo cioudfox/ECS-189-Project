@@ -32,7 +32,6 @@ public class InventoryController : MonoBehaviour
 
     private void RefreshInventoryItems() 
     {
-        Debug.Log(playerController.GetMouseDirection());
         foreach (Transform child in inventoryPanel)
         {
             if (child == slotTemplate)
@@ -149,9 +148,10 @@ public class InventoryController : MonoBehaviour
                 uiText.SetText(item.amount.ToString());
 
                 // Cooldown visuals
-                if (playerController.GetItemCooldownTimer() > 0.0f)
+                Image cooldownClockImage = slotRectTransform.Find("Cooldown").GetComponent<Image>();
+                if (playerController.GetItemCooldownTimer() > 0.0f && cooldownClockImage)
                 {
-                    StartCoroutine(FillCooldownOverTime(slotRectTransform.Find("Cooldown").GetComponent<Image>()));
+                    StartCoroutine(FillCooldownOverTime(cooldownClockImage));
                 }
             }
             else
@@ -178,7 +178,7 @@ public class InventoryController : MonoBehaviour
     private System.Collections.IEnumerator FillCooldownOverTime(Image image)
     {
 
-        while (playerController.GetItemCooldownTimer() > 0.0f)
+        while (playerController.GetItemCooldownTimer() > 0.0f && image)
         {
             float fillAmount = playerController.GetItemCooldownTimer() / playerController.GetItemUsageCooldown();
 
@@ -191,6 +191,10 @@ public class InventoryController : MonoBehaviour
             yield return null;
         }
 
-        image.fillAmount = 0f; // Set the fill amount to 0 when the cooldown ends
+        if (image)
+        {
+            // Set the fill amount to 0 when the cooldown ends
+            image.fillAmount = 0f; 
+        }
     }
 }
