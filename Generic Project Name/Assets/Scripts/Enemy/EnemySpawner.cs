@@ -24,12 +24,15 @@ public class EnemySpawner : MonoBehaviour
     {
         Vector3 position = GenerateRandomPosition();
 
-        position += player.transform.position;
+        if (player)
+        {
+            position += player.transform.position;
 
-        GameObject newEnemy = Instantiate(enemy);
-        newEnemy.transform.position = position;
-        newEnemy.GetComponent<EnemyController>().SetTarget(player);
-        newEnemy.transform.parent = transform;
+            GameObject newEnemy = Instantiate(enemy);
+            newEnemy.transform.position = position;
+            newEnemy.GetComponent<EnemyController>().SetTarget(player);
+            newEnemy.transform.parent = transform;
+        }
     }
 
     public Vector3 GenerateRandomPosition()

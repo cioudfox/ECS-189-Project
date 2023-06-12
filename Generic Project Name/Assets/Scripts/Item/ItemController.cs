@@ -61,7 +61,7 @@ public class ItemController : MonoBehaviour
             }
 
             // Item picked up by player
-            if (Vector3.Distance(this.item.transform.position, this.player.transform.position) < itemCollectRange)
+            if (this.player && Vector3.Distance(this.item.transform.position, this.player.transform.position) < itemCollectRange)
             {
                 this.item.transform.position = Vector3.MoveTowards(this.item.transform.position, this.player.transform.position, this.itemCollectSpeed * Time.deltaTime);
             }

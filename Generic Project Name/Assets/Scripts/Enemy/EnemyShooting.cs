@@ -21,15 +21,18 @@ public class EnemyShooting : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector2.Distance(bulletPosition.position, player.transform.position);
-        if(distance < range)
+        if (player)
         {
-            timer -= Time.deltaTime;
-
-            if(timer < 0)
+            float distance = Vector2.Distance(bulletPosition.position, player.transform.position);
+            if(distance < range)
             {
-                timer = coolTime;
-                Shoot();
+                timer -= Time.deltaTime;
+
+                if(timer < 0)
+                {
+                    timer = coolTime;
+                    Shoot();
+                }
             }
         }
     }

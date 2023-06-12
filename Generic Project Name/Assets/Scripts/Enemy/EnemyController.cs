@@ -50,14 +50,17 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 direction = (tragetDestination.position - transform.position).normalized;
-        if(isRunning)
+        if (targetGameObject)
         {
-            rgdbd2d.velocity = direction * speed;
-        }
-        else
-        {
-            rgdbd2d.velocity = direction *0;
+            Vector3 direction = (tragetDestination.position - transform.position).normalized;
+            if(isRunning)
+            {
+                rgdbd2d.velocity = direction * speed;
+            }
+            else
+            {
+                rgdbd2d.velocity = direction *0;
+            }
         }
     }
 

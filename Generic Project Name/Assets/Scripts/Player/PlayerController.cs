@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private IPlayerCommand leftMouse;
-    private IPlayerCommand rightMouse;
-    private IPlayerCommand Ibutton;
+    private IPlayerCommand<GameObject> iButton;
+    private IPlayerCommand<Inventory> num1Button;
+    private IPlayerCommand<Inventory> num2Button;
+    private IPlayerCommand<Inventory> num3Button;
+
     [SerializeField] public InventoryController inventoryController;
 
     public Animator animator;
@@ -63,8 +65,11 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         lastMovedVector = new Vector2(1, 0f); //If we don't do this and game starts up and don't move, the projectile weapon will have no momentum
 
-        // this.leftMouse = ScriptableObject.CreateInstance<ShootingTowardsMouseCommand>();
-        this.Ibutton = ScriptableObject.CreateInstance<toggleInventoryCommand>();
+        this.iButton = ScriptableObject.CreateInstance<ToggleInventoryCommand>();
+
+        this.num1Button = ScriptableObject.CreateInstance<UseItem1Command>();
+        this.num2Button = ScriptableObject.CreateInstance<UseItem2Command>();
+        this.num3Button = ScriptableObject.CreateInstance<UseItem3Command>();
 
         this.inventory = new Inventory(UseItem);
         inventoryController.SetInventory(this.inventory);
@@ -113,75 +118,29 @@ public class PlayerController : MonoBehaviour
             lastMovedVector = new Vector2(lastHorizontalVector, lastVerticalVector);    //While moving
         }
 
-        if (GameObject.FindGameObjectWithTag("Inventory") == null)
-        {
-            // if (Input.GetMouseButtonDown(0))
-            // {
-            //     // Left mouse button was clicked
-            //     this.leftMouse.Execute(this.gameObject);
-            // }
-            // if (Input.GetMouseButtonDown(1))
-            // {
-            //     // Right mouse button was clicked
-            //     this.rightMouse.Execute(this.gameObject);
-            // }
-        }
+
 
         if (Input.GetKeyDown(KeyCode.I))
         {
             // The "I" key was pressed to toggle inventory
-            this.Ibutton.Execute(this.gameObject);
+            this.iButton.Execute(this.gameObject);
         }
 
 
         if (Input.GetKeyDown(KeyCode.Keypad1) || (Input.GetKeyDown(KeyCode.Alpha1)))
         {
-            // Debug.Log("Number 1 clicked");
-            // this.inventory.UseItem(this.inventory.GetItemList);
-            Item targetItem = null;
-            foreach (Item item in this.inventory.GetItemList())
-            {
-                if (item.itemType == Item.ItemType.Heart)
-                {
-                    targetItem = item;
-                }
-            }
-            if (targetItem != null)
-            {
-                inventory.UseItem(targetItem);
-            }
+            this.num1Button.Execute(this.inventory);
         }
 
         if (Input.GetKeyDown(KeyCode.Keypad2) || (Input.GetKeyDown(KeyCode.Alpha2)))
         {
-            Item targetItem = null;
-            foreach (Item item in this.inventory.GetItemList())
-            {
-                if (item.itemType == Item.ItemType.CriticalSurge)
-                {
-                    targetItem = item;
-                }
-            }
-            if (targetItem != null)
-            {
-                inventory.UseItem(targetItem);
-            }
+            this.num2Button.Execute(this.inventory);
+
         }
 
         if (Input.GetKeyDown(KeyCode.Keypad3) || (Input.GetKeyDown(KeyCode.Alpha3)))
         {
-            Item targetItem = null;
-            foreach (Item item in this.inventory.GetItemList())
-            {
-                if (item.itemType == Item.ItemType.Swift)
-                {
-                    targetItem = item;
-                }
-            }
-            if (targetItem != null)
-            {
-                inventory.UseItem(targetItem);
-            }
+            this.num3Button.Execute(this.inventory);
         }
     }
 

@@ -13,10 +13,12 @@ public class FixedCameraController : AbstractCameraController
     // Start is called before the first frame update
     void LateUpdate()
     {
-        var targetPosition = this.Target.transform.position;
-        var cameraPosition = managedCamera.transform.position;
+        if (this.Target)
+        {
+            var targetPosition = this.Target.transform.position;
+            var cameraPosition = managedCamera.transform.position;
 
-        this.managedCamera.transform.position = new Vector3(targetPosition.x, targetPosition.y, cameraPosition.z);
-
+            this.managedCamera.transform.position = new Vector3(targetPosition.x, targetPosition.y, cameraPosition.z);
+        }
     }
 }

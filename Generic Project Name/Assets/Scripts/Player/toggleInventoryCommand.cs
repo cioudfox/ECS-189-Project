@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Player.Command
 {
-    public class toggleInventoryCommand : ScriptableObject, IPlayerCommand
+    public class ToggleInventoryCommand : ScriptableObject, IPlayerCommand<GameObject>
     {
         // Start is called before the first frame update
         GameObject inventoryGameObject;

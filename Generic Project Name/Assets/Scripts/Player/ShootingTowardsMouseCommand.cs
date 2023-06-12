@@ -5,7 +5,7 @@ using Player.Command;
 
 namespace Player.Command
 {
-    public class ShootingTowardsMouseCommand : ScriptableObject, IPlayerCommand
+    public class ShootingTowardsMouseCommand : ScriptableObject, IPlayerCommand<GameObject>
     {
 
         public void Execute(GameObject gameObject)

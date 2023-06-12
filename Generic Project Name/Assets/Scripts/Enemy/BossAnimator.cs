@@ -55,11 +55,15 @@ public class BossAnimator : MonoBehaviour
             animator.SetBool("IsAttacking",false);
             // Debug.Log("Fast moving");
         }
-        Vector3  direction = (player.position - transform.position).normalized;
-        // Debug.Log("x:"+direction.x);
-        // Debug.Log("y:"+direction.y);
-        animator.SetFloat("X", direction.x);
-        animator.SetFloat("Y", direction.y);
+
+        if (player)
+        {
+            Vector3  direction = (player.position - transform.position).normalized;
+            // Debug.Log("x:"+direction.x);
+            // Debug.Log("y:"+direction.y);
+            animator.SetFloat("X", direction.x);
+            animator.SetFloat("Y", direction.y);
+        }
     }
 
     // void FixedUpdate()

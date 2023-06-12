@@ -92,7 +92,7 @@ public class PlayerStat : MonoBehaviour
             {
                 currentHealth = characterData.MaxHp;
             }
-            hpBar.SetState(currentHealth, characterData.MaxHp);
+            hpBar.SetState(currentHealth, currentMaxHp);
             currentRecoveryTimer = 1.0f;
         }
        
@@ -126,7 +126,7 @@ public class PlayerStat : MonoBehaviour
     {
         
         GetComponent<GameOver>().ShowGameOver();
-        Destroy(gameObject, 2.0f);
+        Destroy(gameObject);
     }
 
     public void RestoreHealth()

@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace Player.Command
 {
-    public interface IPlayerCommand
+    public interface IPlayerCommand<T>
     {
-        void Execute(GameObject gameObject);
+        void Execute(T argument);
     }
 }

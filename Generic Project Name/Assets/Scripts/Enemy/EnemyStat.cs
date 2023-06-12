@@ -36,7 +36,7 @@ public class EnemyStat : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) >= despawnDistance)
+        if (player && Vector2.Distance(transform.position, player.position) >= despawnDistance)
         {
             ReturnEnemy();
         }
@@ -48,35 +48,38 @@ public class EnemyStat : MonoBehaviour
 
     public void TakeDamage(float damage)
     {   
-        float playerCritChance = player.gameObject.GetComponent<PlayerStat>().currentCritChance;
-        float realDamage;
-        bool isCriticalHit = Random.Range(0,100) < playerCritChance;
-        if(isCriticalHit)
+        if (player)
         {
-            realDamage = damage * 2.0f;
-        }
-        else
-        {
-            realDamage = damage;
-        }
-        realDamage -= enemyData.Defence;
-        if(realDamage <= 1)
-        {
-            currentHp -= 1;
-            realDamage = 1;
-        }
-        else
-        {
-            currentHp -= realDamage;
-        }
-        
-        DamgePopup.Create(this.gameObject.transform.position, (int)realDamage, isCriticalHit);
-        
-        if(currentHp <= 0 && !dead)
-        {
-            dead = true;
-            Kill();
-            FindObjectOfType<SoundManager>().PlaySoundEffect("enemyDie");
+            float playerCritChance = player.gameObject.GetComponent<PlayerStat>().currentCritChance;
+            float realDamage;
+            bool isCriticalHit = Random.Range(0,100) < playerCritChance;
+            if(isCriticalHit)
+            {
+                realDamage = damage * 2.0f;
+            }
+            else
+            {
+                realDamage = damage;
+            }
+            realDamage -= enemyData.Defence;
+            if(realDamage <= 1)
+            {
+                currentHp -= 1;
+                realDamage = 1;
+            }
+            else
+            {
+                currentHp -= realDamage;
+            }
+            
+            DamgePopup.Create(this.gameObject.transform.position, (int)realDamage, isCriticalHit);
+            
+            if(currentHp <= 0 && !dead)
+            {
+                dead = true;
+                Kill();
+                FindObjectOfType<SoundManager>().PlaySoundEffect("enemyDie");
+            }
         }
     }
 
