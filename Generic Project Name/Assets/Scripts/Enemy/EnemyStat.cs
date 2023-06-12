@@ -20,6 +20,7 @@ public class EnemyStat : MonoBehaviour
     Transform player;
 
     public bool isThisBoss;
+    private bool dead = false;
 
     void Awake()
     {
@@ -70,8 +71,9 @@ public class EnemyStat : MonoBehaviour
         
         DamgePopup.Create(this.gameObject.transform.position, (int)realDamage, isCriticalHit);
         
-        if(currentHp <= 0)
+        if(currentHp <= 0 && !dead)
         {
+            dead = true;
             Kill();
             FindObjectOfType<SoundManager>().PlaySoundEffect("enemyDie");
         }
@@ -94,8 +96,7 @@ public class EnemyStat : MonoBehaviour
             float criticalChance = Random.value;
             float swiftChance = Random.value;
 
-            if (gemChance < 0.6f) 
-                Instantiate(enemyData.GemPrefab, transform.position, Quaternion.identity);
+            Instantiate(enemyData.GemPrefab, transform.position, Quaternion.identity);
 
             // if (mushroomChance < 0.4f) 
             //     Instantiate(mushroomPrefab, transform.position, Quaternion.identity);

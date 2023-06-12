@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a43e0466ad5f34ba8220935607573a, type: 3}
   m_Name: IceShard
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3432851166608940634, guid: 8b6403975bf108f42b9c5c94a9b4df88, type: 3}
+  prefab: {fileID: 3432851166608940634, guid: 7e17ec84e1b4e0144aae2137af9f71f3, type: 3}
   damage: 3
-  speed: 5
-  cooldownDuration: 0
+  speed: 10
+  cooldownDuration: 0.25
   pierce: 2
   lifetime: 1
   chain: 0

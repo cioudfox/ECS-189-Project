@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 lastMovedVector;
 
     private Inventory inventory;
-    private float itemUsageCooldown = 1.0f;
+    private float itemUsageCooldown = 4.0f;
     private float itemCooldownTimer = 0.0f;
 
     PlayerStat playerStat;
@@ -266,7 +266,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("use a Heart");
                     inventory.RemoveItem(new Item {itemType = Item.ItemType.Heart, amount = 1});
                     StartCoroutine(FlashObject(this.gameObject, 0.25f, Color.green));
-                    playerStat.RestoreHealth(15.0f);
+                    playerStat.RestoreHealth(20.0f);
                     break;
                 case Item.ItemType.CriticalSurge:
                     Debug.Log("use a CriticalSurge");

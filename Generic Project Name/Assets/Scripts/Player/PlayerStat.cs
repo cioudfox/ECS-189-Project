@@ -162,11 +162,11 @@ public class PlayerStat : MonoBehaviour
     public void UpgradeHealth()
     {
         float currentHPPercentage = currentHealth/currentMaxHp;
-        currentMaxHp += 10f;
-        currentRecovery += 0.5f;
+        currentMaxHp += 20f;
+        currentRecovery += 1f;
         currentHealth = currentMaxHp*currentHPPercentage;
         hpBar.SetState(currentHealth, currentMaxHp);
-        Debug.Log("Upgrading MaxHP applied speed: " + currentMaxHp);
+        Debug.Log("Upgrading MaxHP applied: " + currentMaxHp);
     }
 
     public void UpgradeSpeed()
