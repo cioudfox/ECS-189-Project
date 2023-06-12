@@ -42,11 +42,9 @@ public class InventoryController : MonoBehaviour
         }
 
         float consumableRowX = 0.0f; 
-        float consumableRowY = 0.0f;
+        float treaRowX = 3.65f;
 
-        float treaRowX = 0.0f;
-        float treaRowY = 1.4f;
-        float slotCellSize = 100.0f;
+        float slotCellSize = 90.0f;
 
         foreach (Item item in inventory.GetItemList()) 
         {
@@ -90,10 +88,10 @@ public class InventoryController : MonoBehaviour
                         infoDisplay.SetText("Heart: Restore health.");
                         break;
                     case Item.ItemType.CriticalSurge:
-                        infoDisplay.SetText("CriticalSurge: Increase critical hit chance and attack speed.");
+                        infoDisplay.SetText("CriticalSurge: Increase critical hit chance and attack speed for 5 seconds.");
                         break;
                     case Item.ItemType.Swift:
-                        infoDisplay.SetText("Swift: Increase movement speed.");
+                        infoDisplay.SetText("Swift: Increase movement speed for 5 seconds.");
                         break;
                 }
             }
@@ -138,7 +136,7 @@ public class InventoryController : MonoBehaviour
                 {
                     consumableRowX = 2.0f;
                 }
-                slotRectTransform.anchoredPosition = new Vector2(consumableRowX * slotCellSize, -consumableRowY * slotCellSize);
+                slotRectTransform.anchoredPosition = new Vector2(slotRectTransform.anchoredPosition.x + consumableRowX * slotCellSize, slotRectTransform.anchoredPosition.y);
 
                 Image image = slotRectTransform.Find("Image").GetComponent<Image>();
                 image.sprite = item.GetSprite();
@@ -157,7 +155,7 @@ public class InventoryController : MonoBehaviour
             }
             else
             {
-                slotRectTransform.anchoredPosition = new Vector2(treaRowX * slotCellSize, -treaRowY * slotCellSize);
+                slotRectTransform.anchoredPosition = new Vector2(slotRectTransform.anchoredPosition.x + treaRowX * slotCellSize, slotRectTransform.anchoredPosition.y);
 
                 Image image = slotRectTransform.Find("Image").GetComponent<Image>();
                 image.sprite = item.GetSprite();
@@ -167,11 +165,6 @@ public class InventoryController : MonoBehaviour
                 uiText.SetText(item.amount.ToString());
 
                 treaRowX++;
-                if (treaRowX >= 3) 
-                { 
-                    treaRowX = 0;
-                    treaRowY++;
-                }
             }
         }
     }

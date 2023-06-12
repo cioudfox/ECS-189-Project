@@ -10,7 +10,7 @@ namespace Player.Command
         GameObject inventoryGameObject;
         void Awake(){
             inventoryGameObject = GameObject.FindGameObjectWithTag("Inventory");
-            inventoryGameObject.SetActive(false);
+            // inventoryGameObject.SetActive(false);
         }
         
         public void Execute(GameObject gameObject)

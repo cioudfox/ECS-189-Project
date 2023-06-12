@@ -74,6 +74,10 @@ public class PlayerController : MonoBehaviour
         this.inventory = new Inventory(UseItem);
         inventoryController.SetInventory(this.inventory);
 
+        this.inventory.AddItem(new Item {itemType = Item.ItemType.Heart, amount = 1});
+        this.inventory.AddItem(new Item {itemType = Item.ItemType.CriticalSurge, amount = 1});
+        this.inventory.AddItem(new Item {itemType = Item.ItemType.Swift, amount = 1});
+
         playerOriginalColor = this.gameObject.GetComponent<Renderer>().material.color;
     }
 
