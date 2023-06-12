@@ -90,10 +90,10 @@ public class InventoryController : MonoBehaviour
                         infoDisplay.SetText("Heart: Restore health.");
                         break;
                     case Item.ItemType.CriticalSurge:
-                        infoDisplay.SetText("CriticalSurge: Increase critical hit chance.");
+                        infoDisplay.SetText("CriticalSurge: Increase critical hit chance and attack speed.");
                         break;
                     case Item.ItemType.Swift:
-                        infoDisplay.SetText("Swift: Increase speed.");
+                        infoDisplay.SetText("Swift: Increase movement speed.");
                         break;
                 }
             }
@@ -148,8 +148,9 @@ public class InventoryController : MonoBehaviour
                 uiText.SetText(item.amount.ToString());
 
                 // Cooldown visuals
+                GameObject inventoryGameObject = GameObject.FindGameObjectWithTag("Inventory");
                 Image cooldownClockImage = slotRectTransform.Find("Cooldown").GetComponent<Image>();
-                if (playerController.GetItemCooldownTimer() > 0.0f && cooldownClockImage)
+                if (playerController.GetItemCooldownTimer() > 0.0f && cooldownClockImage && inventoryGameObject != null && inventoryGameObject.activeSelf)
                 {
                     StartCoroutine(FillCooldownOverTime(cooldownClockImage));
                 }
