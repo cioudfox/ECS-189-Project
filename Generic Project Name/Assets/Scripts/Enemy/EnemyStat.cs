@@ -11,10 +11,11 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] public GameObject swiftPrefab;
 
     public EnemyScriptableObject enemyData;
-
+    public BossHpBar bossHpBar;
     public float currentDamage;
     public float currentSpeed;
     public float currentHp;
+    public float currentMaxHp;
     public float despawnDistance = 20.0f;
 
     Transform player;
@@ -27,11 +28,17 @@ public class EnemyStat : MonoBehaviour
         currentDamage = enemyData.Damage;
         currentSpeed = enemyData.Speed;
         currentHp = enemyData.MaxHp;
+
     }
 
     void Start()
     {
         player = FindObjectOfType<PlayerController>().transform;
+        if (isThisBoss)
+        {
+            bossHpBar = FindObjectOfType<BossHpBar>();
+            currentMaxHp = enemyData.MaxHp;
+        }
     }
 
     void Update()
@@ -43,6 +50,7 @@ public class EnemyStat : MonoBehaviour
         else if(isThisBoss)
         {
             currentSpeed = enemyData.Speed;
+            bossHpBar.UpdateHPSlider(currentHp,currentMaxHp);
         }
     }
 
