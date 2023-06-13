@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8673547518126796947}
   - component: {fileID: 4014068049594317662}
   - component: {fileID: 2877990191954085946}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: AdultRedDragon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 444368007516250485}
   - component: {fileID: 4484427249288892057}
   - component: {fileID: 3407653570412960344}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
