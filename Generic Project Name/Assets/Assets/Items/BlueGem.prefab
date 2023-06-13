@@ -268,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDropRange: 4
   itemDropSpeed: 12
-  itemLifetime: 10
+  itemLifetime: 20
   itemCollectSpeed: 10
   itemCollectRange: 3.5
 --- !u!114 &-1962094768645857682
