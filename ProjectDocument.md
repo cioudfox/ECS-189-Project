@@ -2,14 +2,13 @@
 
 ## Summary ##
 
-**A paragraph-length pitch for your game.**
+In a village located in the middle of nowhere, a survivor fights an impending horde of enemies unique in description and style. The survivor must be resourceful and gather exponentially or multiplicative equipment upgrades to battle their way to the next stage and continue to liberate the various themed locations of enemies. 
 
 ## Gameplay Explanation ##
 
-**In this section, explain how the game should be played. Treat this as a manual within a game. It is encouraged to explain the button mappings and the most optimal gameplay strategy.**
+The player survives from the enemy waves as long as possible. The player moves through the 4 arrow keys of up, down, left, right and with consumable buttons of 1,2,3 numpad keys. These consumables vary from increased attack speed, damage, movement speed and health regen and are acquired by vanquishing enemies. On level up players can choose to upgrade health, damage, attack speed or movement speed. As time progresses, waves get more difficult, so survive as long as you can!
 
 
-**If you did work that should be factored in to your grade that does not fit easily into the proscribed roles, add it here! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
 
 # Main Roles #
 
@@ -24,33 +23,26 @@ Here is an example:
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
 
-## Producer
+## Game Logic
+### Enemy AI, Stage Event, Player Level System
+**WRITE STUFF HERE YOUNG**
 
-**Describe the steps you took in your role as producer. Typical items include group scheduling mechanism, links to meeting notes, descriptions of team logistics problems with their resolution, project organization tools (e.g., timelines, depedency/task tracking, Gantt charts, etc.), and repository management methodology.**
+### player, item, inventory
+**WRITE STUFF HERE YE
 
-## User Interface
+## Animation and VISUALS
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
+**WRITE STUFF HERE MEGAN**
 
-## Movement/Physics
+## Map Design
 
-**Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your movement scripts that do not use the physics system?**
-
-## Animation and Visuals
-
-**List your assets including their sources and licenses.**
-
-**Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+**WRITE STUFF HERE JASON**
 
 ## Input
 
-**Describe the default input configuration.**
+**WRITE STUFF HERE STEVEN**
 
 **Add an entry for each platform or input style your project supports.**
-
-## Game Logic
-
-**Document what game states and game data you managed and what design patterns you used to complete your task.**
 
 # Sub-Roles
 
