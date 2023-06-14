@@ -32,11 +32,15 @@ The player survives from the enemy waves as long as possible. The player moves t
 
 **To ensure variation in the map, maps are split into procedurally loaded tiles. To avoid a barren looking map, all tiles have random spawn points with a select list of random items to spawn. Additionally, to add variety and exploration, there are a several different types of tiles with different dynamics and environmental features tacked on. When the player inside a tile moves closer to an edge, an adjacent tile will spawn and randomly generate objects to make it different. There are a total of 8 different tilemaps for the MapSpawner to pick from and 12 different buildings and trees to spawn in the random location. [Randomized Item Script can be found here!](https://github.com/cioudfox/ECS-189-Project/blob/ec7c9e47ca0fac16c97ed597c4428ca20e288c85/Generic%20Project%20Name/Assets/Scripts/PropRandomizer.cs)** 
 
+MS Paint Visualization of Tile Logic:
+
 ![Tile backend functionality in Paint](https://github.com/cioudfox/ECS-189-Project/assets/68248379/5418b4cb-f58f-4a0a-849a-eeec2976eead)
 
 **The most important part of this game is to ensure the player gets the feeling of euphoria from the endless vanquishing of mobs. To ensure this, the environment has minimal collisions to enemies for easier access to the player and there are less objects to collide with players to ensure mobility and dodging. Similarly, to ensure ease of visibilty, the map is a colored in a brighter shade of green to be distinctive from the darker hues of the enemies. Objects that can obscure players such as trees and large buildings also become opaque if a player moves behind it and enemies take priority of being visible on top of objects.**
 
-![Opaque buildings, darker goblins, and bright fields!](https://github.com/cioudfox/ECS-189-Project/assets/68248379/bcc45aa5-eb7d-446c-b592-cb54aac7e8b3)
+Opaque buildings, darker goblins, and bright fields!
+
+![ASDFGHJ](https://github.com/cioudfox/ECS-189-Project/assets/68248379/bcc45aa5-eb7d-446c-b592-cb54aac7e8b3)
 
 **Since the game has a more open world to explore, in order to optimize gameplay, our MapOptimizer can disable objects and tilemaps once the player is far enough away. Since the tiles are disabled and not destroyed, they still remember the object items and the correct tile that was spawned. 
 [Map Spawner/Chunk Optimizer can be found here!](https://github.com/cioudfox/ECS-189-Project/blob/ec7c9e47ca0fac16c97ed597c4428ca20e288c85/Generic%20Project%20Name/Assets/Scripts/MapController.cs)**
@@ -53,7 +57,7 @@ The player survives from the enemy waves as long as possible. The player moves t
 ## UI
 
 **WRITE STUFF HERE MEGAN**
-**WRITE STUFF HERE JASON**
+**WRITE STUFF HERE JASON. Menu buttons change shades of hue when hovered and click to add more pizzazz. Glamorous bright colors add to the rpg fantasy elements. **
 **WRITE STUFF HERE YE**
 **WRITE STUFF HERE YOUNG**
 **WRITE STUFF HERE STEVEN**
