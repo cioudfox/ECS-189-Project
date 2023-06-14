@@ -152,6 +152,24 @@ Created UI elements for the fixed camera display, time display, player health ba
 
 We added the **spatial elements of object text labels** that appear near items and consumables when the user's cursor hovers over them. The text displays the item or consumable's name and purpose, so the user can clarify on their own accord what the objects in this game are used for, without the descriptions obstructing the game. 
 
+## Gameplay Testing(Layers/Collisions)
+Ensured proper layering and tags so enemies, objects, and player are all properly displayed on the screen with proper collisions. Modified layers in the physics 2D engine for bugfixes to horde of enemies don't get stuck on each other. Fixed wonky physics with capsule colliders mishaping. 
+
+Enemies have no collision with Terrain, however, they do have collision amongst themselves and the player. Flying enemies do not collide with terrain or enemies, but do with the player. In order to allow enemies to still collide with some objects in the map, tilemaps have a special upper tile layer that is treated as enemy which prevents normal enemies that are not flying to pass through.
+
+Sorting Layers help distinguish where an object should be, for example, a tree should be in the midground while the floor should be in the background. Enemies, players, and projectiles should all be in the Foreground. Each sorting layer can have an integer value set to it to prioritize which object is located closer towards the camera. Using sorting layers, the opaqueness of buildings utilizes this by moving the building from the background into the foreground and setting its opacity down to 40% so it seems like the player is still behind it. Similarly, items have full priority over everything else since enemies and buildings blocking item sightline would make them difficult to collect. 
+
+Layers/Sorting Layers for Colliders:
+
+![Screenshot 2023-06-14 152536 png](https://github.com/cioudfox/ECS-189-Project/assets/68248379/92855ccb-e80a-4907-9ebd-0fb7b210b095)
+
+Buildings have 2 parts to them, a 2D collider that acts as a trigger for when the player is on top of it and a 2D collider that only restricts player movement. The addition of the first collider is to allow the building to become opaque when a player is behind it to give the illusion that they are standing behind the building. The second collider is a player only collider that makes it seem like the building is a blocking object in the map and not just some painted on carpet on the map. 
+
+Object Colliders:
+
+![Screenshot 2023-06-14 152536](https://github.com/cioudfox/ECS-189-Project/assets/68248379/e808ba5c-c217-431b-85db-ca6f881ff422)
+
+
 **WRITE STUFF HERE STEVEN**
 
 ## STEVEN
