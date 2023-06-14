@@ -178,6 +178,10 @@ Object Colliders:
 
 ## Audio
 
+Our audio and sound effects have an upbeat vibe and consist of jazzy electronic keyboard and drums, in order to match the pleasant energy of exploring a fantasy landscape and fighting constant mobs.
+
+To implement our audio system, we used a sound manager script adapted from "Introduction to AUDIO in Unity" by Brackeys. The public sound manager allowed us to easily attach audio clips and customize title, volume, pitch, and loop from the editor, as well as play any of the attached audios in other scripts.
+
 **1) [Crystal Caves Music](https://www.gamedevmarket.net/asset/crystal-cavern-game-assets-music)**
 
 **The audio we received was from a free pack. The caves audio theme had a nice jazzy tune to it so we figured it be a fine addition to our 2D pixel style game.**
@@ -190,9 +194,9 @@ Object Colliders:
 
 **A shaky and descending sound effect plays when player dies to in order to reflect the tragedy of the loss. The sound is somewhat musical and funky, fitting the atmosphere of the background music as well.**
 
-**Document the sound style.** 
+**4) [Other Sound Effects](https://sirental.itch.io/elemental-dungeons)**
 
-
+**Most of the sound effects for events, such as taking a hit, using a consumable, or selecting an item, are audio assets from https://sirental.itch.io/elemental-dungeons that are simple, silly, and fitting to the cartoonish, fantasy style.** 
 
 
 ## Press Kit and Trailer
