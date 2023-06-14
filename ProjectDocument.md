@@ -94,7 +94,7 @@ The 2D enemy models are in a similar pixelated visual style. Enemies all have mo
 
 **[Boss Animation Script that Determines Moving, Attacking, and Dying Animations](https://github.com/cioudfox/ECS-189-Project/blob/ec7c9e47ca0fac16c97ed597c4428ca20e288c85/Generic%20Project%20Name/Assets/Scripts/Enemy/BossAnimator.cs)**
 
-We used a combination of animation and visual effects to make a better **game feel** that centers around being simple and cartoonish. We had similar animation implementations for players and enemies alike for simplicity's sake, while adding slight differences that establishes each sprite as its own type with unique looks, animations, and abilities. Game feel is also improved to feel more active and responsive to player input with clear visual responses and feedback, such color changes when taking damage and enemies that immediately change direction and animations based on the player's input.  
+We used a combination of animation and visual effects to make a better **game feel** that centers around being simple and cartoonish. We had similar animation implementations for players and enemies alike for simplicity's sake, while adding slight differences that establishes each sprite as its own type with unique looks, animations, and abilities. Game feel is also improved to feel more active and responsive to player input with clear visual responses and feedback, such color changes when taking damage and enemies that immediately change direction and animations based on the player's input. Additionally, our asset choices reflect our chosen fantasy theme and match our map design's style in terms of bright coloring and pixelated fantastical art.  
 
 ### Map Design
 
@@ -104,9 +104,9 @@ MS Paint Visualization of Tile Logic:
 
 ![Tile backend functionality in Paint](https://github.com/cioudfox/ECS-189-Project/assets/68248379/5418b4cb-f58f-4a0a-849a-eeec2976eead)
 
-**The most important part of this game is to ensure the player gets the feeling of euphoria from the endless vanquishing of mobs. To ensure this, the environment has minimal collisions to enemies for easier access to the player and there are less objects to collide with players to ensure mobility and dodging. Even while near bodies of water that the players and enemies cannot walk on top of, flying enemies are able to get across to both emphasize their unique enemy abilities in the context of the game and allow continuous combat despite these obstacles.**
+**The most important part of this game is to ensure the player gets the feeling of euphoria from the endless vanquishing of mobs. To ensure this, the environment has minimal collisions to enemies for easier access to the player and there are fewer objects to collide with players to ensure mobility and dodging. Even while near bodies of water that the players and walking enemies cannot walk on top of, flying enemies are able to get across to both emphasize their unique enemy abilities in the context of the game and allow continuous combat despite these obstacles.**
 
-**To ensure ease of visibilty, the map is a colored in a brighter shade of green to be distinctive from the darker hues of the enemies. Objects that can obscure players such as trees and large buildings also become opaque if a player moves behind it and enemies take priority of being visible on top of objects.**
+**To ensure ease of visibility, the map is a colored in a brighter shade of green to be distinctive from the darker hues of the enemies. Objects that can obscure players such as trees and large buildings also become opaque if a player moves behind it and enemies take priority of being visible on top of objects.**
 
 Opaque buildings, darker goblins, and bright fields!
 
@@ -160,6 +160,14 @@ Created UI elements for the fixed camera display, time display, player health ba
 **1) [Crystal Caves Music](https://www.gamedevmarket.net/asset/crystal-cavern-game-assets-music)**
 
 **The audio we received was from a free pack. The caves audio theme had a nice jazzy tune to it so we figured it be a fine addition to our 2D pixel style game.**
+
+**2) [Win Game Sound Effect](https://freesound.org/people/EVRetro/sounds/495005/)**
+
+**Steady and upbeat music plays to celebrate when the player defeats the dragon boss and wins the game. The music has a classic video game feel that fits our fantasy theme.**
+
+**3) [Lose Game Sound Effect](https://freesound.org/people/Jofae/sounds/364929/)**
+
+**A shaky and descending sound effect plays when player dies to in order to reflect the tragedy of the loss. The sound is somewhat musical and funky, fitting the atmosphere of the background music as well.**
 
 **Document the sound style.** 
 
