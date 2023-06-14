@@ -14,7 +14,7 @@ The player survives from the enemy waves as long as possible. The player moves t
 
 ## Game Logic
 
-### - Enemy AI, Stage Event, Player Level System - Young Cheol KO
+### - Enemy AI, Stage Event, Player Level System - Young Cheol Ko
 
 As the main contributor to the game logic, I took responsibility for several crucial components of the game:
 
@@ -126,7 +126,7 @@ Opaque buildings, darker goblins, and bright fields!
 **WRITE STUFF HERE YE**
 **WRITE STUFF HERE YOUNG**
 
-Subrole: UI
+Subrole: UI - Young Cheol Ko
 Contributed to the user interface (UI) system:
 
 Scene UI:
