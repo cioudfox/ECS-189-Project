@@ -76,22 +76,25 @@ Designed and implemented an upgrade system, enabling players to enhance their ch
 
 ## Animation and Visuals
 
-**WRITE STUFF HERE MEGAN**
 ### Animation
-In order to emphasize a simple topdown shooter aesthetic, we found more cartoonish and pixelated 2D model assets for the player, enemies, map, attacks, and items. We bought the rights to use an RPG Asset Mega Bundle. Some of the assets can be viewed here:
+In order to emphasize a simple topdown shooter aesthetic, we used more cartoonish and pixelated 2D model assets for the player, enemies, map, attacks, and items. We bought the rights to use an RPG Asset Mega Bundle. Some of the assets can be viewed here:
 
 * [Fantasy RPG Monster Pack](https://franuka.itch.io/fantasy-rpg-monster-pack) - Assets for animated top-down enemies and their attacks
 * [RPG Asset Pack](https://franuka.itch.io/rpg-asset-pack) - Assets used for a grassy tileset, objects, and character sprites
 
-As our game has a more simple and old-school feel, our player and enemy animations were implemented to match the game feel. Player animation is simple and has animations for the states of moving left and right based on the player's keyboard input. As the player is constantly attacking in intervals, we made the decision to not implement a player attacking animation, but rather continuous weapon projectile animations coming from the player. The weapon projectile assets are also found in the mentioned bundle. The color of the model also changes upon damage, as we worked to select the appropriate common animation and visual effects to match our gameplay.
+![Model assets](https://github.com/cioudfox/ECS-189-Project/assets/103870157/f7ce0e80-20ff-4503-9b58-402dd8e14497)
 
-The 2D enemy models is in a similar pixelated visual style. Enemies all have moving animations going north, east, south, and west, with some enemies flying and some walking. Players and enemies have different animators in Unity with these basic movements and room for more states, such as attacking, idle, and dying animations.
+As our game has a more simple and old-school feel, our **player and enemy animations** were implemented to match the style. Player animation is simple and has animations for the states of moving left and right based on the player's keyboard input. As the player is constantly attacking in intervals, we made the decision to not implement a player attacking animation, but rather continuous weapon projectile animations coming from the player. The weapon projectile assets are also found in the mentioned bundle. The color of the model also changes upon damage, as we worked to select and combine the appropriate common animation and visual effects to match our gameplay and provide feedback to players.
+
+The 2D enemy models are in a similar pixelated visual style. Enemies all have moving animations going north, east, south, and west, with some enemies flying and some walking. Players and enemies have different animators in Unity with these basic movements and room for more states, such as attacking, idle, and dying animations.
 
 ![Animator](https://github.com/cioudfox/ECS-189-Project/assets/103870157/86d962f3-141e-4546-b193-d4605aed0015)
 
 ![Blend Tree](https://github.com/cioudfox/ECS-189-Project/assets/103870157/9cf75f20-303e-4e2d-8b01-00f5277d7224)
 
-game feel, graphic design, world-building info
+**[Boss Animation Script that Determines Moving, Attacking, and Dying Animations](https://github.com/cioudfox/ECS-189-Project/blob/ec7c9e47ca0fac16c97ed597c4428ca20e288c85/Generic%20Project%20Name/Assets/Scripts/Enemy/BossAnimator.cs)**
+
+We used a combination of animation and visual effects to make a better **game feel** that centers around being simple and cartoonish. We had similar animation implementations for players and enemies alike for simplicity's sake, while adding slight differences that establishes each sprite as its own type with unique looks, animations, and abilities. Game feel is also improved to feel more active and responsive to player input with clear visual responses and feedback, such color changes when taking damage and enemies that immediately change direction and animations based on the player's input.  
 
 ### Map Design
 
@@ -101,7 +104,9 @@ MS Paint Visualization of Tile Logic:
 
 ![Tile backend functionality in Paint](https://github.com/cioudfox/ECS-189-Project/assets/68248379/5418b4cb-f58f-4a0a-849a-eeec2976eead)
 
-**The most important part of this game is to ensure the player gets the feeling of euphoria from the endless vanquishing of mobs. To ensure this, the environment has minimal collisions to enemies for easier access to the player and there are less objects to collide with players to ensure mobility and dodging. Similarly, to ensure ease of visibilty, the map is a colored in a brighter shade of green to be distinctive from the darker hues of the enemies. Objects that can obscure players such as trees and large buildings also become opaque if a player moves behind it and enemies take priority of being visible on top of objects.**
+**The most important part of this game is to ensure the player gets the feeling of euphoria from the endless vanquishing of mobs. To ensure this, the environment has minimal collisions to enemies for easier access to the player and there are less objects to collide with players to ensure mobility and dodging. Even while near bodies of water that the players and enemies cannot walk on top of, flying enemies are able to get across to both emphasize their unique enemy abilities in the context of the game and allow continuous combat despite these obstacles.**
+
+**To ensure ease of visibilty, the map is a colored in a brighter shade of green to be distinctive from the darker hues of the enemies. Objects that can obscure players such as trees and large buildings also become opaque if a player moves behind it and enemies take priority of being visible on top of objects.**
 
 Opaque buildings, darker goblins, and bright fields!
 
