@@ -12,23 +12,17 @@ The player survives from the enemy waves as long as possible. The player moves t
 
 # Main Roles #
 
-Your goal is to relate the work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
-
-Below is a template for you to highlight items of your work. These provide the evidence needed for your work to be evaluated. Try to have at least 4 such descriptions. They will be assessed on the quality of the underlying system and how they are linked to course content. 
-
-*Short Description* - Long description of your work item that includes how it is relevant to topics discussed in class. [link to evidence in your repository](https://github.com/dr-jam/ECS189L/edit/project-description/ProjectDocumentTemplate.md)
-
-Here is an example:  
-*Procedural Terrain* - The background of the game consists of procedurally-generated terrain that is produced with Perlin noise. This terrain can be modified by the game at run-time via a call to its script methods. The intent is to allow the player to modify the terrain. This system is based on the component design pattern and the procedural content generation portions of the course. [The PCG terrain generation script](https://github.com/dr-jam/CameraControlExercise/blob/513b927e87fc686fe627bf7d4ff6ff841cf34e9f/Obscura/Assets/Scripts/TerrainGenerator.cs#L6).
-
-You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
-
 ## Game Logic
-### Enemy AI, Stage Event, Player Level System
+
+### - Enemy AI, Stage Event, Player Level System
+
 **WRITE STUFF HERE YOUNG**
 
-### player, item, inventory
-**WRITE STUFF HERE YE
+
+### - Player, item, inventory
+
+**WRITE STUFF HERE YE**
+
 
 ## Animation and VISUALS
 
@@ -36,7 +30,13 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## Map Design
 
-**WRITE STUFF HERE JASON**
+**To ensure variation in the map, maps are split into procedurally loaded tiles. To avoid a barren looking map, all tiles have random spawn points with a select list of random items to spawn. Additionally, to add variety and exploration, there are a several different types of tiles with different dynamics and environmental features tacked on. When the player inside a tile moves closer to an edge, an adjacent tile will spawn and randomly generate objects to make it different. There are a total of 8 different tilemaps for the MapSpawner to pick from and 12 different buildings and trees to spawn in the random location.** 
+![Tile backend functionality in Paint](https://github.com/cioudfox/ECS-189-Project/assets/68248379/5418b4cb-f58f-4a0a-849a-eeec2976eead)
+
+**The most important part of this game is to ensure the player gets the feeling of euphoria from the endless vanquishing of mobs. To ensure this, the environment has minimal collisions to enemies for easier access to the player and there are less objects to collide with players to ensure mobility and dodging. Similarly, to ensure ease of visibilty, the map is a colored in a brighter shade of green to be distinctive from the darker hues of the enemies. Objects that can obscure players such as trees and large buildings also become opaque if a player moves behind it and enemies take priority of being visible on top of objects.**
+![Opaque buildings, darker goblins, and bright fields!](https://github.com/cioudfox/ECS-189-Project/assets/68248379/bcc45aa5-eb7d-446c-b592-cb54aac7e8b3)
+
+**Since the game has a more open world to explore, in order to optimize gameplay, our MapOptimizer can disable objects and tilemaps once the player is far enough away. Since the tiles are disabled and not destroyed, they still remember the object items and the correct tile that was spawned. **
 
 ## Input
 
@@ -46,31 +46,32 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 # Sub-Roles
 
-## Cross-Platform
+## UI
 
-**Describe the platforms you targeted for your game release. For each, describe the process and unique actions taken for each platform. What obstacles did you overcome? What was easier than expected?**
+**WRITE STUFF HERE MEGAN**
+**WRITE STUFF HERE JASON**
+**WRITE STUFF HERE YE**
+**WRITE STUFF HERE YOUNG**
+**WRITE STUFF HERE STEVEN**
+
+## STEVEN
+
+**UP TO YOU IF YOU WANT TO MAKE YOUR OWN CATEGORY**
 
 ## Audio
 
-**List your assets including their sources and licenses.**
+**1) [Crystal Caves Music](https://www.gamedevmarket.net/asset/crystal-cavern-game-assets-music)**
 
-**Describe the implementation of your audio system.**
+**The audio we received was from a free pack. The caves audio theme had a nice jazzy tune to it so we figured it be a fine addition to our 2D pixel style game.**
 
 **Document the sound style.** 
 
-## Gameplay Testing
 
-**Add a link to the full results of your gameplay tests.**
 
-**Summarize the key findings from your gameplay tests.**
-
-## Narrative Design
-
-**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
 
 ## Press Kit and Trailer
 
-**Include links to your presskit materials and trailer.**
+**GENERIC GAME TRAILER HERE**
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
