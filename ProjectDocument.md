@@ -126,9 +126,11 @@ Opaque buildings, darker goblins, and bright fields!
 
 ## UI
 
-**WRITE STUFF HERE MEGAN**
-**WRITE STUFF HERE JASON. Menu buttons change shades of hue when hovered and click to add more pizzazz. Glamorous bright colors add to the rpg fantasy elements. **
+
+**WRITE STUFF HERE JASON. Menu buttons change shades of hue when hovered and click to add more pizzazz. Glamorous bright colors add to the rpg fantasy elements.**
+
 **WRITE STUFF HERE YE**
+
 **WRITE STUFF HERE YOUNG**
 
 Subrole: UI - Young Cheol Ko
@@ -148,6 +150,7 @@ Game UI:
 
 Created UI elements for the fixed camera display, time display, player health bar, player experience bar, game over popup, winning popup, score UI, boss health bar, and upgrade system UI. Offered players important information, including health and experience status, and provided visual feedback during gameplay. Conveyed game outcomes through the game over popup and winning popup screens. Tracked and displayed the player's score through the score UI. Enabled monitoring of the boss's health through the boss health bar, adding strategic elements to gameplay.
 
+We added the **spatial elements of object text labels** that appear near items and consumables when the user's cursor hovers over them. The text displays the item or consumable's name and purpose, so the user can clarify on their own accord what the objects in this game are used for, without the descriptions obstructing the game. 
 
 **WRITE STUFF HERE STEVEN**
 
@@ -161,11 +164,11 @@ Created UI elements for the fixed camera display, time display, player health ba
 
 **The audio we received was from a free pack. The caves audio theme had a nice jazzy tune to it so we figured it be a fine addition to our 2D pixel style game.**
 
-**2) [Win Game Sound Effect](https://freesound.org/people/EVRetro/sounds/495005/)**
+**2) [Win Game Sound Effect](https://freesound.org/people/EVRetro/sounds/495005/)** - [Code](https://github.com/cioudfox/ECS-189-Project/blob/d9ba4870dd381146096ad5be28a48c85746b334e/Generic%20Project%20Name/Assets/Scripts/Menu/Winning.cs#LL21C6-L21C6)
 
 **Steady and upbeat music plays to celebrate when the player defeats the dragon boss and wins the game. The music has a classic video game feel that fits our fantasy theme.**
 
-**3) [Lose Game Sound Effect](https://freesound.org/people/Jofae/sounds/364929/)**
+**3) [Lose Game Sound Effect](https://freesound.org/people/Jofae/sounds/364929/)** - [Code](https://github.com/cioudfox/ECS-189-Project/blob/d9ba4870dd381146096ad5be28a48c85746b334e/Generic%20Project%20Name/Assets/Scripts/Menu/GameOver.cs#LL22C33-L22C33)
 
 **A shaky and descending sound effect plays when player dies to in order to reflect the tragedy of the loss. The sound is somewhat musical and funky, fitting the atmosphere of the background music as well.**
 
