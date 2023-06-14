@@ -74,11 +74,26 @@ Designed and implemented an upgrade system, enabling players to enhance their ch
 **WRITE STUFF HERE YE**
 
 
-## Animation and VISUALS
+## Animation and Visuals
 
 **WRITE STUFF HERE MEGAN**
+### Animation
+In order to emphasize a simple topdown shooter aesthetic, we found more cartoonish and pixelated 2D model assets for the player, enemies, map, attacks, and items. We bought the rights to use an RPG Asset Mega Bundle. Some of the assets can be viewed here:
 
-## Map Design
+* [Fantasy RPG Monster Pack](https://franuka.itch.io/fantasy-rpg-monster-pack) - Assets for animated top-down enemies and their attacks
+* [RPG Asset Pack](https://franuka.itch.io/rpg-asset-pack) - Assets used for a grassy tileset, objects, and character sprites
+
+As our game has a more simple and old-school feel, our player and enemy animations were implemented to match the game feel. Player animation is simple and has animations for the states of moving left and right based on the player's keyboard input. As the player is constantly attacking in intervals, we made the decision to not implement a player attacking animation, but rather continuous weapon projectile animations coming from the player. The weapon projectile assets are also found in the mentioned bundle. The color of the model also changes upon damage, as we worked to select the appropriate common animation and visual effects to match our gameplay.
+
+The 2D enemy models is in a similar pixelated visual style. Enemies all have moving animations going north, east, south, and west, with some enemies flying and some walking. Players and enemies have different animators in Unity with these basic movements and room for more states, such as attacking, idle, and dying animations.
+
+![Animator](https://github.com/cioudfox/ECS-189-Project/assets/103870157/86d962f3-141e-4546-b193-d4605aed0015)
+
+![Blend Tree](https://github.com/cioudfox/ECS-189-Project/assets/103870157/9cf75f20-303e-4e2d-8b01-00f5277d7224)
+
+game feel, graphic design, world-building info
+
+### Map Design
 
 **To ensure variation in the map, maps are split into procedurally loaded tiles. To avoid a barren looking map, all tiles have random spawn points with a select list of random items to spawn. Additionally, to add variety and exploration, there are a several different types of tiles with different dynamics and environmental features tacked on. When the player inside a tile moves closer to an edge, an adjacent tile will spawn and randomly generate objects to make it different. There are a total of 8 different tilemaps for the MapSpawner to pick from and 12 different buildings and trees to spawn in the random location. [Randomized Item Script can be found here!](https://github.com/cioudfox/ECS-189-Project/blob/ec7c9e47ca0fac16c97ed597c4428ca20e288c85/Generic%20Project%20Name/Assets/Scripts/PropRandomizer.cs)** 
 
