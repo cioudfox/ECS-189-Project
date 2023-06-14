@@ -14,10 +14,60 @@ The player survives from the enemy waves as long as possible. The player moves t
 
 ## Game Logic
 
-### - Enemy AI, Stage Event, Player Level System
+### - Enemy AI, Stage Event, Player Level System - Young Cheol KO
 
-**WRITE STUFF HERE YOUNG**
+As the main contributor to the game logic, I took responsibility for several crucial components of the game:
 
+#### Enemy AI:
+Implemented an enemy controller responsible for enemy movement toward the player. This included defining enemy behavior to actively pursue the player using predefined patterns. Integrated a mechanism to halt enemy movement when shooting actions were initiated. Developed the enemy animator logic to ensure smooth transitions between two different animations, allowing seamless movement and shooting sequences in 4 ways. Programmed the enemy shooting mechanism, determining bullet trajectories and accurate hit detection. Managed enemy stats, including damage-taking, returning to the player when too far away, and dealing collision damage to the player upon contact.
+
+##### - Boss Enemy Behavior:
+Designed the behavior for the boss enemy, considering its unique characteristics and role within the game. Defined attack and movement radius for the boss to engage the player within specific ranges. Developed the boss's animation system, incorporating changeable collision hitboxes for accurate attack detection and response.
+
+#### Stage Event Controller:
+Created a stage controller system to manage the game's stage progression. Implemented logic to spawn monsters based on predetermined criteria, such as time, count, and spawn intervals. Integrated a dynamic spawning system that randomly spawned enemies from outside the camera's view, adding unpredictability and maintaining gameplay engagement.
+
+##### - Wave System:
+As part of the stage events, I integrated a wave system to introduce dynamic challenges for the players. The stages were divided into three distinct sections, each featuring different types of enemies:
+
+
+1. Goblin Stage:
+For the first stage, goblins were the primary enemies. I designed the wave system to gradually increase the number and difficulty of the goblin spawns as the stage progressed. This progressive difficulty kept the gameplay engaging and required players to adapt their strategies accordingly.
+![a4](https://github.com/cioudfox/ECS-189-Project/assets/44619284/bfdbc303-3412-455d-b554-5c0a93de63e2)
+
+
+2. Ogre and Cyclops Stage:
+The second stage introduced ogres and cyclops as the main enemies. Similar to the goblin stage, I implemented a wave system that introduced more challenging variations of ogres and cyclops over time. This escalation in difficulty encouraged players to utilize different tactics and abilities to overcome the increased challenge.
+![a5](https://github.com/cioudfox/ECS-189-Project/assets/44619284/0642a19e-b4d7-4114-9643-5dc580e7098a)
+
+
+3. Imp and Efreet Stage:
+The third stage showcased imps and efreets as the primary enemies. I designed the wave system in this stage to provide a significant challenge, pushing players' skills to their limits. The waves were carefully crafted to offer intense and demanding encounters, requiring players to make strategic use of their acquired abilities and upgrades. Finally, the dragon, the boss of all these monsters, appears to defeat the player.
+![a6](https://github.com/cioudfox/ECS-189-Project/assets/44619284/fc3cad02-332b-4db1-b919-0053e29028b4)
+
+Mess Spawning Event:
+For the Goblin and Ogre stages, I created special "mess spawning" events. During these events, enemies would spawn in chaotic and unpredictable patterns, adding intense moments to the gameplay. I carefully crafted the spawning logic to strike a balance between challenge and fairness, allowing players to devise strategies to navigate through the chaotic encounters successfully.
+
+#### Data Structure:
+Established a data system to manage various in-game characters and entities. Created structured data for player, enemy, weapon, and stage information, facilitating efficient access and utilization throughout the game.
+
+#### Player Stat Framework:
+Developed a player stat framework to handle functionalities such as damage-taking and player level logic. Allowed the player character to receive damage from enemies and hazards, triggering appropriate reactions and consequences. Implemented logic for collecting items affecting the player's level progression, such as experience points and power-ups. Accurately tracked player progression, providing a sense of achievement and growth. 
+
+##### - Level System
+I designed a structured level system that allowed players to advance and enhance their character's abilities. The level system was designed to provide a sense of accomplishment and growth throughout the game.
+
+- Experience Points and Gems:
+To facilitate character progression, players gained experience points by collecting gems throughout the game. These gems were obtained as drops from defeated enemies or discovered within the game world. Accumulating experience points was essential for leveling up. When players leveled up, an upgrade panel would appear, presenting them with various options to increase the power and capabilities of their character.
+
+- Incremental Capacity Increase:
+To maintain a balanced progression curve, I designed the level system to increase the capacity for experience points in each set of five levels. This meant that as players reached specific milestones, they needed to accumulate more experience points to level up further. The increased capacity matched the experience gained from gem drops, ensuring a coherent and rewarding progression system.
+
+Strategic Decision-Making:
+With the upgrade panel and the incremental capacity increase, players were encouraged to make strategic choices about their character's development. They needed to consider their playstyle, preferred abilities, and the challenges they faced in the game. This added depth and personalization to the gameplay experience, allowing players to tailor their character's growth according to their preferences.
+
+#### Upgrade System (except Weapon Upgrades):
+Designed and implemented an upgrade system, enabling players to enhance their character's abilities as they progressed. Created upgrade options, defined upgrade logic, and integrated corresponding UI elements. Provided players with opportunities to invest in character development and improving attributes. At each level up. upgrade panel will show up on the screen, and the panel allows players to make strategic decisions about which aspects of their character to enhance, such as increasing damage, improving maximum health points, or player movement.
 
 ### - Player, item, inventory
 
@@ -60,6 +110,24 @@ Opaque buildings, darker goblins, and bright fields!
 **WRITE STUFF HERE JASON. Menu buttons change shades of hue when hovered and click to add more pizzazz. Glamorous bright colors add to the rpg fantasy elements. **
 **WRITE STUFF HERE YE**
 **WRITE STUFF HERE YOUNG**
+
+Subrole: UI
+Contributed to the user interface (UI) system:
+
+Scene UI:
+
+![a1](https://github.com/cioudfox/ECS-189-Project/assets/44619284/0c80ce2b-7977-4e01-8d8b-8aa85f1ff44e)
+![a2](https://github.com/cioudfox/ECS-189-Project/assets/44619284/c984851f-b73c-497c-8c3c-2eb8262c95a5)
+
+Developed UI elements and scripts for the scene controller, character selector, main menu, and ESC menu. Ensured smooth transitions between scenes, allowed character selection, and provided accessible menus for navigation.
+
+Game UI:
+
+![a3](https://github.com/cioudfox/ECS-189-Project/assets/44619284/618507c7-dfc5-419b-9e4f-f25819c5d55d)
+
+Created UI elements for the fixed camera display, time display, player health bar, player experience bar, game over popup, winning popup, score UI, boss health bar, and upgrade system UI. Offered players important information, including health and experience status, and provided visual feedback during gameplay. Conveyed game outcomes through the game over popup and winning popup screens. Tracked and displayed the player's score through the score UI. Enabled monitoring of the boss's health through the boss health bar, adding strategic elements to gameplay.
+
+
 **WRITE STUFF HERE STEVEN**
 
 ## STEVEN
