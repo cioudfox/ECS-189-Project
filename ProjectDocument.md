@@ -81,8 +81,13 @@ Within the item collection and item controller systems, I have implemented dynam
 The inventory system provides players with a comprehensive and user-friendly interface to view and manage their collected items. With this system in place, players can effortlessly access vital information such as the quantity of each item at their disposal. To enhance usability and convenience, I have incorporated visual indicators that display cooldown clocks for consumable items. This feature allows players to gauge the availability of these items and plan their strategies accordingly. By providing clear and intuitive visuals, players can make informed decisions about when to use their consumables effectively.
 Moreover, I have implemented interactive elements within the inventory system. When hovering over an item, players are presented with relevant information. To further streamline item usage, I have implemented a right-click functionality besides keybindings 1, 2, and 3.
 
+![1686788602365](https://github.com/cioudfox/ECS-189-Project/assets/114460759/be8640a3-245d-4f24-80d5-928e8258efe2)
+
+
 #### Damage Popup:
 The damage pop-up controller effectively communicates the impact of each attack through visual cues in the form of pop-up text. To distinguish normal hits from critical hits, a color scheme is used, with yellow text representing normal hits and red text representing critical hits. To create a smooth visual experience, the pop-up text dynamically changes in size throughout its duration. It starts small and gradually increases in size during the first half of the pop-up, then gradually decreases in size during the second half. This approach provides a visually appealing and immersive experience for players during combat.
+
+![1686788851866](https://github.com/cioudfox/ECS-189-Project/assets/114460759/3fadefcd-a52d-44da-8838-675dd179d213)
 
 ## Animation and Visuals
 
