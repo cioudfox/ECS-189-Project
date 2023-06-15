@@ -89,7 +89,7 @@ The damage pop-up controller effectively communicates the impact of each attack 
 
 ![1686788851866](https://github.com/cioudfox/ECS-189-Project/assets/114460759/3fadefcd-a52d-44da-8838-675dd179d213)
 
-### - Weapon System Weapon System(Projectile and Melee), Armor, Passive Regen, and weapon Upgrade system
+### - Weapon System Weapon System(Projectile and Melee), Armor, Passive Regen, and weapon Upgrade system - Steven
 
 #### Weapon System: 
 In the game, each weapon is associated with a ScriptableObject that stores all the predefined properties and characteristics for that specific weapon type. This design allows for easy customization and future development of new weapon types. Projectile weapons utilize the ProjectileWeaponController and Behavior code, while melee weapons use the MeleeWeaponController and Behavior code. This modular approach ensures consistent functionality and simplifies the process of introducing new weapons with unique behaviors. It provides a flexible and scalable system for managing weapons in the game, facilitating customization and maintaining clarity in the overall design.
@@ -248,14 +248,7 @@ To implement our audio system, we used a sound manager script adapted from "Intr
 **Most of the sound effects for events, such as taking a hit, using a consumable, or selecting an item, are audio assets from https://sirental.itch.io/elemental-dungeons that are simple, silly, and fitting to the cartoonish, fantasy style.** 
 
 
-## Press Kit and Trailer
+## Trailer
+[TRAILER](https://drive.google.com/file/d/1kiZaTPTLuCKJhyxJP_LnBvr84NN-_NO4/view?usp=sharing)
+Our game trailer expertly captures the essence of our work by showcasing its main features in a concise and engaging manner. The trailer highlights various types of weapons, demonstrating their unique characteristics and devastating power. It also emphasizes the strength upgrade system, illustrating how players can enhance their abilities as they progress in the game. Additionally, the strategic use of items is showcased, providing players with tactical advantages during intense gameplay moments. The trailer teases waves of challenging enemies, conveying the excitement and adrenaline of combat encounters. Finally, it unveils the imposing boss character, promising epic battles that will test players' skills and determination. Carefully selected screenshots and gameplay footage combine to create a professional trailer that captivates viewers, leaving them eager to delve into the thrilling gaming experience that awaits them.
 
-**GENERIC GAME TRAILER HERE**
-
-**Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
-
-
-
-## Game Feel
-
-**Document what you added to and how you tweaked your game to improve its game feel.**
