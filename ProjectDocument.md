@@ -69,10 +69,20 @@ With the upgrade panel and the incremental capacity increase, players were encou
 #### Upgrade System (except Weapon Upgrades):
 Designed and implemented an upgrade system, enabling players to enhance their character's abilities as they progressed. Created upgrade options, defined upgrade logic, and integrated corresponding UI elements. Provided players with opportunities to invest in character development and improving attributes. At each level up. upgrade panel will show up on the screen, and the panel allows players to make strategic decisions about which aspects of their character to enhance, such as increasing damage, improving maximum health points, or player movement.
 
-### - Player, item, inventory
+### - Player, Item, Inventory, Damage Popup - Hongye Xu
 
-**WRITE STUFF HERE YE**
+#### Player Controller:
+The player controller includes precise control over the character's attack toward the cursor and character movement, as well as enabling seamless item usage through intuitive keybindings (1, 2, and 3). Additionally, I have implemented smooth item pickup mechanics and the ability to effortlessly open and close the inventory by pressing the "I" key. To achieve these functionalities, I have employed the command design pattern. Furthermore, I have diligently incorporated the necessary logic for applying effects when items are utilized. This ensures that the game's mechanics remain coherent and consistent, allowing players to strategize and make informed decisions regarding their inventory usage.
 
+#### Item:
+Within the item collection and item controller systems, I have implemented dynamic mechanics that enhance the realism and immersion of dropped items. When items are dropped, they scatter in random directions, adding a sense of unpredictability and excitement to the gameplay experience. By introducing this randomness, players need to adapt and react accordingly. Furthermore, to maintain balance and prevent clutter within the game world, I have implemented a limited existence life for dropped items. Each item is programmed to have a predefined lifespan, after which it will naturally disappear. This ensures that the game world remains uncluttered and that players are encouraged to promptly collect items to benefit from their associated advantages.
+
+#### Inventory:
+The inventory system provides players with a comprehensive and user-friendly interface to view and manage their collected items. With this system in place, players can effortlessly access vital information such as the quantity of each item at their disposal. To enhance usability and convenience, I have incorporated visual indicators that display cooldown clocks for consumable items. This feature allows players to gauge the availability of these items and plan their strategies accordingly. By providing clear and intuitive visuals, players can make informed decisions about when to use their consumables effectively.
+Moreover, I have implemented interactive elements within the inventory system. When hovering over an item, players are presented with relevant information. To further streamline item usage, I have implemented a right-click functionality besides keybindings 1, 2, and 3.
+
+#### Damage Popup:
+The damage pop-up controller effectively communicates the impact of each attack through visual cues in the form of pop-up text. To distinguish normal hits from critical hits, a color scheme is used, with yellow text representing normal hits and red text representing critical hits. To create a smooth visual experience, the pop-up text dynamically changes in size throughout its duration. It starts small and gradually increases in size during the first half of the pop-up, then gradually decreases in size during the second half. This approach provides a visually appealing and immersive experience for players during combat.
 
 ## Animation and Visuals
 
