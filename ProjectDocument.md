@@ -95,11 +95,11 @@ The damage pop-up controller effectively communicates the impact of each attack 
 In our game, each weapon is associated with a ScriptableObject that stores all the predefined properties and characteristics for that specific weapon type. This design allows for easy customization and future development of new weapon types. Projectile weapons utilize the ProjectileWeaponController and Behavior code, while melee weapons use the MeleeWeaponController and Behavior code. This modular approach ensures consistent functionality and simplifies the process of introducing new weapons with unique behaviors. It provides a flexible and scalable system for managing weapons in the game, facilitating customization and maintaining clarity in the overall design. and my are written with those in mind.  I have made refence to the tutorial here, but end up ditching it in the end[Reference tutorial](https://www.youtube.com/watch?v=RCOxhTsbAWo&list=PLgXA5L5ma2Bveih0btJV58REE2mzfQLOQ&index=3).
 #### Projectile weapons: 
 currently have the generic Damage, speed, cooldown(attackspeed), and lifetime. But also have the additional properties of “Pierce”, “chain”, “explosive”, and “boomerang”. 
--Pierce: how many enemy that projectile can hit before destroyed.
--Chain: the projectile will jump to the closest enemy after hiting one.
--Explosive: Initially wanted to use other prefab to create explosion on hit, because we have no assets for that so I changed it to: explode into x many numbers of another projectile, spread out evenly. thus, an orb can explode into dagger of different stats for example.
--Boomerang: return to the player after reaching a certain distance away.
--NumberofProjectile: shoot x many projectile at same time, spread is uneven within a 40 degree arc.
+  Pierce: how many enemy that projectile can hit before destroyed.
+  Chain: the projectile will jump to the closest enemy after hiting one.
+  Explosive: Initially wanted to use other prefab to create explosion on hit, because we have no assets for that so I changed it to: explode into x many numbers of another projectile, spread out evenly. thus, an orb can explode into dagger of different stats for example.
+  Boomerang: return to the player after reaching a certain distance away.
+  NumberofProjectile: shoot x many projectile at same time, spread is uneven within a 40 degree arc.
 Initially, I encountered an issue where projectiles would unintentionally hit the same enemy multiple times. To resolve this, I implemented a solution using a list to keep track of all the enemies that were previously hit by a projectile. With this approach, every time a collider is detected, the system checks the list to ensure that the enemy has not been hit before. This prevents duplicate hits and ensures that each enemy is only affected once by the projectile. By employing this list-based tracking mechanism, I successfully resolved the problem of repeated enemy hits caused by the same projectile.
 ![image](https://github.com/cioudfox/ECS-189-Project/assets/61336686/2b2f4af7-07a5-4f7b-a13e-b84ed3084efc)
 
@@ -219,9 +219,9 @@ Health upgrades: Instead of simply increasing the maximum HP and instantly heali
 
 Item functionality changes: I made adjustments to the functionality of the items to enhance their effectiveness and impact
 
--The first item now heals the player for 40% of their maximum HP, providing a more substantial healing effect compared to the previous flat value of 20 HP.
--The second item not only temporary increases critical chance but also slightly boosts attack speed, providing additional benefits to the player's combat capabilities.
--The third item now grants a temporary increase in movement speed, removing its previous effect of increasing attack speed.
+*The first item now heals the player for 40% of their maximum HP, providing a more substantial healing effect compared to the previous flat value of 20 HP.
+*The second item not only temporary increases critical chance but also slightly boosts attack speed, providing additional benefits to the player's combat capabilities.
+*The third item now grants a temporary increase in movement speed, removing its previous effect of increasing attack speed.
 Global cooldown for items: After a player uses an item, I introduced a global cooldown mechanism that temporarily disables the use of any other items. This encourages players to carefully consider their choices and strategize their item usage in different situations, adding a layer of decision-making to the gameplay.
 
 Weapon and enemy balancing: I did multiple times on the stats and characteristics of all weapons and enemies. This process resulted in a game that starts off relatively easy but progressively becomes more challenging as players progress. This approach increases replayability and provides a satisfying sense of progression and difficulty curve.
@@ -231,11 +231,12 @@ Adjusted enemy spawning: I expanded the area in which enemies spawn, and slightl
 Change to PlayerStats: I made adjustments to the player's movement speed in order to prevent them from easily outrunning all enemies. By decreasing the base speed, players will need to strategize and use their skills effectively to avoid enemy encounters or gain an advantage. Additionally, I introduced a slight passive health regeneration feature to provide a gradual healing effect over time, reducing the reliance on external healing sources. Furthermore, I decided to give the player a base armor value. This armor provides a baseline level of defense, reducing the amount of damage taken from enemy attacks. The inclusion of armor adds another layer of strategic decision-making for players, as they need to consider the balance between offensive and defensive capabilities during gamepla
 
 Other Minor changes: 
-  -the value of exp from each gems, and the exp required to level up.
-  -fixed up some part of the map to make it looks nicer and less buggy.
-  -buff to the weapons that my groupmate considered weak, and nerfed lightning.
-  -buff the dragon, made change to the projectiles from enemy, also their colors slightly to make it looks better.
-  -change to the UI color, menu color, text color, transparency, etc.
+  *the value of exp from each gems, and the exp required to level up.
+  *fixed up some part of the map to make it looks nicer and less buggy.
+  *buff to the weapons that my groupmate considered weak, and nerfed lightning.
+  *buff the dragon, made change to the projectiles from enemy, also their colors slightly to make it looks better.
+  *change to the UI color, menu color, text color, transparency.
+  *etc
 
 
 ## Audio - Hongye Xu, Megan Liu
