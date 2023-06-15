@@ -72,20 +72,20 @@ Designed and implemented an upgrade system, enabling players to enhance their ch
 ### - Player, Item, Inventory, Damage Popup - Hongye Xu
 
 #### Player Controller:
-The player controller includes precise control over the character's attack toward the cursor and character movement, as well as enabling seamless item usage through intuitive keybindings (1, 2, and 3). Additionally, I have implemented smooth item pickup mechanics and the ability to effortlessly open and close the inventory by pressing the "I" key. To achieve these functionalities, I have employed the command design pattern. Furthermore, I have diligently incorporated the necessary logic for applying effects when items are utilized. This ensures that the game's mechanics remain coherent and consistent, allowing players to strategize and make informed decisions regarding their inventory usage.
+The player controller includes precise control over the character's attack toward the cursor and character movement, as well as enabling seamless item usage through intuitive keybindings (1, 2, and 3). Additionally, I have implemented smooth item pickup mechanics and the ability to effortlessly open and close the inventory by pressing the "I" key. To achieve these functionalities, I have employed the command design pattern. Furthermore, I have diligently incorporated the necessary logic for applying effects when items are utilized. This ensures that the game's mechanics remain coherent and consistent, allowing players to strategize and make informed decisions regarding their inventory usage. [The main player controller script](https://github.com/cioudfox/ECS-189-Project/blob/f12713189b42f11b884d53a79a240c921986cd05/Generic%20Project%20Name/Assets/Scripts/Player/PlayerController.cs#L6).
 
 #### Item:
-Within the item collection and item controller systems, I have implemented dynamic mechanics that enhance the realism and immersion of dropped items. When items are dropped, they scatter in random directions, adding a sense of unpredictability and excitement to the gameplay experience. By introducing this randomness, players need to adapt and react accordingly. Furthermore, to maintain balance and prevent clutter within the game world, I have implemented a limited existence life for dropped items. Each item is programmed to have a predefined lifespan, after which it will naturally disappear. This ensures that the game world remains uncluttered and that players are encouraged to promptly collect items to benefit from their associated advantages.
+Within the item collection and item controller systems, I have implemented dynamic mechanics that enhance the realism and immersion of dropped items. When items are dropped, they scatter in random directions, adding a sense of unpredictability and excitement to the gameplay experience. By introducing this randomness, players need to adapt and react accordingly. Furthermore, to maintain balance and prevent clutter within the game world, I have implemented a limited existence life for dropped items. Each item is programmed to have a predefined lifespan, after which it will naturally disappear. This ensures that the game world remains uncluttered and that players are encouraged to promptly collect items to benefit from their associated advantages. [Item Class](https://github.com/cioudfox/ECS-189-Project/blob/f12713189b42f11b884d53a79a240c921986cd05/Generic%20Project%20Name/Assets/Scripts/Item/Item.cs#LL5C17-L5C17), [Item controller script](https://github.com/cioudfox/ECS-189-Project/blob/f12713189b42f11b884d53a79a240c921986cd05/Generic%20Project%20Name/Assets/Scripts/Item/ItemController.cs#L5).
 
 #### Inventory:
 The inventory system provides players with a comprehensive and user-friendly interface to view and manage their collected items. With this system in place, players can effortlessly access vital information such as the quantity of each item at their disposal. To enhance usability and convenience, I have incorporated visual indicators that display cooldown clocks for consumable items. This feature allows players to gauge the availability of these items and plan their strategies accordingly. By providing clear and intuitive visuals, players can make informed decisions about when to use their consumables effectively.
-Moreover, I have implemented interactive elements within the inventory system. When hovering over an item, players are presented with relevant information. To further streamline item usage, I have implemented a right-click functionality besides keybindings 1, 2, and 3.
+Moreover, I have implemented interactive elements within the inventory system. When hovering over an item, players are presented with relevant information. To further streamline item usage, I have implemented a right-click functionality besides keybindings 1, 2, and 3. [Inventory Class](https://github.com/cioudfox/ECS-189-Project/blob/f12713189b42f11b884d53a79a240c921986cd05/Generic%20Project%20Name/Assets/Scripts/Item/Inventory.cs#L12), [Inventory controller script](https://github.com/cioudfox/ECS-189-Project/blob/f12713189b42f11b884d53a79a240c921986cd05/Generic%20Project%20Name/Assets/Scripts/Item/InventoryController.cs#L7). [Reference tutorial](https://www.youtube.com/watch?v=2WnAOV7nHW0&t=19s&ab_channel=CodeMonkey).
 
 ![1686788602365](https://github.com/cioudfox/ECS-189-Project/assets/114460759/be8640a3-245d-4f24-80d5-928e8258efe2)
 
 
 #### Damage Popup:
-The damage pop-up controller effectively communicates the impact of each attack through visual cues in the form of pop-up text. To distinguish normal hits from critical hits, a color scheme is used, with yellow text representing normal hits and red text representing critical hits. To create a smooth visual experience, the pop-up text dynamically changes in size throughout its duration. It starts small and gradually increases in size during the first half of the pop-up, then gradually decreases in size during the second half. This approach provides a visually appealing and immersive experience for players during combat.
+The damage pop-up controller effectively communicates the impact of each attack through visual cues in the form of pop-up text. To distinguish normal hits from critical hits, a color scheme is used, with yellow text representing normal hits and red text representing critical hits. To create a smooth visual experience, the pop-up text dynamically changes in size throughout its duration. It starts small and gradually increases in size during the first half of the pop-up, then gradually decreases in size during the second half. This approach provides a visually appealing and immersive experience for players during combat. [Damage popup controller script](https://github.com/cioudfox/ECS-189-Project/blob/f12713189b42f11b884d53a79a240c921986cd05/Generic%20Project%20Name/Assets/Scripts/DamgePopup.cs#L6).
 
 ![1686788851866](https://github.com/cioudfox/ECS-189-Project/assets/114460759/3fadefcd-a52d-44da-8838-675dd179d213)
 
@@ -144,22 +144,24 @@ Opaque buildings, darker goblins, and bright fields!
 
 **WRITE STUFF HERE JASON. Menu buttons change shades of hue when hovered and click to add more pizzazz. Glamorous bright colors add to the rpg fantasy elements.**
 
-**WRITE STUFF HERE YE**
+### Inventory and In-Game Button UI - Hongye Xu
+By prioritizing user experience, the button UI provides users with helpful tooltips and information when hovering over buttons, empowering them with valuable insights to make informed decisions. Furthermore, the deliberate design of the inventory and item placement within it ensures a visually pleasing and functional play view, facilitating smooth navigation and effective item usage. These interface enhancements contribute to a more immersive and intuitive gameplay experience, allowing players to easily access important information and manage their inventory seamlessly. [Button Class](https://github.com/cioudfox/ECS-189-Project/blob/f12713189b42f11b884d53a79a240c921986cd05/Generic%20Project%20Name/Assets/Scripts/ButtonUI.cs#L6)
 
-**WRITE STUFF HERE YOUNG**
+![1686789818365](https://github.com/cioudfox/ECS-189-Project/assets/114460759/b2b5afcb-67f3-4c82-9135-d0dbb7505b55)
+![1686790127231](https://github.com/cioudfox/ECS-189-Project/assets/114460759/bba9f31d-fffc-41c8-a500-69d227f12230)
 
-Subrole: UI - Young Cheol Ko
 
-Contributed to the user interface (UI) system:
 
-Scene UI:
+### Scene UI, Game UI - Young Cheol Ko
+
+#### Scene UI:
 
 ![a1](https://github.com/cioudfox/ECS-189-Project/assets/44619284/0c80ce2b-7977-4e01-8d8b-8aa85f1ff44e)
 ![a2](https://github.com/cioudfox/ECS-189-Project/assets/44619284/c984851f-b73c-497c-8c3c-2eb8262c95a5)
 
 Developed UI elements and scripts for the scene controller, character selector, main menu, and ESC menu. Ensured smooth transitions between scenes, allowed character selection, and provided accessible menus for navigation.
 
-Game UI:
+#### Game UI:
 
 ![a3](https://github.com/cioudfox/ECS-189-Project/assets/44619284/618507c7-dfc5-419b-9e4f-f25819c5d55d)
 
@@ -191,11 +193,11 @@ Object Colliders:
 
 **UP TO YOU IF YOU WANT TO MAKE YOUR OWN CATEGORY**
 
-## Audio
+## Audio - Hongye Xu, Megan Liu
 
 Our audio and sound effects have an upbeat vibe and consist of jazzy electronic keyboard and drums, in order to match the pleasant energy of exploring a fantasy landscape and fighting constant mobs.
 
-To implement our audio system, we used a sound manager script adapted from "Introduction to AUDIO in Unity" by Brackeys. The public sound manager allowed us to easily attach audio clips and customize title, volume, pitch, and loop from the editor, as well as play any of the attached audios in other scripts.
+To implement our audio system, we used a sound manager script adapted from "Introduction to AUDIO in Unity" by Brackeys. The public sound manager allowed us to easily attach audio clips and customize title, volume, pitch, and loop from the editor, as well as play any of the attached audios in other scripts. [Sound Manager Class, referencing assignment 1 Captain's sound manager](https://github.com/cioudfox/ECS-189-Project/blob/f12713189b42f11b884d53a79a240c921986cd05/Generic%20Project%20Name/Assets/Scripts/SoundManager.cs#L13).
 
 **1) [Crystal Caves Music](https://www.gamedevmarket.net/asset/crystal-cavern-game-assets-music)**
 
