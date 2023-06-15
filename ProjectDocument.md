@@ -91,7 +91,7 @@ The damage pop-up controller effectively communicates the impact of each attack 
 
 ## Animation and Visuals
 
-### Animation
+### Animation - Megan Liu
 In order to emphasize a simple topdown shooter aesthetic, we used more cartoonish and pixelated 2D model assets for the player, enemies, map, attacks, and items. We bought the rights to use an RPG Asset Mega Bundle. Some of the assets can be viewed here:
 
 * [Fantasy RPG Monster Pack](https://franuka.itch.io/fantasy-rpg-monster-pack) - Assets for animated top-down enemies and their attacks
@@ -111,7 +111,7 @@ The 2D enemy models are in a similar pixelated visual style. Enemies all have mo
 
 We used a combination of animation and visual effects to make a better **game feel** that centers around being simple and cartoonish. We had similar animation implementations for players and enemies alike for simplicity's sake, while adding slight differences that establishes each sprite as its own type with unique looks, animations, and abilities. Game feel is also improved to feel more active and responsive to player input with clear visual responses and feedback, such color changes when taking damage and enemies that immediately change direction and animations based on the player's input. Additionally, our asset choices reflect our chosen fantasy theme and match our map design's style in terms of bright coloring and pixelated fantastical art.  
 
-### Map Design
+### Map Design - Megan Liu, Jason Wu
 
 **To ensure variation in the map, maps are split into procedurally loaded tiles. To avoid a barren looking map, all tiles have random spawn points with a select list of random items to spawn. Additionally, to add variety and exploration, there are a several different types of tiles with different dynamics and environmental features tacked on. When the player inside a tile moves closer to an edge, an adjacent tile will spawn and randomly generate objects to make it different. There are a total of 8 different tilemaps for the MapSpawner to pick from and 12 different buildings and trees to spawn in the random location. [Randomized Item Script can be found here!](https://github.com/cioudfox/ECS-189-Project/blob/ec7c9e47ca0fac16c97ed597c4428ca20e288c85/Generic%20Project%20Name/Assets/Scripts/PropRandomizer.cs)** 
 
