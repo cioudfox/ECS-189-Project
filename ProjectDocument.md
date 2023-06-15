@@ -86,21 +86,24 @@ Moreover, I have implemented interactive elements within the inventory system. W
 ### - Weapon System Weapon System(Projectile and Melee), Armor, Passive Regen, and weapon Upgrade system
 
 #### Weapon System: 
-every weapon has a scriptableObject that stores all the prebuilt weapon types, it can be changed easily, and it is modulable for future development of more different type of weapons. All projectile weapon will use the ProjectileWeaponController and Behavior code. And all melee weapon uses the MeleeWeaponControler and Behavior code.
-#####Projectile weapons: 
-currently have the generic Damage, speed, cooldown(attackspeed), and lifetime. But also have the additional properties of “Pierce”, “chain”, “explosive”, and “boomerang”. To not hit an enemy multiple time with the same projectile, I created a list that storage all enemy hit by that projectile.
+In the game, each weapon is associated with a ScriptableObject that stores all the predefined properties and characteristics for that specific weapon type. This design allows for easy customization and future development of new weapon types. Projectile weapons utilize the ProjectileWeaponController and Behavior code, while melee weapons use the MeleeWeaponController and Behavior code. This modular approach ensures consistent functionality and simplifies the process of introducing new weapons with unique behaviors. It provides a flexible and scalable system for managing weapons in the game, facilitating customization and maintaining clarity in the overall design.
+#### Projectile weapons: 
+currently have the generic Damage, speed, cooldown(attackspeed), and lifetime. But also have the additional properties of “Pierce”, “chain”, “explosive”, and “boomerang”. 
 -Pierce: how many enemy that projectile can hit before destroyed.
 -Chain: the projectile will jump to the closest enemy after hiting one.
--Explosive: explode into another projectile of x many numbers, thus, an orb can explode into dagger of different stats for example.
+-Explosive: Initially wanted to use other prefab to create explosion on hit, because we have no assets for that so I changed it to: explode into x many numbers of another projectile, spread out evenly. thus, an orb can explode into dagger of different stats for example.
 -Boomerang: return to the player after reaching a certain distance away.
-#####Melee weapons: 
-same as projectile weapon, but not as developed, only have the generic damage, and attack speed. I tried to implement many other different attacks, but lacks the animations and sprites for it, and I’m not a good animator, another thing is the knockback.
-####Armor System:
-Implement the armor for the enemy and the player for more interesting balancing, overall, it will apply after all damage calculation is done. So that the damage calculation will be easier and more balanced than for example sentry shield in SC2.
-####Passive Health Regen:
-Implemented the passive hp regen for the player character, so it would have a little less punishing to get hit.
+-NumberofProjectile: shoot x many projectile at same time, spread is uneven within a 40 degree arc.
+Initially, I encountered an issue where projectiles would unintentionally hit the same enemy multiple times. To resolve this, I implemented a solution using a list to keep track of all the enemies that were previously hit by a projectile. With this approach, every time a collider is detected, the system checks the list to ensure that the enemy has not been hit before. This prevents duplicate hits and ensures that each enemy is only affected once by the projectile. By employing this list-based tracking mechanism, I successfully resolved the problem of repeated enemy hits caused by the same projectile.
+
+#### Melee weapons: 
+Similar to projectile weapons, melee weapons share certain characteristics such as generic damage and attack speed. It can hit all enemy in its hit box once, thus a real aoe that requires player to get close to use.  However, it is not complete, mainly due to the lack of specific animations and sprites required for various attack variations. Implementing different attack animations and sprites is a task that requires specialized skills in animation, which I do not possess. Additionally, the implementation of knockback effects in melee combat is an area that requires further attention and refinement. While the foundation for melee weapons is in place, the overall development and polish of these weapons may require additional resources and expertise in animation and combat mechanics.
+#### Armor System:
+To enhance the gameplay balance, I have incorporated armor mechanics for both enemies and the player. It was Intended for Melee only player character in mind(however we scrapted that).  This addition brings an extra layer of strategic depth to the game. The armor is applied after all damage calculations have been performed, ensuring a more streamlined and balanced damage calculation process. By implementing armor in this manner, it simplifies the overall damage calculation process and provides a fairer and more balanced gameplay experience. This approach is different from, for example, the sentry shield in StarCraft II, where damage reduction is applied before damage calculations. The implementation of armor in this way aims to create a more engaging and strategically satisfying gameplay experience.
+#### Passive Health Regen:
+I also implemented passive HP regeneration for the player character to provide a slight reduction in the punishment for getting hit. It allows the player's health to gradually recover over time without needing external healing sources or consumables. This feature offers a more forgiving gameplay experience by providing a natural means of healing.
 ####UpgradeSystem(Weapon, and change to Health): 
-Implemented the damage and attack speed scaling of the upgrade system. Which is a stacking modifier that multiplies the base stats of weapons. for example, if you upgrade attack damage 3 time, and the based damage is 4, it would be 4* (100% + 7.5%*3). since enemy all have health as float value, even though the damage pop up might not change, it does kill the enemy faster. 
+I implemented an upgrade system that scales the damage and attack speed of weapons. The system utilizes stacking modifiers that multiply the base stats of the weapons. For example, if you upgrade the attack damage three times and the base damage is 4, the resulting damage would be calculated as 4 * (100% + 7.5% * 3). Although the damage pop-up might not reflect the exact change, the upgraded weapon effectively kills enemies faster since their health values are stored as float values. This scaling mechanism enhances the effectiveness of weapons over time and provides a sense of progression and power growth for the player.
 
 
 #### Damage Popup:
@@ -207,17 +210,20 @@ Object Colliders:
 
 
 ## Game Feel and Gameplay Testing  - Steven
-I have our game many time over and over trying to balance the game and make it not too challenging and not to easy. 
-Initially our game will have the option to shoot at the direction your player move, and you have to use mouse click to toggle between this and shoot to the location of mouse. how ever that is a hassle, I decided to delete the shoot at direction of move entirely.
-I changed the upgrade of health into increase of max hp and passive regen speed rather than pure max hp and heal you instantly to full. because this would make the game slighly easlier as we already have an item that will heal the player.
-I made change to the items and changed their funtionality
-   -the first item now heals 40% of player's max hp rather than a flat 20hp.
-   -the second item now not only increase crit chance, but also slightly increase attackspeed.
-   -the thrid item now only increase movementspeed for a short time. instead of also incresee attackspeed.
-I decided to add a global cooldown after the player used an item, which will force the player to make choice of what to use at a given circumnstance.
-I changed and balanced the stats of all weapons and enemy many times, so the game will be easy at start, but harder as it goes on.
+I have dedicated significant time to playtesting and balancing our game, aiming to strike a balance between challenge and accessibility. During this process, I made several important changes and improvements:
+Shooting mechanics: Initially, players had the option to shoot in the direction of their movement. However, I found this to be cumbersome and decided to remove it. Now, players shoot directly towards the location of the mouse cursor, making the shooting experience more intuitive and user-friendly.
 
-**UP TO YOU IF YOU WANT TO MAKE YOUR OWN CATEGORY**
+Health upgrades: Instead of simply increasing the maximum HP and instantly healing the player to full, I modified the health upgrades to increase the maximum HP and passive health regeneration speed. This change adds a gradual healing aspect to the game and slightly reduces the overall difficulty, considering the presence of healing items.
+
+Item functionality changes: I made adjustments to the functionality of the items to enhance their effectiveness and impact:
+-The first item now heals the player for 40% of their maximum HP, providing a more substantial healing effect compared to the previous flat value of 20 HP.
+-The second item not only temporary increases critical chance but also slightly boosts attack speed, providing additional benefits to the player's combat capabilities.
+-The third item now grants a temporary increase in movement speed, removing its previous effect of increasing attack speed.
+Global cooldown for items: After a player uses an item, I introduced a global cooldown mechanism that temporarily disables the use of any other items. This encourages players to carefully consider their choices and strategize their item usage in different situations, adding a layer of decision-making to the gameplay.
+
+Weapon and enemy balancing: I iterated multiple times on the stats and characteristics of all weapons and enemies. This iterative process resulted in a game that starts off relatively easy but progressively becomes more challenging as players progress. This approach increases replayability and provides a satisfying sense of progression and difficulty curve.
+
+Adjusted enemy spawning: I expanded the area in which enemies spawn, creating a larger space for encounters and making the waves of enemies less overwhelming and lethal. This modification allows players to maneuver more effectively and strategize their actions during intense combat situations.
 
 ## Audio - Hongye Xu, Megan Liu
 
