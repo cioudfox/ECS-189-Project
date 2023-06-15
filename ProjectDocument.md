@@ -83,6 +83,25 @@ Moreover, I have implemented interactive elements within the inventory system. W
 
 ![1686788602365](https://github.com/cioudfox/ECS-189-Project/assets/114460759/be8640a3-245d-4f24-80d5-928e8258efe2)
 
+### - Weapon System Weapon System(Projectile and Melee), Armor, Passive Regen, and weapon Upgrade system
+
+#### Weapon System: 
+every weapon has a scriptableObject that stores all the prebuilt weapon types, it can be changed easily, and it is modulable for future development of more different type of weapons. All projectile weapon will use the ProjectileWeaponController and Behavior code. And all melee weapon uses the MeleeWeaponControler and Behavior code.
+#####Projectile weapons: 
+currently have the generic Damage, speed, cooldown(attackspeed), and lifetime. But also have the additional properties of “Pierce”, “chain”, “explosive”, and “boomerang”. To not hit an enemy multiple time with the same projectile, I created a list that storage all enemy hit by that projectile.
+-Pierce: how many enemy that projectile can hit before destroyed.
+-Chain: the projectile will jump to the closest enemy after hiting one.
+-Explosive: explode into another projectile of x many numbers, thus, an orb can explode into dagger of different stats for example.
+-Boomerang: return to the player after reaching a certain distance away.
+#####Melee weapons: 
+same as projectile weapon, but not as developed, only have the generic damage, and attack speed. I tried to implement many other different attacks, but lacks the animations and sprites for it, and I’m not a good animator, another thing is the knockback.
+####Armor System:
+Implement the armor for the enemy and the player for more interesting balancing, overall, it will apply after all damage calculation is done. So that the damage calculation will be easier and more balanced than for example sentry shield in SC2.
+####Passive Health Regen:
+Implemented the passive hp regen for the player character, so it would have a little less punishing to get hit.
+####UpgradeSystem(Weapon, and change to Health): 
+Implemented the damage and attack speed scaling of the upgrade system. Which is a stacking modifier that multiplies the base stats of weapons. for example, if you upgrade attack damage 3 time, and the based damage is 4, it would be 4* (100% + 7.5%*3). since enemy all have health as float value, even though the damage pop up might not change, it does kill the enemy faster. 
+
 
 #### Damage Popup:
 The damage pop-up controller effectively communicates the impact of each attack through visual cues in the form of pop-up text. To distinguish normal hits from critical hits, a color scheme is used, with yellow text representing normal hits and red text representing critical hits. To create a smooth visual experience, the pop-up text dynamically changes in size throughout its duration. It starts small and gradually increases in size during the first half of the pop-up, then gradually decreases in size during the second half. This approach provides a visually appealing and immersive experience for players during combat. [Damage popup controller script](https://github.com/cioudfox/ECS-189-Project/blob/f12713189b42f11b884d53a79a240c921986cd05/Generic%20Project%20Name/Assets/Scripts/DamgePopup.cs#L6).
@@ -134,7 +153,7 @@ Opaque buildings, darker goblins, and bright fields!
 ## Input
 
 **WRITE STUFF HERE STEVEN**
-
+(writing right now, sorry :(   
 **Add an entry for each platform or input style your project supports.**
 
 # Sub-Roles
@@ -187,9 +206,16 @@ Object Colliders:
 ![Screenshot 2023-06-14 152536](https://github.com/cioudfox/ECS-189-Project/assets/68248379/e808ba5c-c217-431b-85db-ca6f881ff422)
 
 
-**WRITE STUFF HERE STEVEN**
-
-## STEVEN
+## Game Feel and Gameplay Testing  - Steven
+I have our game many time over and over trying to balance the game and make it not too challenging and not to easy. 
+Initially our game will have the option to shoot at the direction your player move, and you have to use mouse click to toggle between this and shoot to the location of mouse. how ever that is a hassle, I decided to delete the shoot at direction of move entirely.
+I changed the upgrade of health into increase of max hp and passive regen speed rather than pure max hp and heal you instantly to full. because this would make the game slighly easlier as we already have an item that will heal the player.
+I made change to the items and changed their funtionality
+   -the first item now heals 40% of player's max hp rather than a flat 20hp.
+   -the second item now not only increase crit chance, but also slightly increase attackspeed.
+   -the thrid item now only increase movementspeed for a short time. instead of also incresee attackspeed.
+I decided to add a global cooldown after the player used an item, which will force the player to make choice of what to use at a given circumnstance.
+I changed and balanced the stats of all weapons and enemy many times, so the game will be easy at start, but harder as it goes on.
 
 **UP TO YOU IF YOU WANT TO MAKE YOUR OWN CATEGORY**
 
