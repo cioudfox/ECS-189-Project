@@ -83,6 +83,12 @@ Moreover, I have implemented interactive elements within the inventory system. W
 
 ![1686788602365](https://github.com/cioudfox/ECS-189-Project/assets/114460759/be8640a3-245d-4f24-80d5-928e8258efe2)
 
+
+#### Damage Popup:
+The damage pop-up controller effectively communicates the impact of each attack through visual cues in the form of pop-up text. To distinguish normal hits from critical hits, a color scheme is used, with yellow text representing normal hits and red text representing critical hits. To create a smooth visual experience, the pop-up text dynamically changes in size throughout its duration. It starts small and gradually increases in size during the first half of the pop-up, then gradually decreases in size during the second half. This approach provides a visually appealing and immersive experience for players during combat. [Damage popup controller script](https://github.com/cioudfox/ECS-189-Project/blob/f12713189b42f11b884d53a79a240c921986cd05/Generic%20Project%20Name/Assets/Scripts/DamgePopup.cs#L6).
+
+![1686788851866](https://github.com/cioudfox/ECS-189-Project/assets/114460759/3fadefcd-a52d-44da-8838-675dd179d213)
+
 ### - Weapon System Weapon System(Projectile and Melee), Armor, Passive Regen, and weapon Upgrade system
 
 #### Weapon System: 
@@ -104,12 +110,6 @@ To enhance the gameplay balance, I have incorporated armor mechanics for both en
 I also implemented passive HP regeneration for the player character to provide a slight reduction in the punishment for getting hit. It allows the player's health to gradually recover over time without needing external healing sources or consumables. This feature offers a more forgiving gameplay experience by providing a natural means of healing.
 ####UpgradeSystem(Weapon, and change to Health): 
 I implemented an upgrade system that scales the damage and attack speed of weapons. The system utilizes stacking modifiers that multiply the base stats of the weapons. For example, if you upgrade the attack damage three times and the base damage is 4, the resulting damage would be calculated as 4 * (100% + 7.5% * 3). Although the damage pop-up might not reflect the exact change, the upgraded weapon effectively kills enemies faster since their health values are stored as float values. This scaling mechanism enhances the effectiveness of weapons over time and provides a sense of progression and power growth for the player.
-
-
-#### Damage Popup:
-The damage pop-up controller effectively communicates the impact of each attack through visual cues in the form of pop-up text. To distinguish normal hits from critical hits, a color scheme is used, with yellow text representing normal hits and red text representing critical hits. To create a smooth visual experience, the pop-up text dynamically changes in size throughout its duration. It starts small and gradually increases in size during the first half of the pop-up, then gradually decreases in size during the second half. This approach provides a visually appealing and immersive experience for players during combat. [Damage popup controller script](https://github.com/cioudfox/ECS-189-Project/blob/f12713189b42f11b884d53a79a240c921986cd05/Generic%20Project%20Name/Assets/Scripts/DamgePopup.cs#L6).
-
-![1686788851866](https://github.com/cioudfox/ECS-189-Project/assets/114460759/3fadefcd-a52d-44da-8838-675dd179d213)
 
 ## Animation and Visuals
 
