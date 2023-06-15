@@ -215,28 +215,28 @@ Object Colliders:
 I have dedicated significant time to playtesting and balancing our game, aiming to strike a balance between challenge and accessibility. During this process, I made several important changes and improvements:
 Shooting mechanics: Initially, players had the option to shoot in the direction of their movement. However, I found this to be cumbersome and decided to remove it. Now, players shoot directly towards the location of the mouse cursor, making the shooting experience more intuitive and user-friendly.
 
-Health upgrades: Instead of simply increasing the maximum HP and instantly healing the player to full, I modified the health upgrades to increase the maximum HP and passive health regeneration speed. This change adds a gradual healing aspect to the game and slightly reduces the overall difficulty, considering the presence of healing items.
+* Health upgrades: Instead of simply increasing the maximum HP and instantly healing the player to full, I modified the health upgrades to increase the maximum HP and passive health regeneration speed. This change adds a gradual healing aspect to the game and slightly reduces the overall difficulty, considering the presence of healing items.
 
-Item functionality changes: I made adjustments to the functionality of the items to enhance their effectiveness and impact
+* Item functionality changes: I made adjustments to the functionality of the items to enhance their effectiveness and impact
 
 - The first item now heals the player for 40% of their maximum HP, providing a more substantial healing effect compared to the previous flat value of 20 HP.
 - The second item not only temporary increases critical chance but also slightly boosts attack speed, providing additional benefits to the player's combat capabilities.
 - The third item now grants a temporary increase in movement speed, removing its previous effect of increasing attack speed.
-Global cooldown for items: After a player uses an item, I introduced a global cooldown mechanism that temporarily disables the use of any other items. This encourages players to carefully consider their choices and strategize their item usage in different situations, adding a layer of decision-making to the gameplay.
+* Global cooldown for items: After a player uses an item, I introduced a global cooldown mechanism that temporarily disables the use of any other items. This encourages players to carefully consider their choices and strategize their item usage in different situations, adding a layer of decision-making to the gameplay.
 
-Weapon and enemy balancing: I did multiple times on the stats and characteristics of all weapons and enemies. This process resulted in a game that starts off relatively easy but progressively becomes more challenging as players progress. This approach increases replayability and provides a satisfying sense of progression and difficulty curve.
+* Weapon and enemy balancing: I did multiple times on the stats and characteristics of all weapons and enemies. This process resulted in a game that starts off relatively easy but progressively becomes more challenging as players progress. This approach increases replayability and provides a satisfying sense of progression and difficulty curve.
 
-Adjusted enemy spawning: I expanded the area in which enemies spawn, and slightly increase/degress the speed they spawn, thus creating a larger space for encounters and making the waves of enemies less overwhelming and lethal. and other part more engaging. This modification allows players to maneuver more effectively and strategize their actions during intense combat situations. 
+* Adjusted enemy spawning: I expanded the area in which enemies spawn, and slightly increase/degress the speed they spawn, thus creating a larger space for encounters and making the waves of enemies less overwhelming and lethal. and other part more engaging. This modification allows players to maneuver more effectively and strategize their actions during intense combat situations. 
 
-Change to PlayerStats: I made adjustments to the player's movement speed in order to prevent them from easily outrunning all enemies. By decreasing the base speed, players will need to strategize and use their skills effectively to avoid enemy encounters or gain an advantage. Additionally, I introduced a slight passive health regeneration feature to provide a gradual healing effect over time, reducing the reliance on external healing sources. Furthermore, I decided to give the player a base armor value. This armor provides a baseline level of defense, reducing the amount of damage taken from enemy attacks. The inclusion of armor adds another layer of strategic decision-making for players, as they need to consider the balance between offensive and defensive capabilities during gamepla
+* Change to PlayerStats: I made adjustments to the player's movement speed in order to prevent them from easily outrunning all enemies. By decreasing the base speed, players will need to strategize and use their skills effectively to avoid enemy encounters or gain an advantage. Additionally, I introduced a slight passive health regeneration feature to provide a gradual healing effect over time, reducing the reliance on external healing sources. Furthermore, I decided to give the player a base armor value. This armor provides a baseline level of defense, reducing the amount of damage taken from enemy attacks. The inclusion of armor adds another layer of strategic decision-making for players, as they need to consider the balance between offensive and defensive capabilities during gamepla
 
-Other Minor changes: 
-  * the value of exp from each gems, and the exp required to level up.
-  * fixed up some part of the map to make it looks nicer and less buggy.
-  * buff to the weapons that my groupmate considered weak, and nerfed lightning.
-  * buff the dragon, made change to the projectiles from enemy, also their colors slightly to make it looks better.
-  * change to the UI color, menu color, text color, transparency.
-  * etc
+* Other Minor changes: 
+  - the value of exp from each gems, and the exp required to level up.
+  - fixed up some part of the map to make it looks nicer and less buggy.
+  - buff to the weapons that my groupmate considered weak, and nerfed lightning.
+  - buff the dragon, made change to the projectiles from enemy, also their colors slightly to make it looks better.
+  - change to the UI color, menu color, text color, transparency.
+  - etc
 
 
 ## Audio - Hongye Xu, Megan Liu
