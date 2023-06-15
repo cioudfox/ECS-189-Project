@@ -153,13 +153,6 @@ Opaque buildings, darker goblins, and bright fields!
 **Since the game has a more open world to explore, in order to optimize gameplay, our MapOptimizer can disable objects and tilemaps once the player is far enough away. Since the tiles are disabled and not destroyed, they still remember the object items and the correct tile that was spawned. 
 [Map Spawner/Chunk Optimizer can be found here!](https://github.com/cioudfox/ECS-189-Project/blob/ec7c9e47ca0fac16c97ed597c4428ca20e288c85/Generic%20Project%20Name/Assets/Scripts/MapController.cs)**
 
-
-## Input
-
-**WRITE STUFF HERE STEVEN**
-(writing right now, sorry :(   
-**Add an entry for each platform or input style your project supports.**
-
 # Sub-Roles
 
 ## UI
